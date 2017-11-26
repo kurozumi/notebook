@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/public_server.rst:4
+msgid "Running a notebook server"
+msgstr ""
+
+#: ../../source/public_server.rst:7
+msgid ""
+"The :doc:`Jupyter notebook <notebook>` web application is based on a "
+"server-client structure.  The notebook server uses a :ref:`two-process "
+"kernel architecture <ipython:ipythonzmq>` based on ZeroMQ_, as well as "
+"Tornado_ for serving HTTP requests."
+msgstr ""
+
+#: ../../source/public_server.rst:13
+msgid ""
+"By default, a notebook server runs locally at 127.0.0.1:8888 and is "
+"accessible only from `localhost`. You may access the notebook server from"
+" the browser using `http://127.0.0.1:8888`."
+msgstr ""
+
+#: ../../source/public_server.rst:17
+msgid ""
+"This document describes how you can :ref:`secure a notebook server "
+"<notebook_server_security>` and how to :ref:`run it on a public interface"
+" <notebook_public_server>`."
+msgstr ""
+
+#: ../../source/public_server.rst:23
+msgid ""
+"**This is not the multi-user server you are looking for**. This document "
+"describes how you can run a public server with a single user. This should"
+" only be done by someone who wants remote access to their personal "
+"machine. Even so, doing this requires a thorough understanding of the "
+"set-ups limitations and security implications. If you allow multiple "
+"users to access a notebook server as it is described in this document, "
+"their commands may collide, clobber and overwrite each other."
+msgstr ""
+
+#: ../../source/public_server.rst:31
+msgid ""
+"If you want a multi-user server, the official solution is  JupyterHub_. "
+"To use JupyterHub, you need a Unix server (typically Linux) running "
+"somewhere that is accessible to your users on a network. This may run "
+"over the public internet, but doing so introduces additional `security "
+"concerns <https://jupyterhub.readthedocs.io/en/latest/getting-started"
+"/security-basics.html>`_."
+msgstr ""
+
+#: ../../source/public_server.rst:48
+msgid "Securing a notebook server"
+msgstr ""
+
+#: ../../source/public_server.rst:50
+msgid ""
+"You can protect your notebook server with a simple single password by "
+"configuring the :attr:`NotebookApp.password` setting in "
+":file:`jupyter_notebook_config.py`."
+msgstr ""
+
+#: ../../source/public_server.rst:55
+msgid "Prerequisite: A notebook configuration file"
+msgstr ""
+
+#: ../../source/public_server.rst:57
+msgid ""
+"Check to see if you have a notebook configuration file, "
+":file:`jupyter_notebook_config.py`. The default location for this file is"
+" your Jupyter folder in your home directory, ``~/.jupyter``."
+msgstr ""
+
+#: ../../source/public_server.rst:61
+msgid ""
+"If you don't already have one, create a config file for the notebook "
+"using the following command::"
+msgstr ""
+
+#: ../../source/public_server.rst:69
+msgid "Preparing a hashed password"
+msgstr ""
+
+#: ../../source/public_server.rst:71
+msgid ""
+"As of notebook version 5.0, you can enter and store a password for your "
+"notebook server with a single command. :command:`jupyter notebook "
+"password` will prompt you for your password and record the hashed "
+"password in your :file:`jupyter_notebook_config.json`."
+msgstr ""
+
+#: ../../source/public_server.rst:83
+msgid ""
+"You can prepare a hashed password manually, using the function "
+":func:`notebook.auth.security.passwd`:"
+msgstr ""
+
+#: ../../source/public_server.rst:96
+msgid ""
+":func:`~notebook.auth.security.passwd` when called with no arguments will"
+" prompt you to enter and verify your password such as in the above code "
+"snippet. Although the function can also be passed a string as an argument"
+" such as ``passwd('mypassword')``, please **do not** pass a string as an "
+"argument inside an IPython session, as it will be saved in your input "
+"history."
+msgstr ""
+
+#: ../../source/public_server.rst:104
+msgid "Adding hashed password to your notebook configuration file"
+msgstr ""
+
+#: ../../source/public_server.rst:105
+msgid ""
+"You can then add the hashed password to your "
+":file:`jupyter_notebook_config.py`. The default location for this file "
+":file:`jupyter_notebook_config.py` is in your Jupyter folder in your home"
+" directory, ``~/.jupyter``, e.g.::"
+msgstr ""
+
+#: ../../source/public_server.rst:113
+msgid "Using SSL for encrypted communication"
+msgstr ""
+
+#: ../../source/public_server.rst:114
+msgid ""
+"When using a password, it is a good idea to also use SSL with a web "
+"certificate, so that your hashed password is not sent unencrypted by your"
+" browser."
+msgstr ""
+
+#: ../../source/public_server.rst:119
+msgid ""
+"Web security is rapidly changing and evolving. We provide this document "
+"as a convenience to the user, and recommend that the user keep current on"
+" changes that may impact security, such as new releases of OpenSSL. The "
+"Open Web Application Security Project (`OWASP`_) website is a good "
+"resource on general security issues and web practices."
+msgstr ""
+
+#: ../../source/public_server.rst:125
+msgid ""
+"You can start the notebook to communicate via a secure protocol mode by "
+"setting the ``certfile`` option to your self-signed certificate, i.e. "
+"``mycert.pem``, with the command::"
+msgstr ""
+
+#: ../../source/public_server.rst:133
+msgid ""
+"A self-signed certificate can be generated with ``openssl``.  For "
+"example, the following command will create a certificate valid for 365 "
+"days with both the key and certificate data written to the same file::"
+msgstr ""
+
+#: ../../source/public_server.rst:139
+msgid ""
+"When starting the notebook server, your browser may warn that your self-"
+"signed certificate is insecure or unrecognized.  If you wish to have a "
+"fully compliant self-signed certificate that will not raise warnings, it "
+"is possible (but rather involved) to create one, as explained in detail "
+"in this `tutorial`_. Alternatively, you may use `Let's Encrypt`_ to "
+"acquire a free SSL certificate and follow the steps in :ref:`using-lets-"
+"encrypt` to set up a public server."
+msgstr ""
+
+#: ../../source/public_server.rst:153
+msgid "Running a public notebook server"
+msgstr ""
+
+#: ../../source/public_server.rst:155
+msgid ""
+"If you want to access your notebook server remotely via a web browser, "
+"you can do so by running a public notebook server. For optimal security "
+"when running a public notebook server, you should first secure the server"
+" with a password and SSL/HTTPS as described in "
+":ref:`notebook_server_security`."
+msgstr ""
+
+#: ../../source/public_server.rst:161
+msgid ""
+"Start by creating a certificate file and a hashed password, as explained "
+"in :ref:`notebook_server_security`."
+msgstr ""
+
+#: ../../source/public_server.rst:164
+msgid ""
+"If you don't already have one, create a config file for the notebook "
+"using the following command line::"
+msgstr ""
+
+#: ../../source/public_server.rst:169
+msgid ""
+"In the ``~/.jupyter`` directory, edit the notebook config file, "
+"``jupyter_notebook_config.py``.  By default, the notebook config file has"
+" all fields commented out. The minimum set of configuration options that "
+"you should uncomment and edit in :file:`jupyter_notebook_config.py` is "
+"the following::"
+msgstr ""
+
+#: ../../source/public_server.rst:187 ../../source/public_server.rst:226
+msgid "You can then start the notebook using the ``jupyter notebook`` command."
+msgstr ""
+
+#: ../../source/public_server.rst:192
+msgid "Using Let's Encrypt"
+msgstr ""
+
+#: ../../source/public_server.rst:193
+msgid ""
+"`Let's Encrypt`_ provides free SSL/TLS certificates. You can also set up "
+"a public server using a `Let's Encrypt`_ certificate."
+msgstr ""
+
+#: ../../source/public_server.rst:196
+msgid ""
+":ref:`notebook_public_server` will be similar when using a Let's Encrypt "
+"certificate with a few configuration changes. Here are the steps:"
+msgstr ""
+
+#: ../../source/public_server.rst:199
+msgid ""
+"Create a `Let's Encrypt certificate <https://letsencrypt.org/getting-"
+"started/>`_."
+msgstr ""
+
+#: ../../source/public_server.rst:200
+msgid "Use :ref:`hashed-pw` to create one."
+msgstr ""
+
+#: ../../source/public_server.rst:201
+msgid ""
+"If you don't already have config file for the notebook, create one using "
+"the following command:"
+msgstr ""
+
+#: ../../source/public_server.rst:208
+msgid ""
+"4. In the ``~/.jupyter`` directory, edit the notebook config file, "
+"``jupyter_notebook_config.py``.  By default, the notebook config file has"
+" all fields commented out. The minimum set of configuration options that "
+"you should to uncomment and edit in :file:`jupyter_notebook_config.py` is"
+" the following::"
+msgstr ""
+
+#: ../../source/public_server.rst:230
+msgid ""
+"**Use 'https'.** Keep in mind that when you enable SSL support, you must "
+"access the notebook server over ``https://``, not over plain ``http://``."
+"  The startup message from the server prints a reminder in the console, "
+"but *it is easy to overlook this detail and think the server is for some "
+"reason non-responsive*."
+msgstr ""
+
+#: ../../source/public_server.rst:237
+msgid "**When using SSL, always access the notebook server with 'https://'.**"
+msgstr ""
+
+#: ../../source/public_server.rst:239
+msgid ""
+"You may now access the public server by pointing your browser to "
+"``https://your.host.com:9999`` where ``your.host.com`` is your public "
+"server's domain."
+msgstr ""
+
+#: ../../source/public_server.rst:247
+msgid "Firewall Setup"
+msgstr ""
+
+#: ../../source/public_server.rst:249
+msgid ""
+"To function correctly, the firewall on the computer running the jupyter "
+"notebook server must be configured to allow connections from client "
+"machines on the access port ``c.NotebookApp.port`` set in "
+":file:`jupyter_notebook_config.py` to allow connections to the web "
+"interface.  The firewall must also allow connections from 127.0.0.1 "
+"(localhost) on ports from 49152 to 65535. These ports are used by the "
+"server to communicate with the notebook kernels. The kernel communication"
+" ports are chosen randomly by ZeroMQ, and may require multiple "
+"connections per kernel, so a large range of ports must be accessible."
+msgstr ""
+
+#: ../../source/public_server.rst:260
+msgid "Running the notebook with a customized URL prefix"
+msgstr ""
+
+#: ../../source/public_server.rst:262
+msgid ""
+"The notebook dashboard, which is the landing page with an overview of the"
+" notebooks in your working directory, is typically found and accessed at "
+"the default URL ``http://localhost:8888/``."
+msgstr ""
+
+#: ../../source/public_server.rst:266
+msgid ""
+"If you prefer to customize the URL prefix for the notebook dashboard, you"
+" can do so through modifying ``jupyter_notebook_config.py``. For example,"
+" if you prefer that the notebook dashboard be located with a sub-"
+"directory that contains other ipython files, e.g. "
+"``http://localhost:8888/ipython/``, you can do so with configuration "
+"options like the following (see above for instructions about modifying "
+"``jupyter_notebook_config.py``):"
+msgstr ""
+
+#: ../../source/public_server.rst:279
+msgid "Embedding the notebook in another website"
+msgstr ""
+
+#: ../../source/public_server.rst:281
+msgid ""
+"Sometimes you may want to embed the notebook somewhere on your website, "
+"e.g. in an IFrame. To do this, you may need to override the Content-"
+"Security-Policy to allow embedding. Assuming your website is at "
+"`https://mywebsite.example.com`, you can embed the notebook on your "
+"website with the following configuration setting in "
+":file:`jupyter_notebook_config.py`:"
+msgstr ""
+
+#: ../../source/public_server.rst:296
+msgid ""
+"When embedding the notebook in a website using an iframe, consider "
+"putting the notebook in single-tab mode. Since the notebook opens some "
+"links in new tabs by default, single-tab mode keeps the notebook from "
+"opening additional tabs. Adding the following to "
+":file:`~/.jupyter/custom/custom.js` will enable single-tab mode:"
+msgstr ""
+
+#: ../../source/public_server.rst:311
+msgid "Known issues"
+msgstr ""
+
+#: ../../source/public_server.rst:314
+msgid "Proxies"
+msgstr ""
+
+#: ../../source/public_server.rst:316
+msgid ""
+"When behind a proxy, especially if your system or browser is set to "
+"autodetect the proxy, the notebook web application might fail to connect "
+"to the server's websockets, and present you with a warning at startup. In"
+" this case, you need to configure your system not to use the proxy for "
+"the server's address."
+msgstr ""
+
+#: ../../source/public_server.rst:321
+msgid ""
+"For example, in Firefox, go to the Preferences panel, Advanced section, "
+"Network tab, click 'Settings...', and add the address of the notebook "
+"server to the 'No proxy for' field."
+msgstr ""
+
+#: ../../source/public_server.rst:326
+msgid "Docker CMD"
+msgstr ""
+
+#: ../../source/public_server.rst:328
+msgid ""
+"Using ``jupyter notebook`` as a `Docker CMD "
+"<https://docs.docker.com/engine/reference/builder/#cmd>`_ results in "
+"kernels repeatedly crashing, likely due to a lack of `PID reaping "
+"<https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-"
+"problem/>`_. To avoid this, use the `tini "
+"<https://github.com/krallin/tini>`_ ``init`` as your Dockerfile "
+"`ENTRYPOINT`::"
+msgstr ""
+

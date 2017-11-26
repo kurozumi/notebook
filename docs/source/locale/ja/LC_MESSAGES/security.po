@@ -1,0 +1,350 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/security.rst:5
+msgid "Security in the Jupyter notebook server"
+msgstr ""
+
+#: ../../source/security.rst:7
+msgid ""
+"Since access to the Jupyter notebook server means access to running "
+"arbitrary code, it is important to restrict access to the notebook "
+"server. For this reason, notebook 4.3 introduces token-based "
+"authentication that is **on by default**."
+msgstr ""
+
+#: ../../source/security.rst:13
+msgid ""
+"If you enable a password for your notebook server, token authentication "
+"is not enabled by default, and the behavior of the notebook server is "
+"unchanged from versions earlier than 4.3."
+msgstr ""
+
+#: ../../source/security.rst:17
+msgid ""
+"When token authentication is enabled, the notebook uses a token to "
+"authenticate requests. This token can be provided to login to the "
+"notebook server in three ways:"
+msgstr ""
+
+#: ../../source/security.rst:20
+msgid "in the ``Authorization`` header, e.g.::"
+msgstr ""
+
+#: ../../source/security.rst:24
+msgid "In a URL parameter, e.g.::"
+msgstr ""
+
+#: ../../source/security.rst:28
+msgid ""
+"In the password field of the login form that will be shown to you if you "
+"are not logged in."
+msgstr ""
+
+#: ../../source/security.rst:30
+msgid ""
+"When you start a notebook server with token authentication enabled "
+"(default), a token is generated to use for authentication. This token is "
+"logged to the terminal, so that you can copy/paste the URL into your "
+"browser::"
+msgstr ""
+
+#: ../../source/security.rst:38
+msgid ""
+"If the notebook server is going to open your browser automatically (the "
+"default, unless ``--no-browser`` has been passed), an *additional* token "
+"is generated for launching the browser. This additional token can be used"
+" only once, and is used to set a cookie for your browser once it "
+"connects. After your browser has made its first request with this one-"
+"time-token, the token is discarded and a cookie is set in your browser."
+msgstr ""
+
+#: ../../source/security.rst:46
+msgid ""
+"At any later time, you can see the tokens and URLs for all of your "
+"running servers with :command:`jupyter notebook list`::"
+msgstr ""
+
+#: ../../source/security.rst:54
+msgid ""
+"For servers with token-authentication enabled, the URL in the above "
+"listing will include the token, so you can copy and paste that URL into "
+"your browser to login. If a server has no token (e.g. it has a password "
+"or has authentication disabled), the URL will not include the token "
+"argument. Once you have visited this URL, a cookie will be set in your "
+"browser and you won't need to use the token again, unless you switch "
+"browsers, clear your cookies, or start a notebook server on a new port."
+msgstr ""
+
+#: ../../source/security.rst:63
+msgid "Alternatives to token authentication"
+msgstr ""
+
+#: ../../source/security.rst:65
+msgid ""
+"If a generated token doesn't work well for you, you can set a password "
+"for your notebook. :command:`jupyter notebook password` will prompt you "
+"for a password, and store the hashed password in your "
+":file:`jupyter_notebook_config.json`."
+msgstr ""
+
+#: ../../source/security.rst:72
+msgid ":command:`jupyter notebook password` command is added."
+msgstr ""
+
+#: ../../source/security.rst:75
+msgid ""
+"It is possible disable authentication altogether by setting the token and"
+" password to empty strings, but this is **NOT RECOMMENDED**, unless "
+"authentication or access restrictions are handled at a different layer in"
+" your web application:"
+msgstr ""
+
+#: ../../source/security.rst:87
+msgid "Security in notebook documents"
+msgstr ""
+
+#: ../../source/security.rst:89
+msgid ""
+"As Jupyter notebooks become more popular for sharing and collaboration, "
+"the potential for malicious people to attempt to exploit the notebook for"
+" their nefarious purposes increases. IPython 2.0 introduced a security "
+"model to prevent execution of untrusted code without explicit user input."
+msgstr ""
+
+#: ../../source/security.rst:96
+msgid "The problem"
+msgstr ""
+
+#: ../../source/security.rst:98
+msgid ""
+"The whole point of Jupyter is arbitrary code execution. We have no desire"
+" to limit what can be done with a notebook, which would negatively impact"
+" its utility."
+msgstr ""
+
+#: ../../source/security.rst:102
+msgid ""
+"Unlike other programs, a Jupyter notebook document includes output. "
+"Unlike other documents, that output exists in a context that can execute "
+"code (via Javascript)."
+msgstr ""
+
+#: ../../source/security.rst:106
+msgid ""
+"The security problem we need to solve is that no code should execute just"
+" because a user has **opened** a notebook that **they did not write**. "
+"Like any other program, once a user decides to execute code in a "
+"notebook, it is considered trusted, and should be allowed to do anything."
+msgstr ""
+
+#: ../../source/security.rst:113
+msgid "Our security model"
+msgstr ""
+
+#: ../../source/security.rst:115
+msgid "Untrusted HTML is always sanitized"
+msgstr ""
+
+#: ../../source/security.rst:116
+msgid "Untrusted Javascript is never executed"
+msgstr ""
+
+#: ../../source/security.rst:117
+msgid "HTML and Javascript in Markdown cells are never trusted"
+msgstr ""
+
+#: ../../source/security.rst:118
+msgid "**Outputs** generated by the user are trusted"
+msgstr ""
+
+#: ../../source/security.rst:119
+msgid ""
+"Any other HTML or Javascript (in Markdown cells, output generated by "
+"others) is never trusted"
+msgstr ""
+
+#: ../../source/security.rst:121
+msgid "The central question of trust is \"Did the current user do this?\""
+msgstr ""
+
+#: ../../source/security.rst:124
+msgid "The details of trust"
+msgstr ""
+
+#: ../../source/security.rst:126
+msgid ""
+"When a notebook is executed and saved, a signature is computed from a "
+"digest of the notebook's contents plus a secret key. This is stored in a "
+"database, writable only by the current user. By default, this is located "
+"at::"
+msgstr ""
+
+#: ../../source/security.rst:134
+msgid ""
+"Each signature represents a series of outputs which were produced by code"
+" the current user executed, and are therefore trusted."
+msgstr ""
+
+#: ../../source/security.rst:137
+msgid ""
+"When you open a notebook, the server computes its signature, and checks "
+"if it's in the database. If a match is found, HTML and Javascript output "
+"in the notebook will be trusted at load, otherwise it will be untrusted."
+msgstr ""
+
+#: ../../source/security.rst:142
+msgid "Any output generated during an interactive session is trusted."
+msgstr ""
+
+#: ../../source/security.rst:145
+msgid "Updating trust"
+msgstr ""
+
+#: ../../source/security.rst:147
+msgid ""
+"A notebook's trust is updated when the notebook is saved. If there are "
+"any untrusted outputs still in the notebook, the notebook will not be "
+"trusted, and no signature will be stored. If all untrusted outputs have "
+"been removed (either via ``Clear Output`` or re-execution), then the "
+"notebook will become trusted."
+msgstr ""
+
+#: ../../source/security.rst:153
+msgid ""
+"While trust is updated per output, this is only for the duration of a "
+"single session. A newly loaded notebook file is either trusted or not in "
+"its entirety."
+msgstr ""
+
+#: ../../source/security.rst:158
+msgid "Explicit trust"
+msgstr ""
+
+#: ../../source/security.rst:160
+msgid ""
+"Sometimes re-executing a notebook to generate trusted output is not an "
+"option, either because dependencies are unavailable, or it would take a "
+"long time. Users can explicitly trust a notebook in two ways:"
+msgstr ""
+
+#: ../../source/security.rst:164
+msgid "At the command-line, with::"
+msgstr ""
+
+#: ../../source/security.rst:168
+msgid "After loading the untrusted notebook, with ``File / Trust Notebook``"
+msgstr ""
+
+#: ../../source/security.rst:170
+msgid ""
+"These two methods simply load the notebook, compute a new signature, and "
+"add that signature to the user's database."
+msgstr ""
+
+#: ../../source/security.rst:174
+msgid "Reporting security issues"
+msgstr ""
+
+#: ../../source/security.rst:176
+msgid ""
+"If you find a security vulnerability in Jupyter, either a failure of the "
+"code to properly implement the model described here, or a failure of the "
+"model itself, please report it to security@ipython.org."
+msgstr ""
+
+#: ../../source/security.rst:180
+msgid ""
+"If you prefer to encrypt your security reports, you can use "
+":download:`this PGP public key <ipython_security.asc>`."
+msgstr ""
+
+#: ../../source/security.rst:184
+msgid "Affected use cases"
+msgstr ""
+
+#: ../../source/security.rst:186
+msgid ""
+"Some use cases that work in Jupyter 1.0 became less convenient in 2.0 as "
+"a result of the security changes. We do our best to minimize these "
+"annoyances, but security is always at odds with convenience."
+msgstr ""
+
+#: ../../source/security.rst:191
+msgid "Javascript and CSS in Markdown cells"
+msgstr ""
+
+#: ../../source/security.rst:193
+msgid ""
+"While never officially supported, it had become common practice to put "
+"hidden Javascript or CSS styling in Markdown cells, so that they would "
+"not be visible on the page. Since Markdown cells are now sanitized (by "
+"`Google Caja <https://developers.google.com/caja>`__), all Javascript "
+"(including click event handlers, etc.) and CSS will be stripped."
+msgstr ""
+
+#: ../../source/security.rst:199
+msgid ""
+"We plan to provide a mechanism for notebook themes, but in the meantime "
+"styling the notebook can only be done via either ``custom.css`` or CSS in"
+" HTML output. The latter only have an effect if the notebook is trusted, "
+"because otherwise the output will be sanitized just like Markdown."
+msgstr ""
+
+#: ../../source/security.rst:206
+msgid "Collaboration"
+msgstr ""
+
+#: ../../source/security.rst:208
+msgid ""
+"When collaborating on a notebook, people probably want to see the outputs"
+" produced by their colleagues' most recent executions. Since each "
+"collaborator's key will differ, this will result in each share starting "
+"in an untrusted state. There are three basic approaches to this:"
+msgstr ""
+
+#: ../../source/security.rst:213
+msgid "re-run notebooks when you get them (not always viable)"
+msgstr ""
+
+#: ../../source/security.rst:214
+msgid ""
+"explicitly trust notebooks via ``jupyter trust`` or the notebook menu "
+"(annoying, but easy)"
+msgstr ""
+
+#: ../../source/security.rst:216
+msgid ""
+"share a notebook signatures database, and use configuration dedicated to "
+"the collaboration while working on the project."
+msgstr ""
+
+#: ../../source/security.rst:219
+msgid "To share a signatures database among users, you can configure:"
+msgstr ""
+
+#: ../../source/security.rst:225
+msgid ""
+"to specify a non-default path to the SQLite database (of notebook hashes,"
+" essentially). We are aware that SQLite doesn't work well on NFS and we "
+"are `working out better ways to do this "
+"<https://github.com/jupyter/notebook/issues/1782>`_."
+msgstr ""
+

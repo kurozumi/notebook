@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/extending/keymaps.rst:2
+msgid "Customize keymaps"
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:6
+msgid ""
+"Declarative Custom Keymaps is a provisional feature with unstable API "
+"which is not guaranteed to be kept in future versions of the notebook, "
+"and can be removed or changed without warnings."
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:10
+msgid ""
+"The notebook shortcuts that are defined by jupyter both in edit mode an "
+"command mode are configurable in the frontend configuration file "
+"``~/.jupyter/nbconfig/notebook.json``. The modification of Keyboard "
+"shortcut suffer of several limitations, mainly that your Browser and OS "
+"might prevent certain shortcut to work correctly. If this is the case, "
+"there are unfortunately not much than can be done. The second issue can "
+"arise with keyboard that have a layout different than US English. Again "
+"even if we are aware of the issue, there is not much we can do about "
+"that."
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:19
+msgid ""
+"Shortcut are also limited by the underlying library that handle code and "
+"text edition: CodeMirror. If some Keyboard shortcuts are conflicting, the"
+" method describe below might not work to create new keyboard shortcuts, "
+"especially in the ``edit`` mode of the notebook."
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:25
+msgid ""
+"The 4 sections of interest in ``~/.jupyter/nbconfig/notebook.json`` are "
+"the following:"
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:28
+msgid "``keys.command.unbind``"
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:29
+msgid "``keys.edit.unbind``"
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:30
+msgid "``keys.command.bind``"
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:31
+msgid "``keys.edit.bind``"
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:33
+msgid ""
+"The first two section describe which default keyboard shortcut not to "
+"register at notebook startup time. These are mostly useful if you need to"
+" ``unbind`` a default keyboard shortcut before binding it to a new "
+"``command``."
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:37
+msgid ""
+"These two first sections apply respectively to the ``command`` and "
+"``edit`` mode of the notebook. They take a list of shortcut to "
+"``unbind``."
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:40
+msgid ""
+"For example, to unbind the shortcut to split a cell at the position of "
+"the cursor (``Ctrl-Shift-Minus``)use the  following:"
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:60
+msgid ""
+"The last two section describe which new keyboard shortcut to register at "
+"notebook startup time, and which actions they trigger."
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:63
+msgid ""
+"These two last sections apply respectively to the ``command`` and "
+"``edit`` mode of the notebook. They take a dictionary with shortcuts as "
+"``keys`` and ``commands`` name as value."
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:67
+msgid ""
+"For example, to bind the shortcut ``G,G,G`` (Press G three time in a row)"
+" in command mode, to the command that restart the kernel and run all "
+"cells, use the following:"
+msgstr ""
+
+#: ../../source/extending/keymaps.rst:89
+msgid ""
+"The name of the available ``commands`` can be find by hovering the right "
+"end of a row in the command palette."
+msgstr ""
+

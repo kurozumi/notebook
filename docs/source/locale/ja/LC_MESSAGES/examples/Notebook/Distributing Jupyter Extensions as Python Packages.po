@@ -1,0 +1,347 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:6 Python as
+msgid "Distributing Jupyter Extensions as Python Packages"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:14 Python as
+msgid "Overview"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:17 Python as
+msgid "How can the notebook be extended?"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:19 Python as
+msgid ""
+"The Jupyter Notebook client and server application are both deeply "
+"customizable. Their behavior can be extended by creating, respectively:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:22 Python as
+msgid "nbextension: a notebook extension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:24 Python as
+msgid ""
+"a single JS file, or directory of JavaScript, Cascading StyleSheets, etc."
+" that contain at minimum a JavaScript module packaged as an `AMD modules "
+"<https://en.wikipedia.org/wiki/Asynchronous_module_definition>`__ that "
+"exports a function ``load_ipython_extension``"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:30 Python as
+msgid "server extension: an importable Python module"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:32 Python as
+msgid "that implements ``load_jupyter_server_extension``"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:34 Python as
+msgid ""
+"bundler extension: an importable Python module with generated File -> "
+"Download as / Deploy as menu item trigger"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:37 Python as
+msgid "that implements ``bundle``"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:45 Python as
+msgid "Why create a Python package for Jupyter extensions?"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:47 Python as
+msgid ""
+"Since it is rare to have a server extension that does not have any "
+"frontend components (an nbextension), for convenience and consistency, "
+"all these client and server extensions with their assets can be packaged "
+"and versioned together as a Python package with a few simple commands. "
+"This makes installing the package of extensions easier and less error-"
+"prone for the user."
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:60 Python as
+msgid "Installation of Jupyter Extensions"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:63 Python as
+msgid "Install a Python package containing Jupyter Extensions"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:65 Python as
+msgid ""
+"There are several ways that you may get a Python package containing "
+"Jupyter Extensions. Commonly, you will use a package manager for your "
+"system:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:85 Python as
+msgid "Enable a Server Extension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:87 Python as
+msgid ""
+"The simplest case would be to enable a server extension which has no "
+"frontend components."
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:90 Python as
+msgid ""
+"A ``pip`` user that wants their configuration stored in their home "
+"directory would type the following command:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:97 Python as
+msgid ""
+"Alternatively, a ``virtualenv`` or ``conda`` user can pass ``--sys-"
+"prefix`` which keeps their environment isolated and reproducible. For "
+"example:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:114 Python as
+msgid "Install the nbextension assets"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:121 Python as
+msgid ""
+"If a package also has an nbextension with frontend assets that must be "
+"available (but not neccessarily enabled by default), install these assets"
+" with the following command:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:135 Python as
+msgid "Enable nbextension assets"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:137 Python as
+msgid ""
+"If a package has assets that should be loaded every time a Jupyter app "
+"(e.g. lab, notebook, dashboard, terminal) is loaded in the browser, the "
+"following command can be used to enable the nbextension:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:151 Python as
+msgid "Did it work? Check by listing Jupyter Extensions."
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:153 Python as
+msgid ""
+"After running one or more extension installation steps, you can list what"
+" is presently known about nbextensions, server extensions, or bundler "
+"extensions. The following commands will list which extensions are "
+"available, whether they are enabled, and other extension details:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:170 Python as
+msgid "Additional resources on creating and distributing packages"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:172 Python as
+msgid ""
+"Of course, in addition to the files listed, there are number of other "
+"files one needs to build a proper package. Here are some good resources: "
+"- `The Hitchhiker’s Guide to Packaging <https://the-hitchhikers-guide-to-"
+"packaging.readthedocs.io/en/latest/quickstart.html>`__ - `Repository "
+"Structure and Python <https://www.kennethreitz.org/essays/repository-"
+"structure-and-python>`__ by Kenneth Reitz"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:182 Python as
+msgid ""
+"How you distribute them, too, is important: - `Packaging and Distributing"
+" Projects <https://python-packaging-user-guide.readthedocs.io/tutorials"
+"/distributing-packages/>`__ - `conda: Building packages "
+"<https://conda.io/docs/building/build.html>`__"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:190 Python as
+msgid ""
+"Here are some tools to get you started: - `generator-nbextension "
+"<https://github.com/Anaconda-Platform/generator-nbextension>`__"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:199 Python as
+msgid "Example - Server extension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:207 Python as
+msgid "Creating a Python package with a server extension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:209 Python as
+msgid ""
+"Here is an example of a python module which contains a server extension "
+"directly on itself. It has this directory structure:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:225 Python as
+msgid "Defining the server extension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:227 Python as
+msgid ""
+"This example shows that the server extension and its "
+"``load_jupyter_server_extension`` function are defined in the "
+"``__init__.py`` file."
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:232 Python as
+msgid "``my_module/__init__.py``"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:251 Python as
+msgid "Install and enable the server extension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:253 Python as
+msgid "Which a user can install with:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:265 Python as
+msgid "Example - Server extension and nbextension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:273 Python as
+msgid "Creating a Python package with a server extension and nbextension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:275 Python as
+msgid ""
+"Here is another server extension, with a front-end module. It assumes "
+"this directory structure:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:293 Python as
+msgid "Defining the server extension and nbextension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:295 Python as
+msgid ""
+"This example again shows that the server extension and its "
+"``load_jupyter_server_extension`` function are defined in the "
+"``__init__.py`` file. This time, there is also a function "
+"``_jupyter_nbextension_path`` for the nbextension."
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:301 Python as
+msgid "``my_fancy_module/__init__.py``"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:330 Python as
+msgid "Install and enable the server extension and nbextension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:332 Python as
+msgid ""
+"The user can install and enable the extensions with the following set of "
+"commands:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:347 Python as
+msgid "Example - Bundler extension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:355 Python as
+msgid "Creating a Python package with a bundlerextension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:357 Python as
+msgid ""
+"Here is a bundler extension that adds a *Download as -> Notebook Tarball "
+"(tar.gz)* option to the notebook *File* menu. It assumes this directory "
+"structure:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:374 Python as
+msgid "Defining the bundler extension"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:376 Python as
+msgid ""
+"This example shows that the bundler extension and its ``bundle`` function"
+" are defined in the ``__init__.py`` file."
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:380 Python as
+msgid "``my_tarball_bundler/__init__.py``"
+msgstr ""
+
+#: ../../source/examples/Notebook/Distributing Extensions Jupyter
+#: Packages.ipynb:438 Python as
+msgid ""
+"See `Extending the Notebook <../../extending/index.rst>`__ for more "
+"documentation about writing nbextensions, server extensions, and bundler "
+"extensions."
+msgstr ""
+

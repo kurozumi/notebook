@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/comms.rst:2
+msgid "Comms"
+msgstr ""
+
+#: ../../source/comms.rst:4
+msgid ""
+"*Comms* allow custom messages between the frontend and the kernel. They "
+"are used, for instance, in `ipywidgets "
+"<http://ipywidgets.readthedocs.io/en/latest/>`__ to update widget state."
+msgstr ""
+
+#: ../../source/comms.rst:8
+msgid ""
+"A comm consists of a pair of objects, in the kernel and the frontend, "
+"with an automatically assigned unique ID. When one side sends a message, "
+"a callback on the other side is triggered with that message data. Either "
+"side, the frontend or kernel, can open or close the comm."
+msgstr ""
+
+#: ../../source/comms.rst:15
+msgid ""
+"`Custom Messages <http://jupyter-"
+"client.readthedocs.io/en/latest/messaging.html#custom-messages>`__"
+msgstr ""
+
+#: ../../source/comms.rst:16
+msgid "The messaging specification section on comms"
+msgstr ""
+
+#: ../../source/comms.rst:19
+msgid "Opening a comm from the kernel"
+msgstr ""
+
+#: ../../source/comms.rst:21
+msgid ""
+"First, the function to accept the comm must be available on the frontend."
+" This can either be specified in a `requirejs` module, or registered in a"
+" registry, for example when an :doc:`extension "
+"<extending/frontend_extensions>` is loaded. This example shows a frontend"
+" comm target registered in a registry:"
+msgstr ""
+
+#: ../../source/comms.rst:39
+msgid ""
+"Now that the frontend comm is registered, you can open the comm from the "
+"kernel:"
+msgstr ""
+
+#: ../../source/comms.rst:55
+msgid ""
+"This example uses the IPython kernel; it's up to each language kernel "
+"what API, if any, it offers for using comms."
+msgstr ""
+
+#: ../../source/comms.rst:59
+msgid "Opening a comm from the frontend"
+msgstr ""
+
+#: ../../source/comms.rst:61
+msgid ""
+"This is very similar to above, but in reverse. First, a comm target must "
+"be registered in the kernel. For instance, this may be done by code "
+"displaying output: it will register a target in the kernel, and then "
+"display output containing Javascript to connect to it."
+msgstr ""
+
+#: ../../source/comms.rst:82
+msgid ""
+"This example uses the IPython kernel again; this example will be "
+"different in other kernels that support comms. Refer to the specific "
+"language kernel's documentation for comms support."
+msgstr ""
+
+#: ../../source/comms.rst:86
+msgid "And then open the comm from the frontend:"
+msgstr ""
+

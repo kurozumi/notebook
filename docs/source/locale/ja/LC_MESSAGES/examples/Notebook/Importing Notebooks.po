@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:6
+msgid "Importing Jupyter Notebooks as Modules"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:13
+msgid ""
+"It is a common problem that people want to import code from Jupyter "
+"Notebooks. This is made difficult by the fact that Notebooks are not "
+"plain Python files, and thus cannot be imported by the regular Python "
+"machinery."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:18
+msgid ""
+"Fortunately, Python provides some fairly sophisticated `hooks "
+"<https://www.python.org/dev/peps/pep-0302/>`__ into the import machinery,"
+" so we can actually make Jupyter notebooks importable without much "
+"difficulty, and only using public APIs."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:44
+msgid "Import hooks typically take the form of two objects:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:46
+msgid ""
+"a Module **Loader**, which takes a module name (e.g. "
+"``'IPython.display'``), and returns a Module"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:48
+msgid ""
+"a Module **Finder**, which figures out whether a module might exist, and "
+"tells Python what **Loader** to use"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:82
+msgid "Notebook Loader"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:89
+msgid ""
+"Here we have our Notebook Loader. It’s actually quite simple - once we "
+"figure out the filename of the module, all it does is:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:92
+msgid "load the notebook document into memory"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:93
+msgid "create an empty Module"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:94
+msgid "execute every cell in the Module namespace"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:96
+msgid ""
+"Since IPython cells can have extended syntax, the IPython transform is "
+"applied to turn each of these cells into their pure-Python counterparts "
+"before executing them. If all of your notebook cells are pure-Python, "
+"this step is unnecessary."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:155
+msgid "The Module Finder"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:162
+msgid ""
+"The finder is a simple object that tells you whether a name can be "
+"imported, and returns the appropriate loader. All this one does is check,"
+" when you do:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:170
+msgid ""
+"it checks whether ``mynotebook.ipynb`` exists. If a notebook is found, "
+"then it returns a NotebookLoader."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:173
+msgid "Any extra logic is just for resolving paths within packages."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:206
+msgid "Register the hook"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:213
+msgid "Now we register the ``NotebookFinder`` with ``sys.meta_path``"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:227
+msgid "After this point, my notebooks should be importable."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:229
+msgid "Let’s look at what we have in the CWD:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:243
+msgid "So I should be able to ``import nbpackage.mynotebook``."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:258
+msgid "Aside: displaying notebooks"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:265
+msgid ""
+"Here is some simple code to display the contents of a notebook with "
+"syntax highlighting, etc."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:315
+msgid ""
+"So my notebook has some code cells, one of which contains some IPython "
+"syntax."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:318
+msgid "Let’s see what happens when we import it"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:332
+msgid "Hooray, it imported! Does it work?"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:346
+msgid "Hooray again!"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:348
+msgid "Even the function that contains IPython syntax works:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:363
+msgid "Notebooks in packages"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:370
+msgid ""
+"We also have a notebook inside the ``nb`` package, so let’s make sure "
+"that works as well."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:385
+msgid ""
+"Note that the ``__init__.py`` is necessary for ``nb`` to be considered a "
+"package, just like usual."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:408
+msgid ""
+"So now we have importable notebooks, from both the local directory and "
+"inside packages."
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:411
+msgid ""
+"I can even put a notebook inside IPython, to further demonstrate that "
+"this is working properly:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:432
+msgid "and import the notebook from ``IPython.utils``"
+msgstr ""
+
+#: ../../source/examples/Notebook/Importing Notebooks.ipynb:447
+#, python-format
+msgid ""
+"This approach can even import functions and classes that are defined in a"
+" notebook using the ``%%cython`` magic."
+msgstr ""
+

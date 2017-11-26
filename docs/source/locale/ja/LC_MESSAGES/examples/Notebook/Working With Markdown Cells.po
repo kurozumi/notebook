@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:6 Markdown With
+msgid "Markdown Cells"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:13 Markdown With
+msgid ""
+"Text can be added to Jupyter Notebooks using Markdown cells. Markdown is "
+"a popular markup language that is a superset of HTML. Its specification "
+"can be found here:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:17 Markdown With
+msgid "https://daringfireball.net/projects/markdown/"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:25 Markdown With
+msgid "Markdown basics"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:32 Markdown With
+msgid "You can make text *italic* or **bold**."
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:39 Markdown With
+msgid "You can build nested itemized or enumerated lists:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:41 Markdown With
+msgid "One"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:43 Cells.ipynb:51
+#: Cells.ipynb:55 Cells.ipynb:61 Cells.ipynb:62 Markdown With
+msgid "Sublist"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:45 Cells.ipynb:238
+#: Markdown With
+msgid "This"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:47 Markdown With
+msgid "Sublist - That - The other thing"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:49 Markdown With
+msgid "Two"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:53 Markdown With
+msgid "Three"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:57 Markdown With
+msgid "Now another list:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:59 Markdown With
+msgid "Here we go"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:64 Markdown With
+msgid "There we go"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:65 Markdown With
+msgid "Now this"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:72 Markdown With
+msgid "You can add horizontal rules:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:81 Markdown With
+msgid "Here is a blockquote:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:83 Markdown With
+msgid ""
+"Beautiful is better than ugly. Explicit is better than implicit. Simple "
+"is better than complex. Complex is better than complicated. Flat is "
+"better than nested. Sparse is better than dense. Readability counts. "
+"Special cases aren’t special enough to break the rules. Although "
+"practicality beats purity. Errors should never pass silently. Unless "
+"explicitly silenced. In the face of ambiguity, refuse the temptation to "
+"guess. There should be one– and preferably only one –obvious way to do "
+"it. Although that way may not be obvious at first unless you’re Dutch. "
+"Now is better than never. Although never is often better than *right* "
+"now. If the implementation is hard to explain, it’s a bad idea. If the "
+"implementation is easy to explain, it may be a good idea. Namespaces are "
+"one honking great idea – let’s do more of those!"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:102 Markdown With
+msgid "And shorthand for links:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:104 Markdown With
+msgid "`Jupyter’s website <http://jupyter.org>`__"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:112 Markdown With
+msgid "Headings"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:119 Markdown With
+msgid ""
+"You can add headings by starting a line with one (or multiple) ``#`` "
+"followed by a space, as in the following example:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:135 Markdown With
+msgid "Embedded code"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:142 Markdown With
+msgid "You can embed code meant for illustration instead of execution in Python:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:151 Markdown With
+msgid "or other languages:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:166 Markdown With
+msgid "LaTeX equations"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:173 Markdown With
+msgid ""
+"Courtesy of MathJax, you can include mathematical expressions both "
+"inline: :math:`e^{i\\pi} + 1 = 0` and displayed:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:178 Markdown With
+msgid "Inline expressions can be added by surrounding the latex code with ``$``:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:185 Markdown With
+msgid "Expressions on their own line are surrounded by ``$$``:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:197 Markdown With
+msgid "GitHub flavored markdown"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:204 Markdown With
+msgid ""
+"The Notebook webapp supports Github flavored markdown meaning that you "
+"can use triple backticks for code blocks:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:217 Markdown With
+msgid "Gives:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:227 Markdown With
+msgid "And a table like this:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:235 Markdown With
+msgid "A nice HTML Table:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:238 Markdown With
+msgid "is"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:240 Markdown With
+msgid "a"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:240 Markdown With
+msgid "table"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:249 Markdown With
+msgid "General HTML"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:256 Markdown With
+msgid ""
+"Because Markdown is a superset of HTML you can even add things like HTML "
+"tables:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:271 Markdown With
+msgid "Header 1"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:281 Markdown With
+msgid "Header 2"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:299 Markdown With
+msgid "row 1, cell 1"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:309 Markdown With
+msgid "row 1, cell 2"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:327 Markdown With
+msgid "row 2, cell 1"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:337 Markdown With
+msgid "row 2, cell 2"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:357 Markdown With
+msgid "Local files"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:364 Markdown With
+msgid ""
+"If you have local files in your Notebook directory, you can refer to "
+"these files in Markdown cells directly:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:371 Markdown With
+msgid "For example, in the images folder, we have the Python logo:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:377 Markdown With
+msgid "and a video with the HTML5 video tag:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:387 Markdown With
+msgid ""
+"These do not embed the data into the notebook file, and require that the "
+"files exist when you are viewing the notebook."
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:396 Markdown With
+msgid "Security of local files"
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:403 Markdown With
+msgid ""
+"Note that this means that the Jupyter notebook server also acts as a "
+"generic file server for files inside the same tree as your notebooks. "
+"Access is not granted outside the notebook folder so you have strict "
+"control over what files are visible, but for this reason it is highly "
+"recommended that you do not run the notebook server with a notebook "
+"directory at a high level in your filesystem (e.g. your home directory)."
+msgstr ""
+
+#: ../../source/examples/Notebook/Working Cells.ipynb:410 Markdown With
+msgid ""
+"When you run the notebook in a password-protected manner, local file "
+"access is restricted to authenticated users unless read-only views are "
+"active."
+msgstr ""
+

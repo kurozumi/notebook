@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:6 Notebook
+msgid "Embracing web standards"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:13 Notebook
+msgid ""
+"One of the main reasons why we developed the current notebook web "
+"application was to embrace the web technology."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:16 Notebook
+msgid ""
+"By being a pure web application using HTML, Javascript, and CSS, the "
+"Notebook can get all the web technology improvement for free. Thus, as "
+"browser support for different media extend, the notebook web app should "
+"be able to be compatible without modification."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:21 Notebook
+msgid ""
+"This is also true with performance of the User Interface as the speed of "
+"Javascript VM increases."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:29 Notebook
+msgid ""
+"The other advantage of using only web technology is that the code of the "
+"interface is fully accessible to the end user and is modifiable live. "
+"Even if this task is not always easy, we strive to keep our code as "
+"accessible and reusable as possible. This should allow us - with minimum "
+"effort - development of small extensions that customize the behavior of "
+"the web interface."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:42 Notebook
+msgid "Tampering with the Notebook application"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:49 Notebook
+msgid ""
+"The first tool that is available to you and that you should be aware of "
+"are browser “developers tool”. The exact naming can change across browser"
+" and might require the installation of extensions. But basically they can"
+" allow you to inspect/modify the DOM, and interact with the javascript "
+"code that runs the frontend."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:55 Notebook
+msgid ""
+"In Chrome and Safari, Developer tools are in the menu ``View > Developer "
+"> Javascript Console``"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:57 Notebook
+msgid "In Firefox you might need to install `Firebug <http://getfirebug.com/>`__"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:60 Notebook
+msgid ""
+"Those will be your best friends to debug and try different approaches for"
+" your extensions."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:69 Notebook
+msgid "Injecting JS"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:77 Notebook
+msgid "Using magics"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:84 Notebook
+#, python-format
+msgid ""
+"The above tools can be tedious for editing edit long JavaScript files. "
+"Therefore we provide the ``%%javascript`` magic. This allows you to "
+"quickly inject JavaScript into the notebook. Still the javascript "
+"injected this way will not survive reloading. Hence, it is a good tool "
+"for testing and refining a script."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:90 Notebook
+msgid ""
+"You might see here and there people modifying css and injecting js into "
+"the notebook by reading file(s) and publishing them into the notebook. "
+"Not only does this often break the flow of the notebook and make the re-"
+"execution of the notebook broken, but it also means that you need to "
+"execute those cells in the entire notebook every time you need to update "
+"the code."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:97 Notebook
+msgid ""
+"This can still be useful in some cases, like the ``%autosave`` magic that"
+" allows you to control the time between each save. But this can be "
+"replaced by a JavaScript dropdown menu to select the save interval."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:115 Notebook
+msgid "custom.js"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:122 Notebook
+msgid ""
+"To inject Javascript we provide an entry point: ``custom.js`` that allows"
+" the user to execute and load other resources into the notebook. "
+"Javascript code in ``custom.js`` will be executed when the notebook app "
+"starts and can then be used to customize almost anything in the UI and in"
+" the behavior of the notebook."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:128 Notebook
+msgid ""
+"``custom.js`` can be found in the ``~/.jupyter/custom/custom.js``. You "
+"can share your custom.js with others."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:137 Notebook
+msgid "Back to theory"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:153 Notebook
+msgid "and custom js is in"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:180 Notebook
+msgid ""
+"Note that ``custom.js`` is meant to be modified by user. When writing a "
+"script, you can define it in a separate file and add a line of "
+"configuration into ``custom.js`` that will fetch and execute the file."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:189 Notebook
+msgid ""
+"**Warning** : even if modification of ``custom.js`` takes effect "
+"immediately after browser refresh (except if browser cache is "
+"aggressive), *creating* a file in ``static/`` directory needs a **server "
+"restart**."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:200 Notebook
+msgid "Exercise :"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:207 Notebook
+msgid "Create a ``custom.js`` in the right location with the following content:"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:214 Notebook
+msgid "Restart your server and open any notebook."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:215 Notebook
+msgid "Be greeted by custom.js"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:222 Notebook
+msgid ""
+"Have a look at `default custom.js "
+"<https://github.com/jupyter/notebook/blob/4.0.x/notebook/static/custom/custom.js>`__,"
+" to see it’s content and for more explanation."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:232 Notebook
+msgid "For the quick ones :"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:239 Notebook
+msgid ""
+"We’ve seen above that you can change the autosave rate by using a magic. "
+"This is typically something I don’t want to type every time, and that I "
+"don’t like to embed into my workflow and documents. (readers don’t care "
+"what my autosave time is). Let’s build an extension that allows us to do "
+"it."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:250 Notebook
+msgid ""
+"Create a dropdown element in the toolbar (DOM "
+"``Jupyter.toolbar.element``), you will need"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:253 Notebook
+msgid "``Jupyter.notebook.set_autosave_interval(milliseconds)``"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:254 Notebook
+msgid "know that 1 min = 60 sec, and 1 sec = 1000 ms"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:301 Notebook
+msgid "A non-interactive example first"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:308 Notebook
+msgid "I like my cython to be nicely highlighted"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:315 Notebook
+msgid ""
+"``text/x-cython`` is the name of CodeMirror mode name, ``magic_`` prefix "
+"will just patch the mode so that the first line that contains a magic "
+"does not screw up the highlighting. ``reg``\\ is a list or regular "
+"expression that will trigger the change of mode."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:326 Notebook
+msgid "Get more documentation"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:333 Notebook
+msgid ""
+"Sadly, you will have to read the js source file (but there are lots of "
+"comments) and/or build the JavaScript documentation using yuidoc. If you "
+"have ``node`` and ``yui-doc`` installed:"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:359 Notebook
+msgid "and browse http://127.0.0.1:3000 to get documentation"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:367 Notebook
+msgid "Some convenience methods"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:374 Notebook
+msgid ""
+"By browsing the documentation you will see that we have some convenience "
+"methods that allows us to avoid re-inventing the UI every time :"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:389 Notebook
+msgid ""
+"with a `lot of icons <http://fontawesome.io/icons/>`__ you can select "
+"from."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:398 Notebook
+msgid "Cell Metadata"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:405 Notebook
+msgid ""
+"The most requested feature is generally to be able to distinguish an "
+"individual cell in the notebook, or run a specific action with them. To "
+"do so, you can either use ``Jupyter.notebook.get_selected_cell()``, or "
+"rely on ``CellToolbar``. This allows you to register a set of actions and"
+" graphical elements that will be attached to individual cells."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:417 Notebook
+msgid "Cell Toolbar"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:424 Notebook
+msgid ""
+"You can see some example of what can be done by toggling the ``Cell "
+"Toolbar`` selector in the toolbar on top of the notebook. It provides two"
+" default ``presets`` that are ``Default`` and ``slideshow``. Default "
+"allows the user to edit the metadata attached to each cell manually."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:435 Notebook
+msgid ""
+"First we define a function that takes at first parameter an element on "
+"the DOM in which to inject UI element. The second element is the cell "
+"this element wis registered with. Then we will need to register that "
+"function and give it a name."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:446 Notebook
+msgid "Register a callback"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:482 Notebook
+msgid "Registering a preset"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:489 Notebook
+msgid "This function can now be part of many ``preset`` of the CellToolBar."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:505 Notebook
+msgid "You should now have access to two presets :"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:507 Notebook
+msgid "Tutorial 1"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:508 Notebook
+msgid "Tutorial 2"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:510 Notebook
+msgid ""
+"And check that the buttons you defined share state when you toggle "
+"preset. Also check that the metadata of the cell is modified when you "
+"click the button, and that when saved on reloaded the metadata is still "
+"available."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:521 Notebook
+msgid "Exercise:"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:528 Notebook
+msgid ""
+"Try to wrap the all code in a file, put this file in "
+"``{jupyter_dir}/custom/<a-name>.js``, and add"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:535 Notebook
+msgid ""
+"in ``custom.js`` to have this script automatically loaded in all your "
+"notebooks."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:543 Notebook
+msgid ""
+"``require`` is provided by a `javascript library "
+"<http://requirejs.org/>`__ that allow you to express dependency. For "
+"simple extension like the previous one we directly mute the global "
+"namespace, but for more complex extension you could pass a callback to "
+"``require([...], <callback>)`` call, to allow the user to pass "
+"configuration information to your plugin."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:550 Notebook
+msgid "In Python lang,"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:559 Notebook
+msgid "could be read as"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:568 Notebook
+msgid ""
+"See for example @damianavila `“ZenMode” plugin <https://github.com"
+"/ipython-"
+"contrib/jupyter_contrib_nbextensions/blob/b29c698394239a6931fa4911440550df214812cb/src/jupyter_contrib_nbextensions/nbextensions/zenmode/main.js#L32>`__"
+" :"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:587 Notebook
+msgid "For the quickest"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:594 Notebook
+msgid ""
+"Try to use `the following "
+"<https://github.com/ipython/ipython/blob/1.x/IPython/html/static/notebook/js/celltoolbar.js#L367>`__"
+" to bind a dropdown list to ``cell.metadata.difficulty.select``."
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:598 Notebook
+msgid "It should be able to take the 4 following values :"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:600 Notebook
+msgid "``<None>``"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:601 Notebook
+msgid "``Easy``"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:602 Notebook
+msgid "``Medium``"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:603 Notebook
+msgid "``Hard``"
+msgstr ""
+
+#: ../../source/examples/Notebook/JavaScript Extensions.ipynb:605 Notebook
+msgid ""
+"We will use it to customize the output of the converted notebook "
+"depending on the tag on each cell"
+msgstr ""
+

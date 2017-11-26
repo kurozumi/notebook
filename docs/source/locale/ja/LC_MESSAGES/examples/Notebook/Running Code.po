@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/examples/Notebook/Running Code.ipynb:6
+msgid "Running Code"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:13
+msgid ""
+"First and foremost, the Jupyter Notebook is an interactive environment "
+"for writing and running code. The notebook is capable of running code in "
+"a wide range of languages. However, each notebook is associated with a "
+"single kernel. This notebook is associated with the IPython kernel, "
+"therefor runs Python code."
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:25
+msgid "Code cells allow you to enter and run code"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:32
+msgid ""
+"Run a code cell using ``Shift-Enter`` or pressing the button in the "
+"toolbar above:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:79
+msgid "There are two other keyboard shortcuts for running code:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:81
+msgid "``Alt-Enter`` runs the current cell and inserts a new one below."
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:82
+msgid "``Ctrl-Enter`` run the current cell and enters command mode."
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:90
+msgid "Managing the Kernel"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:97
+msgid ""
+"Code is run in a separate process called the Kernel. The Kernel can be "
+"interrupted or restarted. Try running the following cell and then hit the"
+" button in the toolbar above."
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:115
+msgid ""
+"If the Kernel dies you will be prompted to restart it. Here we call the "
+"low-level system libc.time routine with the wrong argument via ctypes to "
+"segfault the Python interpreter:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:142
+msgid "Cell menu"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:149
+msgid ""
+"The “Cell” menu has a number of menu items for running code in different "
+"ways. These includes:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:152
+msgid "Run and Select Below"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:153
+msgid "Run and Insert Below"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:154
+msgid "Run All"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:155
+msgid "Run All Above"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:156
+msgid "Run All Below"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:164
+msgid "Restarting the kernels"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:171
+msgid ""
+"The kernel maintains the state of a notebook’s computations. You can "
+"reset this state by restarting the kernel. This is done by clicking on "
+"the in the toolbar above."
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:181
+msgid "sys.stdout and sys.stderr"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:188
+msgid "The stdout and stderr streams are displayed as text in the output area."
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:260
+msgid "Output is asynchronous"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:267
+msgid ""
+"All output is displayed asynchronously as it is generated in the Kernel. "
+"If you execute the next cell, you will see the output one piece at a "
+"time, not all at the end."
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:325
+msgid "Large outputs"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:332
+msgid ""
+"To better handle large outputs, the output area can be collapsed. Run the"
+" following cell and then single- or double- click on the active area to "
+"the left of the output:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Running Code.ipynb:471
+msgid "Beyond a certain point, output will scroll automatically:"
+msgstr ""
+

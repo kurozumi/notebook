@@ -1,0 +1,1028 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/changelog.rst:4
+msgid "Jupyter notebook changelog"
+msgstr ""
+
+#: ../../source/changelog.rst:6
+msgid ""
+"A summary of changes in the Jupyter notebook. For more detailed "
+"information, see `GitHub <https://github.com/jupyter/notebook>`__."
+msgstr ""
+
+#: ../../source/changelog.rst:12
+msgid ""
+"Use ``pip install notebook --upgrade`` or ``conda upgrade notebook`` to "
+"upgrade to the latest release."
+msgstr ""
+
+#: ../../source/changelog.rst:16
+msgid ""
+"We strongly recommend that you upgrade to version 9+ of pip before "
+"upgrading ``notebook``."
+msgstr ""
+
+#: ../../source/changelog.rst:20
+msgid ""
+"Use ``pip install pip --upgrade`` to upgrade pip. Check pip version with "
+"``pip --version``."
+msgstr ""
+
+#: ../../source/changelog.rst:27
+msgid "5.2.0"
+msgstr ""
+
+#: ../../source/changelog.rst:29
+msgid ""
+"Make all files in the dashboard editable by default and provide a "
+"whitelist of viewable file extensions (:ghpull:`2911`)."
+msgstr ""
+
+#: ../../source/changelog.rst:30
+msgid "Ensure that the root directory is not hidden (:ghpull:`2907`)."
+msgstr ""
+
+#: ../../source/changelog.rst:31
+msgid "Fix CodeMirror styling issue (:ghpull:`2880`)."
+msgstr ""
+
+#: ../../source/changelog.rst:32
+msgid "Update error handling on ``APIHandlers`` (:ghpull:`2853`)."
+msgstr ""
+
+#: ../../source/changelog.rst:33
+msgid "Upgrade xterm.js to 2.9.2 (:ghpull:`2849`)."
+msgstr ""
+
+#: ../../source/changelog.rst:34
+msgid ""
+"Add Chinese translations (depends on upcoming UI implementation) "
+"(:ghpull:`2804`)."
+msgstr ""
+
+#: ../../source/changelog.rst:35
+msgid ""
+"Allow for simpler customization of ``output_prompt`` in custom.js "
+"(:ghpull:`2774`)."
+msgstr ""
+
+#: ../../source/changelog.rst:36
+msgid "Use RFC5987 encoding for filenames (:ghpull:`2767`)."
+msgstr ""
+
+#: ../../source/changelog.rst:37
+msgid "Add path to the resources metadata (:ghpull:`2753`)."
+msgstr ""
+
+#: ../../source/changelog.rst:38
+msgid ""
+"Make ``extraKeys`` consistent between notebook and editor views "
+"(:ghpull:`2745`)."
+msgstr ""
+
+#: ../../source/changelog.rst:39
+msgid "Add RTL (right-to-left) support (:ghpull:`2357`)."
+msgstr ""
+
+#: ../../source/changelog.rst:41
+msgid ""
+"Special thanks to `samarsultan <https://github.com/samarsultan>`__ and "
+"the Arabic Competence and Globalization Center Team at IBM Egypt for "
+"adding RTL (right-to-left) support to the notebook!"
+msgstr ""
+
+#: ../../source/changelog.rst:43
+#, python-format
+msgid ""
+"See the 5.2 milestone on GitHub for a complete list of `issues "
+"<https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&q=is%3Aissue%20milestone%3A5.2>`__"
+" and `pull requests "
+"<https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&q=is%3Apr%20milestone%3A5.2>`__"
+" involved in this release."
+msgstr ""
+
+#: ../../source/changelog.rst:50
+msgid "5.1.0"
+msgstr ""
+
+#: ../../source/changelog.rst:52
+msgid "Preliminary i18n implementation (:ghpull:`2140`)."
+msgstr ""
+
+#: ../../source/changelog.rst:53
+msgid "Expose URL with auth token in notebook UI (:ghpull:`2666`)."
+msgstr ""
+
+#: ../../source/changelog.rst:54 ../../source/changelog.rst:57
+msgid "Fix search background style (:ghpull:`2387`)."
+msgstr ""
+
+#: ../../source/changelog.rst:55
+msgid ""
+"List running notebooks without requiring ``--allow-root`` "
+"(:ghpull:`2421`)."
+msgstr ""
+
+#: ../../source/changelog.rst:56
+msgid "Allow session of type other than notebook (:ghpull:`2559`)."
+msgstr ""
+
+#: ../../source/changelog.rst:58
+msgid ""
+"Fix some Markdown styling issues (:ghpull:`2571`), (:ghpull:`2691`) and "
+"(:ghpull:`2534`)."
+msgstr ""
+
+#: ../../source/changelog.rst:59
+msgid "Remove keymaps that conflict with non-English keyboards (:ghpull:`2535`)."
+msgstr ""
+
+#: ../../source/changelog.rst:60
+msgid "Add session-specific favicons (notebook, terminal, file) (:ghpull:`2452`)."
+msgstr ""
+
+#: ../../source/changelog.rst:61
+msgid "Add /api/shutdown handler (:ghpull:`2507`)."
+msgstr ""
+
+#: ../../source/changelog.rst:62
+msgid "Include metadata when copying a cell (:ghpull:`2349`)."
+msgstr ""
+
+#: ../../source/changelog.rst:63
+msgid "Stop notebook server from command line (:ghpull:`2388`)."
+msgstr ""
+
+#: ../../source/changelog.rst:64
+msgid ""
+"Improve \"View\" and \"Edit\" file handling in dashboard (:ghpull:`2449`)"
+" and (:ghpull:`2402`)."
+msgstr ""
+
+#: ../../source/changelog.rst:65
+msgid ""
+"Provide a promise to replace use of the ``app_initialized.NotebookApp`` "
+"event (:ghpull:`2710`)."
+msgstr ""
+
+#: ../../source/changelog.rst:66
+msgid "Fix disabled collapse/expand output button (:ghpull:`2681`)."
+msgstr ""
+
+#: ../../source/changelog.rst:67
+msgid ""
+"Cull idle kernels using ``--MappingKernelManager.cull_idle_timeout`` "
+"(:ghpull:`2215`)."
+msgstr ""
+
+#: ../../source/changelog.rst:68
+msgid "Allow read-only notebooks to be trusted (:ghpull:`2718`)."
+msgstr ""
+
+#: ../../source/changelog.rst:70
+#, python-format
+msgid ""
+"See the 5.1 milestone on GitHub for a complete list of `issues "
+"<https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&q=is%3Aissue%20milestone%3A5.1>`__"
+" and `pull requests "
+"<https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&q=is%3Apr%20milestone%3A5.1>`__"
+" involved in this release."
+msgstr ""
+
+#: ../../source/changelog.rst:77
+msgid "5.0.0"
+msgstr ""
+
+#: ../../source/changelog.rst:79
+msgid ""
+"This is the first major release of the Jupyter Notebook since version 4.0"
+" was created by the \"Big Split\" of IPython and Jupyter."
+msgstr ""
+
+#: ../../source/changelog.rst:82
+msgid ""
+"We encourage users to start trying JupyterLab in preparation for a future"
+" transition."
+msgstr ""
+
+#: ../../source/changelog.rst:85
+msgid ""
+"We have merged more than 300 pull requests since 4.0. Some of the major "
+"user-facing changes are described here."
+msgstr ""
+
+#: ../../source/changelog.rst:89
+msgid "File sorting in the dashboard"
+msgstr ""
+
+#: ../../source/changelog.rst:91
+msgid ""
+"Files in the dashboard may now be sorted by last modified date or name "
+"(:ghpull:`943`):"
+msgstr ""
+
+#: ../../source/changelog.rst:97
+msgid "Cell tags"
+msgstr ""
+
+#: ../../source/changelog.rst:99
+msgid "There is a new cell toolbar for adding *cell tags* (:ghpull:`2048`):"
+msgstr ""
+
+#: ../../source/changelog.rst:104
+msgid ""
+"Cell tags are a lightweight way to customise the behaviour of tools "
+"working with notebooks; we're working on building support for them into "
+"tools like `nbconvert <http://nbconvert.readthedocs.io/en/latest/>`__ and"
+" `nbval <https://github.com/computationalmodelling/nbval>`__. To start "
+"using tags, select ``Tags`` in the ``View > Cell Toolbar`` menu in a "
+"notebook."
+msgstr ""
+
+#: ../../source/changelog.rst:110
+msgid ""
+"The UI for editing cell tags is basic for now; we hope to improve it in "
+"future releases."
+msgstr ""
+
+#: ../../source/changelog.rst:114
+msgid "Table style"
+msgstr ""
+
+#: ../../source/changelog.rst:116
+msgid ""
+"The default styling for tables in the notebook has been updated "
+"(:ghpull:`1776`)."
+msgstr ""
+
+#: ../../source/changelog.rst:118
+msgid "Before:"
+msgstr ""
+
+#: ../../source/changelog.rst:123
+msgid "After:"
+msgstr ""
+
+#: ../../source/changelog.rst:129
+msgid "Customise keyboard shortcuts"
+msgstr ""
+
+#: ../../source/changelog.rst:131
+msgid ""
+"You can now edit keyboard shortcuts for *Command Mode* within the UI "
+"(:ghpull:`1347`):"
+msgstr ""
+
+#: ../../source/changelog.rst:137
+msgid ""
+"See the ``Help > Edit Keyboard Shortcuts`` menu item and follow the "
+"instructions."
+msgstr ""
+
+#: ../../source/changelog.rst:140
+msgid "Other additions"
+msgstr ""
+
+#: ../../source/changelog.rst:142
+msgid ""
+"You can copy and paste cells between notebooks, using :kbd:`Ctrl-C` and "
+":kbd:`Ctrl-V` (:kbd:`Cmd-C` and :kbd:`Cmd-V` on Mac)."
+msgstr ""
+
+#: ../../source/changelog.rst:145
+msgid ""
+"It's easier to configure a password for the notebook with the new "
+"``jupyter notebook password`` command (:ghpull:`2007`)."
+msgstr ""
+
+#: ../../source/changelog.rst:148
+msgid ""
+"The file list can now be ordered by *last modified* or by *name* "
+"(:ghpull:`943`)."
+msgstr ""
+
+#: ../../source/changelog.rst:151
+msgid ""
+"Markdown cells now support attachments. Simply drag and drop an image "
+"from your desktop to a markdown cell to add it. Unlike relative links "
+"that you enter manually, attachments are embedded in the notebook itself."
+" An unreferenced attachment will be automatically scrubbed from the "
+"notebook on save (:ghpull:`621`)."
+msgstr ""
+
+#: ../../source/changelog.rst:157
+msgid ""
+"Undoing cell deletion now supports undeleting multiple cells. Cells may "
+"not be in the same order as before their deletion, depending on the "
+"actions you did on the meantime, but this should should help reduce the "
+"impact of accidentally deleting code."
+msgstr ""
+
+#: ../../source/changelog.rst:162
+msgid "The file browser now has *Edit* and *View* buttons."
+msgstr ""
+
+#: ../../source/changelog.rst:164
+msgid ""
+"The file browser now supports moving multiple files at once "
+"(:ghpull:`1088`)."
+msgstr ""
+
+#: ../../source/changelog.rst:167
+msgid ""
+"The Notebook will refuse to run as root unless the ``--allow-root`` flag "
+"is given (:ghpull:`1115`)."
+msgstr ""
+
+#: ../../source/changelog.rst:170
+msgid "Keyboard shortcuts are now declarative (:ghpull:`1234`)."
+msgstr ""
+
+#: ../../source/changelog.rst:172
+msgid "Toggling line numbers can now affect all cells (:ghpull:`1312`)."
+msgstr ""
+
+#: ../../source/changelog.rst:174
+msgid "Add more visible *Trusted* and *Untrusted* notifications (:ghpull:`1658`)."
+msgstr ""
+
+#: ../../source/changelog.rst:176
+msgid ""
+"The favicon (browser shortcut icon) now changes to indicate when the "
+"kernel is busy (:ghpull:`1837`)."
+msgstr ""
+
+#: ../../source/changelog.rst:179
+msgid ""
+"Header and toolbar visibility is now persisted in nbconfig and across "
+"sessions (:ghpull:`1769`)."
+msgstr ""
+
+#: ../../source/changelog.rst:182
+msgid ""
+"Load server extensions with ConfigManager so that merge happens "
+"recursively, unlike normal config values, to make it load more "
+"consistently with frontend extensions(:ghpull:`2108`)."
+msgstr ""
+
+#: ../../source/changelog.rst:186
+msgid ""
+"The notebook server now supports the `bundler API <http://jupyter-"
+"notebook.readthedocs.io/en/latest/extending/bundler_extensions.html>`__ "
+"from the `jupyter_cms incubator project <https://github.com/jupyter-"
+"incubator/contentmanagement>`__ (:ghpull:`1579`)."
+msgstr ""
+
+#: ../../source/changelog.rst:191
+msgid ""
+"The notebook server now provides information about kernel activity in its"
+" kernel resource API (:ghpull:`1827`)."
+msgstr ""
+
+#: ../../source/changelog.rst:194
+msgid ""
+"Remember that upgrading ``notebook`` only affects the user interface. "
+"Upgrading kernels and libraries may also provide new features, better "
+"stability and integration with the notebook interface."
+msgstr ""
+
+#: ../../source/changelog.rst:201
+msgid "4.4.0"
+msgstr ""
+
+#: ../../source/changelog.rst:203
+msgid ""
+"Allow override of output callbacks to redirect output messages. This is "
+"used to implement the ipywidgets Output widget, for example."
+msgstr ""
+
+#: ../../source/changelog.rst:204
+msgid ""
+"Fix an async bug in message handling by allowing comm message handlers to"
+" return a promise which halts message processing until the promise "
+"resolves."
+msgstr ""
+
+#: ../../source/changelog.rst:206
+#, python-format
+msgid ""
+"See the 4.4 milestone on GitHub for a complete list of `issues "
+"<https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&q=is%3Aissue%20milestone%3A4.4>`__"
+" and `pull requests "
+"<https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&q=is%3Apr%20milestone%3A4.4>`__"
+" involved in this release."
+msgstr ""
+
+#: ../../source/changelog.rst:213
+msgid "4.3.2"
+msgstr ""
+
+#: ../../source/changelog.rst:215
+msgid ""
+"4.3.2 is a patch release with a bug fix for CodeMirror and improved "
+"handling of the \"editable\" cell metadata field."
+msgstr ""
+
+#: ../../source/changelog.rst:217
+msgid ""
+"Monkey-patch for CodeMirror that resolves `#2037 "
+"<https://github.com/jupyter/notebook/issues/2037>`__ without breaking "
+"`#1967 <https://github.com/jupyter/notebook/issues/1967>`__"
+msgstr ""
+
+#: ../../source/changelog.rst:218
+msgid ""
+"Read-only (``\"editable\": false``) cells can be executed but cannot be "
+"split, merged, or deleted"
+msgstr ""
+
+#: ../../source/changelog.rst:220
+#, python-format
+msgid ""
+"See the 4.3.2 milestone on GitHub for a complete list of `issues "
+"<https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&q=is%3Aissue%20milestone%3A4.3.2>`__"
+" and `pull requests "
+"<https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&q=is%3Apr%20milestone%3A4.3.2>`__"
+" involved in this release."
+msgstr ""
+
+#: ../../source/changelog.rst:227
+msgid "4.3.1"
+msgstr ""
+
+#: ../../source/changelog.rst:229
+msgid ""
+"4.3.1 is a patch release with a security patch, a couple bug fixes, and "
+"improvements to the newly-released token authentication."
+msgstr ""
+
+#: ../../source/changelog.rst:231
+msgid "**Security fix**:"
+msgstr ""
+
+#: ../../source/changelog.rst:233
+msgid ""
+"CVE-2016-9971. Fix CSRF vulnerability, where malicious forms could create"
+" untitled files and start kernels (no remote execution or modification of"
+" existing files) for users of certain browsers (Firefox, Internet "
+"Explorer / Edge). All previous notebook releases are affected."
+msgstr ""
+
+#: ../../source/changelog.rst:239 ../../source/changelog.rst:279
+#: ../../source/changelog.rst:406
+msgid "Bug fixes:"
+msgstr ""
+
+#: ../../source/changelog.rst:241
+msgid "Fix carriage return handling"
+msgstr ""
+
+#: ../../source/changelog.rst:242
+msgid "Make the font size more robust against fickle browsers"
+msgstr ""
+
+#: ../../source/changelog.rst:243
+msgid "Ignore resize events that bubbled up and didn't come from window"
+msgstr ""
+
+#: ../../source/changelog.rst:244
+msgid "Add Authorization to allowed CORS headers"
+msgstr ""
+
+#: ../../source/changelog.rst:245
+msgid "Downgrade CodeMirror to 5.16 while we figure out issues in Safari"
+msgstr ""
+
+#: ../../source/changelog.rst:247 ../../source/changelog.rst:296
+#: ../../source/changelog.rst:442
+msgid "Other improvements:"
+msgstr ""
+
+#: ../../source/changelog.rst:249
+msgid "Better docs for token-based authentication"
+msgstr ""
+
+#: ../../source/changelog.rst:250
+msgid "Further highlight token info in log output when autogenerated"
+msgstr ""
+
+#: ../../source/changelog.rst:252
+#, python-format
+msgid ""
+"See the 4.3.1 milestone on GitHub for a complete list of `issues "
+"<https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&q=is%3Aissue%20milestone%3A4.3.1>`__"
+" and `pull requests "
+"<https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&q=is%3Apr%20milestone%3A4.3.1>`__"
+" involved in this release."
+msgstr ""
+
+#: ../../source/changelog.rst:259
+msgid "4.3.0"
+msgstr ""
+
+#: ../../source/changelog.rst:261
+msgid ""
+"4.3 is a minor release with many bug fixes and improvements. The biggest "
+"user-facing change is the addition of token authentication, which is "
+"enabled by default. A token is generated and used when your browser is "
+"opened automatically, so you shouldn't have to enter anything in the "
+"default circumstances. If you see a login page (e.g. by switching "
+"browsers, or launching on a new port with ``--no-browser``), you get a "
+"login URL with the token from the command ``jupyter notebook list``, "
+"which you can paste into your browser."
+msgstr ""
+
+#: ../../source/changelog.rst:272 ../../source/changelog.rst:326
+#: ../../source/changelog.rst:344
+msgid "Highlights:"
+msgstr ""
+
+#: ../../source/changelog.rst:274
+msgid ""
+"API for creating mime-type based renderer extensions using "
+":code:`OutputArea.register_mime_type` and "
+":code:`Notebook.render_cell_output` methods. See `mimerender-cookiecutter"
+" <https://github.com/jupyterlab/mimerender-cookiecutter>`__ for reference"
+" implementations and cookiecutter."
+msgstr ""
+
+#: ../../source/changelog.rst:275
+msgid ""
+"Enable token authentication by default. See :ref:`server_security` for "
+"more details."
+msgstr ""
+
+#: ../../source/changelog.rst:276
+msgid "Update security docs to reflect new signature system"
+msgstr ""
+
+#: ../../source/changelog.rst:277
+msgid "Switched from term.js to xterm.js"
+msgstr ""
+
+#: ../../source/changelog.rst:281
+msgid "Ensure variable is set if exc_info is falsey"
+msgstr ""
+
+#: ../../source/changelog.rst:282
+msgid "Catch and log handler exceptions in :code:`events.trigger`"
+msgstr ""
+
+#: ../../source/changelog.rst:283
+msgid "Add debug log for static file paths"
+msgstr ""
+
+#: ../../source/changelog.rst:284
+msgid "Don't check origin on token-authenticated requests"
+msgstr ""
+
+#: ../../source/changelog.rst:285
+msgid "Remove leftover print statement"
+msgstr ""
+
+#: ../../source/changelog.rst:286
+msgid "Fix highlighting of Python code blocks"
+msgstr ""
+
+#: ../../source/changelog.rst:287
+msgid ":code:`json_errors` should be outermost decorator on API handlers"
+msgstr ""
+
+#: ../../source/changelog.rst:288
+msgid "Fix remove old nbserver info files"
+msgstr ""
+
+#: ../../source/changelog.rst:289
+msgid "Fix notebook mime type on download links"
+msgstr ""
+
+#: ../../source/changelog.rst:290
+msgid "Fix carriage symbol bahvior"
+msgstr ""
+
+#: ../../source/changelog.rst:291
+msgid "Fix terminal styles"
+msgstr ""
+
+#: ../../source/changelog.rst:292
+msgid "Update dead links in docs"
+msgstr ""
+
+#: ../../source/changelog.rst:293
+msgid "If kernel is broken, start a new session"
+msgstr ""
+
+#: ../../source/changelog.rst:294 ../../source/changelog.rst:312
+msgid "Include cross-origin check when allowing login URL redirects"
+msgstr ""
+
+#: ../../source/changelog.rst:298
+msgid "Allow JSON output data with mime type ``application/*+json``"
+msgstr ""
+
+#: ../../source/changelog.rst:299
+msgid "Allow kernelspecs to have spaces in them for backward compat"
+msgstr ""
+
+#: ../../source/changelog.rst:300
+msgid "Allow websocket connections from scripts"
+msgstr ""
+
+#: ../../source/changelog.rst:301
+msgid "Allow :code:`None` for post_save_hook"
+msgstr ""
+
+#: ../../source/changelog.rst:302
+msgid "Upgrade CodeMirror to 5.21"
+msgstr ""
+
+#: ../../source/changelog.rst:303
+msgid "Upgrade xterm to 2.1.0"
+msgstr ""
+
+#: ../../source/changelog.rst:304
+msgid "Docs for using comms"
+msgstr ""
+
+#: ../../source/changelog.rst:305
+msgid "Set :code:`dirty` flag when output arrives"
+msgstr ""
+
+#: ../../source/changelog.rst:306
+msgid "Set :code:`ws-url` data attribute when accessing a notebook terminal"
+msgstr ""
+
+#: ../../source/changelog.rst:307
+msgid "Add base aliases for nbextensions"
+msgstr ""
+
+#: ../../source/changelog.rst:308
+msgid "Include :code:`@` operator in CodeMirror IPython mode"
+msgstr ""
+
+#: ../../source/changelog.rst:309
+msgid "Extend mathjax_url docstring"
+msgstr ""
+
+#: ../../source/changelog.rst:310
+msgid "Load nbextension in predictable order"
+msgstr ""
+
+#: ../../source/changelog.rst:311
+msgid "Improve the error messages for nbextensions"
+msgstr ""
+
+#: ../../source/changelog.rst:314
+#, python-format
+msgid ""
+"See the 4.3 milestone on GitHub for a complete list of `issues "
+"<https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&q=is%3Aissue%20milestone%3A4.3%20>`__"
+" and `pull requests "
+"<https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&q=is%3Apr%20milestone%3A4.3%20>`__"
+" involved in this release."
+msgstr ""
+
+#: ../../source/changelog.rst:322
+msgid "4.2.3"
+msgstr ""
+
+#: ../../source/changelog.rst:324
+msgid "4.2.3 is a small bugfix release on 4.2."
+msgstr ""
+
+#: ../../source/changelog.rst:328
+msgid ""
+"Fix regression in 4.2.2 that delayed loading custom.js until after "
+"``notebook_loaded`` and ``app_initialized`` events have fired."
+msgstr ""
+
+#: ../../source/changelog.rst:330
+msgid "Fix some outdated docs and links."
+msgstr ""
+
+#: ../../source/changelog.rst:334
+msgid ""
+"4.2.3 `on GitHub "
+"<https://github.com/jupyter/notebook/milestones/4.2.3>`__."
+msgstr ""
+
+#: ../../source/changelog.rst:339
+msgid "4.2.2"
+msgstr ""
+
+#: ../../source/changelog.rst:341
+msgid ""
+"4.2.2 is a small bugfix release on 4.2, with an important security fix. "
+"All users are strongly encouraged to upgrade to 4.2.2."
+msgstr ""
+
+#: ../../source/changelog.rst:346
+msgid ""
+"**Security fix**: CVE-2016-6524, where untrusted latex output could be "
+"added to the page in a way that could execute javascript."
+msgstr ""
+
+#: ../../source/changelog.rst:348
+msgid "Fix missing POST in OPTIONS responses."
+msgstr ""
+
+#: ../../source/changelog.rst:349
+msgid "Fix for downloading non-ascii filenames."
+msgstr ""
+
+#: ../../source/changelog.rst:350
+msgid ""
+"Avoid clobbering ssl_options, so that users can specify more detailed SSL"
+" configuration."
+msgstr ""
+
+#: ../../source/changelog.rst:352
+msgid "Fix inverted load order in nbconfig, so user config has highest priority."
+msgstr ""
+
+#: ../../source/changelog.rst:353
+msgid "Improved error messages here and there."
+msgstr ""
+
+#: ../../source/changelog.rst:357
+msgid ""
+"4.2.2 `on GitHub "
+"<https://github.com/jupyter/notebook/milestones/4.2.2>`__."
+msgstr ""
+
+#: ../../source/changelog.rst:362
+msgid "4.2.1"
+msgstr ""
+
+#: ../../source/changelog.rst:364
+msgid "4.2.1 is a small bugfix release on 4.2. Highlights:"
+msgstr ""
+
+#: ../../source/changelog.rst:366
+msgid "Compatibility fixes for some versions of ipywidgets"
+msgstr ""
+
+#: ../../source/changelog.rst:367
+msgid "Fix for ignored CSS on Windows"
+msgstr ""
+
+#: ../../source/changelog.rst:368
+msgid "Fix specifying destination when installing nbextensions"
+msgstr ""
+
+#: ../../source/changelog.rst:372
+msgid ""
+"4.2.1 `on GitHub "
+"<https://github.com/jupyter/notebook/milestones/4.2.1>`__."
+msgstr ""
+
+#: ../../source/changelog.rst:377
+msgid "4.2.0"
+msgstr ""
+
+#: ../../source/changelog.rst:379
+msgid ""
+"Release 4.2 adds a new API for enabling and installing extensions. "
+"Extensions can now be enabled at the system-level, rather than just per-"
+"user. An API is defined for installing directly from a Python package, as"
+" well."
+msgstr ""
+
+#: ../../source/changelog.rst:385
+msgid ""
+":doc:`./examples/Notebook/Distributing Jupyter Extensions as Python "
+"Packages`"
+msgstr ""
+
+#: ../../source/changelog.rst:388
+msgid "Highlighted changes:"
+msgstr ""
+
+#: ../../source/changelog.rst:390
+msgid "Upgrade MathJax to 2.6 to fix vertical-bar appearing on some equations."
+msgstr ""
+
+#: ../../source/changelog.rst:391
+msgid "Restore ability for notebook directory to be root (4.1 regression)"
+msgstr ""
+
+#: ../../source/changelog.rst:392
+msgid ""
+"Large outputs are now throttled, reducing the ability of output floods to"
+" kill the browser."
+msgstr ""
+
+#: ../../source/changelog.rst:394
+msgid ""
+"Fix the notebook ignoring cell executions while a kernel is starting by "
+"queueing the messages."
+msgstr ""
+
+#: ../../source/changelog.rst:396
+msgid "Fix handling of url prefixes (e.g. JupyterHub) in terminal and edit pages."
+msgstr ""
+
+#: ../../source/changelog.rst:397
+msgid "Support nested SVGs in output."
+msgstr ""
+
+#: ../../source/changelog.rst:399
+msgid "And various other fixes and improvements."
+msgstr ""
+
+#: ../../source/changelog.rst:404
+msgid "4.1.0"
+msgstr ""
+
+#: ../../source/changelog.rst:408
+msgid "Properly reap zombie subprocesses"
+msgstr ""
+
+#: ../../source/changelog.rst:409
+msgid "Fix cross-origin problems"
+msgstr ""
+
+#: ../../source/changelog.rst:410
+msgid "Fix double-escaping of the base URL prefix"
+msgstr ""
+
+#: ../../source/changelog.rst:411
+msgid "Handle invalid unicode filenames more gracefully"
+msgstr ""
+
+#: ../../source/changelog.rst:412
+msgid "Fix ANSI color-processing"
+msgstr ""
+
+#: ../../source/changelog.rst:413
+msgid "Send keepalive messages for web terminals"
+msgstr ""
+
+#: ../../source/changelog.rst:414
+msgid "Fix bugs in the notebook tour"
+msgstr ""
+
+#: ../../source/changelog.rst:416
+msgid "UI changes:"
+msgstr ""
+
+#: ../../source/changelog.rst:418
+msgid ""
+"Moved the cell toolbar selector into the *View* menu. Added a button that"
+" triggers a \"hint\" animation to the main toolbar so users can find the "
+"new location. (Click here to see a `screencast "
+"<https://cloud.githubusercontent.com/assets/335567/10711889/59665a5a-"
+"7a3e-11e5-970f-86b89592880c.gif>`__ )"
+msgstr ""
+
+#: ../../source/changelog.rst:424
+msgid ""
+"Added *Restart & Run All* to the *Kernel* menu. Users can also bind it to"
+" a keyboard shortcut on action ``restart-kernel-and-run-all-cells``."
+msgstr ""
+
+#: ../../source/changelog.rst:426
+msgid ""
+"Added multiple-cell selection. Users press ``Shift-Up/Down`` or "
+"``Shift-K/J`` to extend selection in command mode. Various actions such "
+"as cut/copy/paste, execute, and cell type conversions apply to all "
+"selected cells."
+msgstr ""
+
+#: ../../source/changelog.rst:432
+msgid ""
+"Added a command palette for executing Jupyter actions by name. Users "
+"press ``Cmd/Ctrl-Shift-P`` or click the new command palette icon on the "
+"toolbar."
+msgstr ""
+
+#: ../../source/changelog.rst:437
+msgid ""
+"Added a *Find and Replace* dialog to the *Edit* menu. Users can also "
+"press ``F`` in command mode to show the dialog."
+msgstr ""
+
+#: ../../source/changelog.rst:444
+msgid ""
+"Custom KernelManager methods can be Tornado coroutines, allowing async "
+"operations."
+msgstr ""
+
+#: ../../source/changelog.rst:446
+msgid ""
+"Make clearing output optional when rewriting input with "
+"``set_next_input(replace=True)``."
+msgstr ""
+
+#: ../../source/changelog.rst:448
+msgid ""
+"Added support for TLS client authentication via ``--NotebookApp.client-"
+"ca``."
+msgstr ""
+
+#: ../../source/changelog.rst:449
+msgid ""
+"Added tags to ``jupyter/notebook`` releases on DockerHub. ``latest`` "
+"continues to track the master branch."
+msgstr ""
+
+#: ../../source/changelog.rst:452
+#, python-format
+msgid ""
+"See the 4.1 milestone on GitHub for a complete list of `issues "
+"<https://github.com/jupyter/notebook/issues?page=3&q=milestone%3A4.1+is%3Aclosed+is%3Aissue&utf8=%E2%9C%93>`__"
+" and `pull requests "
+"<https://github.com/jupyter/notebook/pulls?q=milestone%3A4.1+is%3Aclosed+is%3Apr>`__"
+" handled."
+msgstr ""
+
+#: ../../source/changelog.rst:457
+msgid "4.0.x"
+msgstr ""
+
+#: ../../source/changelog.rst:460
+msgid "4.0.6"
+msgstr ""
+
+#: ../../source/changelog.rst:462
+msgid "fix installation of mathjax support files"
+msgstr ""
+
+#: ../../source/changelog.rst:463
+msgid "fix some double-escape regressions in 4.0.5"
+msgstr ""
+
+#: ../../source/changelog.rst:464
+msgid "fix a couple of cases where errors could prevent opening a notebook"
+msgstr ""
+
+#: ../../source/changelog.rst:467
+msgid "4.0.5"
+msgstr ""
+
+#: ../../source/changelog.rst:469
+msgid "Security fixes for maliciously crafted files."
+msgstr ""
+
+#: ../../source/changelog.rst:471
+msgid ""
+"`CVE-2015-6938 <http://www.openwall.com/lists/oss-"
+"security/2015/09/02/3>`__: malicious filenames"
+msgstr ""
+
+#: ../../source/changelog.rst:472
+msgid ""
+"`CVE-2015-7337 <http://www.openwall.com/lists/oss-"
+"security/2015/09/16/3>`__: malicious binary files in text editor."
+msgstr ""
+
+#: ../../source/changelog.rst:474
+msgid "Thanks to Jonathan Kamens at Quantopian and Juan Broullón for the reports."
+msgstr ""
+
+#: ../../source/changelog.rst:478
+msgid "4.0.4"
+msgstr ""
+
+#: ../../source/changelog.rst:480
+msgid "Fix inclusion of mathjax-safe extension"
+msgstr ""
+
+#: ../../source/changelog.rst:483
+msgid "4.0.2"
+msgstr ""
+
+#: ../../source/changelog.rst:485
+msgid "Fix launching the notebook on Windows"
+msgstr ""
+
+#: ../../source/changelog.rst:486
+msgid "Fix the path searched for frontend config"
+msgstr ""
+
+#: ../../source/changelog.rst:490
+msgid "4.0.0"
+msgstr ""
+
+#: ../../source/changelog.rst:492
+msgid "First release of the notebook as a standalone package."
+msgstr ""
+

@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:5
+msgid ""
+"The Markdown parser included in the Jupyter Notebook is MathJax-aware. "
+"This means that you can freely mix in mathematical expressions using the "
+"`MathJax subset of Tex and LaTeX "
+"<http://docs.mathjax.org/en/latest/tex.html#tex-support>`__. `Some "
+"examples from the MathJax site <https://www.mathjax.org/demos/tex-"
+"samples/>`__ are reproduced below, as well as the Markdown+TeX source."
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:19
+msgid "Motivating Examples"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:22
+msgid "The Lorenz Equations"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:25
+#: Equations.ipynb:49 Equations.ipynb:71 Equations.ipynb:97 Equations.ipynb:119
+#: Equations.ipynb:143 Equations.ipynb:173 Equations.ipynb:211
+#: Equations.ipynb:239
+msgid "Source"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:36
+#: Equations.ipynb:58 Equations.ipynb:84 Equations.ipynb:106
+#: Equations.ipynb:130 Equations.ipynb:154 Equations.ipynb:184
+#: Equations.ipynb:218 Equations.ipynb:275
+msgid "Display"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:38
+msgid ""
+":math:`\\begin{align} \\dot{x} & = \\sigma(y-x) \\\\ \\dot{y} & = \\rho x"
+" - y - xz \\\\ \\dot{z} & = -\\beta z + xy \\end{align}`"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:46
+msgid "The Cauchy-Schwarz Inequality"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:60
+msgid ""
+":math:`\\begin{equation*} \\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq "
+"\\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)"
+" \\end{equation*}`"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:68
+msgid "A Cross Product Formula"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:86
+msgid ""
+":math:`\\begin{equation*} \\mathbf{V}_1 \\times \\mathbf{V}_2 = "
+"\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ "
+"\\frac{\\partial X}{\\partial u} & \\frac{\\partial Y}{\\partial u} & 0 "
+"\\\\ \\frac{\\partial X}{\\partial v} & \\frac{\\partial Y}{\\partial v} "
+"& 0 \\end{vmatrix} \\end{equation*}`"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:94
+msgid "The probability of getting (k) heads when flipping (n) coins is"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:108
+msgid ""
+":math:`\\begin{equation*} P(E) = {n \\choose k} p^k (1-p)^{ n-k} "
+"\\end{equation*}`"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:116
+msgid "An Identity of Ramanujan"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:132
+msgid ""
+":math:`\\begin{equation*} \\frac{1}{\\Bigl(\\sqrt{\\phi "
+"\\sqrt{5}}-\\phi\\Bigr) e^{\\frac25 \\pi}} = 1+\\frac{e^{-2\\pi}} "
+"{1+\\frac{e^{-4\\pi}} {1+\\frac{e^{-6\\pi}} {1+\\frac{e^{-8\\pi}} "
+"{1+\\ldots} } } } \\end{equation*}`"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:140
+msgid "A Rogers-Ramanujan Identity"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:170
+msgid "Maxwell’s Equations"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:186
+msgid ""
+":math:`\\begin{align} \\nabla \\times \\vec{\\mathbf{B}} -\\, \\frac1c\\,"
+" \\frac{\\partial\\vec{\\mathbf{E}}}{\\partial t} & = "
+"\\frac{4\\pi}{c}\\vec{\\mathbf{j}} \\\\ \\nabla \\cdot \\vec{\\mathbf{E}}"
+" & = 4 \\pi \\rho \\\\ \\nabla \\times \\vec{\\mathbf{E}}\\, +\\, "
+"\\frac1c\\, \\frac{\\partial\\vec{\\mathbf{B}}}{\\partial t} & = "
+"\\vec{\\mathbf{0}} \\\\ \\nabla \\cdot \\vec{\\mathbf{B}} & = 0 "
+"\\end{align}`"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:194
+msgid "Equation Numbering and References"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:196
+msgid ""
+"Equation numbering and referencing will be available in a future version "
+"of the Jupyter notebook."
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:205
+msgid "Inline Typesetting (Mixing Markdown and TeX)"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:207
+msgid ""
+"While display equations look good for a page of samples, the ability to "
+"mix math and *formatted* **text** in a paragraph is also important."
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:220
+msgid ""
+"This expression :math:`\\sqrt{3x-1}+(1+x)^2` is an example of a TeX "
+"inline equation in a `Markdown-formatted "
+"<https://daringfireball.net/projects/markdown/>`__ sentence."
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:231
+msgid "Other Syntax"
+msgstr ""
+
+#: ../../source/examples/Notebook/Typesetting Equations.ipynb:233
+msgid ""
+"You will notice in other places on the web that ``$$`` are needed "
+"explicitly to begin and end MathJax typesetting. This is **not** required"
+" if you will be using TeX environments, but the Jupyter notebook will "
+"accept this syntax on legacy notebooks."
+msgstr ""
+

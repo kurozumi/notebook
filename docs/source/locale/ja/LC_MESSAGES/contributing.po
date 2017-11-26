@@ -1,0 +1,244 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../../CONTRIBUTING.rst:2
+msgid "Contributing to the Jupyter Notebook"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:4
+msgid ""
+"If you're reading this section, you're probably interested in "
+"contributing to Jupyter.  Welcome and thanks for your interest in "
+"contributing!"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:7
+msgid ""
+"Please take a look at the Contributor documentation, familiarize yourself"
+" with using the Jupyter Notebook, and introduce yourself on the mailing "
+"list and share what area of the project you are interested in working on."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:12
+msgid "General Guidelines"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:14
+msgid ""
+"For general documentation about contributing to Jupyter projects, see the"
+" `Project Jupyter Contributor Documentation`__."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:21
+msgid "Setting Up a Development Environment"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:24
+msgid "Installing Node.js and npm"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:26
+msgid ""
+"Building the Notebook from its GitHub source code requires some tools to "
+"create and minify JavaScript components and the CSS, specifically Node.js"
+" and Node's package manager, ``npm``. It should be node version ≥ 6.0."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:31
+msgid "If you use ``conda``, you can get them with::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:35
+msgid "If you use `Homebrew <https://brew.sh/>`_ on Mac OS X::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:39
+msgid ""
+"Installation on Linux may vary, but be aware that the `nodejs` or `npm` "
+"packages included in the system package repository may be too old to work"
+" properly."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:42
+msgid ""
+"You can also use the installer from the `Node.js website "
+"<https://nodejs.org>`_."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:46
+msgid "Installing the Jupyter Notebook"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:48
+msgid ""
+"Once you have installed the dependencies mentioned above, use the "
+"following steps::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:56
+msgid ""
+"If you are using a system-wide Python installation and you only want to "
+"install the notebook for you, you can add ``--user`` to the install "
+"commands."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:59
+msgid ""
+"Once you have done this, you can launch the master branch of Jupyter "
+"notebook from any directory in your system with::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:66
+msgid "Rebuilding JavaScript and CSS"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:68
+msgid ""
+"There is a build step for the JavaScript and CSS in the notebook. To make"
+" sure that you are working with up-to-date code, you will need to run "
+"this command whenever there are changes to JavaScript or LESS sources::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:74
+msgid ""
+"**IMPORTANT:** Don't forget to run ``npm run build`` after switching "
+"branches. When switching between branches of different versions (e.g. "
+"``4.x`` and ``master``), run ``pip install -e .``. If you have tried the "
+"above and still find that the notebook is not reflecting the current "
+"source code, try cleaning the repo with ``git clean -xfd`` and "
+"reinstalling with ``pip install -e .``."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:81
+msgid "Development Tip"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:83
+msgid ""
+"When doing development, you can use this command to automatically rebuild"
+" JavaScript and LESS sources as they are modified::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:89
+msgid "Git Hooks"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:91
+msgid ""
+"If you want to automatically update dependencies and recompile JavaScript"
+" and CSS after checking out a new commit, you can install post-checkout "
+"and post-merge hooks which will do it for you::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:97
+msgid "See ``git-hooks/README.md`` for more details."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:101
+msgid "Running Tests"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:104
+msgid "Python Tests"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:106
+msgid "Install dependencies::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:110
+msgid "To run the Python tests, use::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:114
+msgid "If you want coverage statistics as well, you can run::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:119
+msgid "JavaScript Tests"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:121
+msgid ""
+"To run the JavaScript tests, you will need to have PhantomJS and CasperJS"
+" installed::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:126
+msgid "Then, to run the JavaScript tests::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:130
+msgid ""
+"where ``[group]`` is an optional argument that is a path relative to "
+"``notebook/tests/``. For example, to run all tests in "
+"``notebook/tests/notebook``::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:136
+msgid "or to run just ``notebook/tests/notebook/deletecell.js``::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:142
+msgid "Building the Documentation"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:144
+msgid ""
+"To build the documentation you'll need `Sphinx <http://www.sphinx-"
+"doc.org/>`_, `pandoc <http://pandoc.org/>`_ and a few other packages."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:147
+msgid ""
+"To install (and activate) a `conda environment`_ named ``notebook_docs`` "
+"containing all the necessary packages (except pandoc), use::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:157
+msgid "If you want to install the necessary packages with ``pip`` instead::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:161
+msgid ""
+"Once you have installed the required packages, you can build the docs "
+"with::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:166
+msgid ""
+"After that, the generated HTML files will be available at "
+"``build/html/index.html``. You may view the docs in your browser."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:169
+msgid "You can automatically check if all hyperlinks are still valid::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:173
+msgid "Windows users can find ``make.bat`` in the ``docs`` folder."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:175
+msgid ""
+"You should also have a look at the `Project Jupyter Documentation "
+"Guide`__."
+msgstr ""
+

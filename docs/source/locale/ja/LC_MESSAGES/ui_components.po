@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/ui_components.rst:2
+msgid "UI Components"
+msgstr ""
+
+#: ../../source/ui_components.rst:3
+msgid ""
+"When opening bug reports or sending emails to the Jupyter mailing list, "
+"it is useful to know the names of different UI components so that other "
+"developers and users have an easier time helping you diagnose your "
+"problems. This section will familiarize you with the names of UI elements"
+" within the Notebook and the different Notebook modes."
+msgstr ""
+
+#: ../../source/ui_components.rst:10
+msgid "Notebook Dashboard"
+msgstr ""
+
+#: ../../source/ui_components.rst:12
+msgid ""
+"When you launch ``jupyter notebook`` the first page that you encounter is"
+" the Notebook Dashboard."
+msgstr ""
+
+#: ../../source/ui_components.rst:18
+msgid "Notebook Editor"
+msgstr ""
+
+#: ../../source/ui_components.rst:20
+msgid ""
+"Once you've selected a Notebook to edit, the Notebook will open in the "
+"Notebook Editor."
+msgstr ""
+
+#: ../../source/ui_components.rst:26
+msgid "Interactive User Interface Tour of the Notebook"
+msgstr ""
+
+#: ../../source/ui_components.rst:28
+msgid ""
+"If you would like to learn more about the specific elements within the "
+"Notebook Editor, you can go through the User Interface Tour by selecting "
+"Help in the menubar then selecting User Interface Tour."
+msgstr ""
+
+#: ../../source/ui_components.rst:33
+msgid "Edit Mode and Notebook Editor"
+msgstr ""
+
+#: ../../source/ui_components.rst:35
+msgid ""
+"When a cell is in edit mode, the Cell Mode Indicator will change to "
+"reflect the cell's state. This state is indicated by a small pencil icon "
+"on the top right of the interface. When the cell is in command mode, "
+"there is no icon in that location."
+msgstr ""
+
+#: ../../source/ui_components.rst:43
+msgid "File Editor"
+msgstr ""
+
+#: ../../source/ui_components.rst:45
+msgid ""
+"Now let's say that you've chosen to open a Markdown file instead of a "
+"Notebook file whilst in the Notebook Dashboard. If so, the file will be "
+"opened in the File Editor."
+msgstr ""
+

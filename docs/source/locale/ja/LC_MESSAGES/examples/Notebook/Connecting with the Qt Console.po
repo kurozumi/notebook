@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:6 Qt the with
+msgid "Connecting to an existing IPython kernel using the Qt Console"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:14 Qt the with
+msgid "The Frontend/Kernel Model"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:21 Qt the with
+msgid ""
+"The traditional IPython (``ipython``) consists of a single process that "
+"combines a terminal based UI with the process that runs the users code."
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:24 Qt the with
+msgid ""
+"While this traditional application still exists, the modern Jupyter "
+"consists of two processes:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:27 Qt the with
+msgid "Kernel: this is the process that runs the users code."
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:28 Qt the with
+msgid ""
+"Frontend: this is the process that provides the user interface where the "
+"user types code and sees results."
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:31 Qt the with
+msgid "Jupyter currently has 3 frontends:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:33 Qt the with
+msgid "Terminal Console (``jupyter console``)"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:34 Qt the with
+msgid "Qt Console (``jupyter qtconsole``)"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:35 Qt the with
+msgid "Notebook (``jupyter notebook``)"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:37 Qt the with
+msgid ""
+"The Kernel and Frontend communicate over a ZeroMQ/JSON based messaging "
+"protocol, which allows multiple Frontends (even of different types) to "
+"communicate with a single Kernel. This opens the door for all sorts of "
+"interesting things, such as connecting a Console or Qt Console to a "
+"Notebook’s Kernel. For example, you may want to connect a Qt console to "
+"your Notebook’s Kernel and use it as a help browser, calling ``??`` on "
+"objects in the Qt console (whose pager is more flexible than the one in "
+"the notebook)."
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:46 Qt the with
+msgid ""
+"This Notebook describes how you would connect another Frontend to an "
+"IPython Kernel that is associated with a Notebook. The commands currently"
+" given here are specific to the IPython kernel."
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:56 Qt the with
+msgid "Manual connection"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:63 Qt the with
+#, python-format
+msgid ""
+"To connect another Frontend to a Kernel manually, you first need to find "
+"out the connection information for the Kernel using the ``%connect_info``"
+" magic:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:141 Qt the with
+msgid ""
+"You can see that this magic displays everything you need to connect to "
+"this Notebook’s Kernel."
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:150 Qt the with
+msgid "Automatic connection using a new Qt Console"
+msgstr ""
+
+#: ../../source/examples/Notebook/Connecting Console.ipynb:157 Qt the with
+msgid ""
+"You can also start a new Qt Console connected to your current Kernel by "
+"using the ``%qtconsole`` magic. This will detect the necessary connection"
+" information and start the Qt Console for you automatically."
+msgstr ""
+

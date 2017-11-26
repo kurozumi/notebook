@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/extending/savehooks.rst:2
+msgid "File save hooks"
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:4
+msgid ""
+"You can configure functions that are run whenever a file is saved. There "
+"are two hooks available:"
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:7
+msgid ""
+"``ContentsManager.pre_save_hook`` runs on the API path and model with "
+"content. This can be used for things like stripping output that people "
+"don't like adding to VCS noise."
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:10
+msgid ""
+"``FileContentsManager.post_save_hook`` runs on the filesystem path and "
+"model without content. This could be used to commit changes after every "
+"save, for instance."
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:14
+msgid "They are both called with keyword arguments::"
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:20
+msgid "Examples"
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:22
+msgid "These can both be added to :file:`jupyter_notebook_config.py`."
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:24
+msgid "A pre-save hook for stripping output::"
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:43
+msgid ""
+"A post-save hook to make a script equivalent whenever the notebook is "
+"saved (replacing the ``--script`` option in older versions of the "
+"notebook):"
+msgstr ""
+
+#: ../../source/extending/savehooks.rst:83
+msgid ""
+"This could be a simple call to ``jupyter nbconvert --to script``, but "
+"spawning the subprocess every time is quite slow."
+msgstr ""
+

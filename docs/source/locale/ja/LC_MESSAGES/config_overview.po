@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/config_overview.rst:4
+msgid "Configuration Overview"
+msgstr ""
+
+#: ../../source/config_overview.rst:6
+msgid ""
+"Beyond the default configuration settings, you can configure a rich array"
+" of options to suit your workflow. Here are areas that are commonly "
+"configured when using Jupyter Notebook:"
+msgstr ""
+
+#: ../../source/config_overview.rst:10
+msgid ":ref:`Jupyter's common configuration system <configure_common>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:11
+msgid ":ref:`Notebook server <configure_nbserver>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:12
+msgid ":ref:`Notebook front-end client <configure_nbclient>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:13
+msgid ":ref:`Notebook extensions <configure_nbextensions>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:15
+msgid "Let's look at highlights of each area."
+msgstr ""
+
+#: ../../source/config_overview.rst:20
+msgid "Jupyter's Common Configuration system"
+msgstr ""
+
+#: ../../source/config_overview.rst:21
+msgid ""
+"Jupyter applications, from the Notebook to JupyterHub to nbgrader, share "
+"a common configuration system. The process for creating a configuration "
+"file and editing settings is similar for all the Jupyter applications."
+msgstr ""
+
+#: ../../source/config_overview.rst:25
+msgid ""
+"`Jupyter’s Common Configuration Approach "
+"<https://jupyter.readthedocs.io/en/latest/projects/config.html>`_"
+msgstr ""
+
+#: ../../source/config_overview.rst:26
+msgid ""
+"`Common Directories and File Locations "
+"<https://jupyter.readthedocs.io/en/latest/projects/jupyter-"
+"directories.html>`_"
+msgstr ""
+
+#: ../../source/config_overview.rst:27
+msgid ""
+"`Language kernels "
+"<https://jupyter.readthedocs.io/en/latest/projects/kernels.html>`_"
+msgstr ""
+
+#: ../../source/config_overview.rst:28
+msgid ""
+"`traitlets <https://traitlets.readthedocs.io/en/latest/config.html"
+"#module-traitlets.config>`_ provide a low-level architecture for "
+"configuration."
+msgstr ""
+
+#: ../../source/config_overview.rst:34
+msgid "Notebook server"
+msgstr ""
+
+#: ../../source/config_overview.rst:35
+msgid ""
+"The Notebook server runs the language kernel and communicates with the "
+"front-end Notebook client (i.e. the familiar notebook interface)."
+msgstr ""
+
+#: ../../source/config_overview.rst:38
+msgid "Configuring the Notebook server"
+msgstr ""
+
+#: ../../source/config_overview.rst:40
+msgid ""
+"To create a ``jupyter_notebook_config.py`` file in the ``.jupyter`` "
+"directory, with all the defaults commented out, use the following "
+"command::"
+msgstr ""
+
+#: ../../source/config_overview.rst:49
+msgid ":ref:`Running a Notebook server <working_remotely>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:50
+msgid ""
+"Related: `Configuring a language kernel "
+"<https://jupyter.readthedocs.io/en/latest/install-kernel.html>`_ to run "
+"in the Notebook server enables your server to run other languages, like R"
+" or Julia."
+msgstr ""
+
+#: ../../source/config_overview.rst:56
+msgid "Notebook front-end client"
+msgstr ""
+
+#: ../../source/config_overview.rst:60
+msgid ":ref:`How front-end configuration works <frontend_config>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:58
+msgid ""
+":ref:`Example: Changing the notebook's default indentation setting "
+"<frontend_config>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:60
+msgid ""
+":ref:`Example: Restoring the notebook's default indentation setting "
+"<frontend_config>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:62
+msgid ":ref:`Persisting configuration settings <frontend_config>`"
+msgstr ""
+
+#: ../../source/config_overview.rst:67
+msgid "Notebook extensions"
+msgstr ""
+
+#: ../../source/config_overview.rst:68
+#, python-format
+msgid ""
+"`Distributing Jupyter Extensions as Python Packages <https://jupyter-"
+"notebook.readthedocs.io/en/latest/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html"
+"#Distributing-Jupyter-Extensions-as-Python-Packages>`_"
+msgstr ""
+
+#: ../../source/config_overview.rst:69
+msgid ""
+"`Extending the Notebook <https://jupyter-"
+"notebook.readthedocs.io/en/latest/extending/index.html>`_"
+msgstr ""
+
+#: ../../source/config_overview.rst:72
+msgid ""
+":ref:`Security in Jupyter notebooks:  <notebook_security>` Since security"
+" policies vary from organization to organization, we encourage you to "
+"consult with your security team on settings that would be best for your "
+"use cases. Our documentation offers some responsible security practices, "
+"and we recommend becoming familiar with the practices."
+msgstr ""
+

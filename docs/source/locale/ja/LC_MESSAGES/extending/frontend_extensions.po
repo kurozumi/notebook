@@ -1,0 +1,288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/extending/frontend_extensions.rst:2
+msgid "Custom front-end extensions"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:4
+msgid ""
+"This describes the basic steps to write a JavaScript extension for the "
+"Jupyter notebook front-end. This allows you to customize the behaviour of"
+" the various pages like the dashboard, the notebook, or the text editor."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:9
+msgid "The structure of a front-end extension"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:13
+msgid ""
+"The notebook front-end and Javascript API are not stable, and are subject"
+" to a lot of changes. Any extension written for the current notebook is "
+"almost guaranteed to break in the next release."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:19
+msgid ""
+"A front-end extension is a JavaScript file that defines an `AMD module`_ "
+"which exposes at least a function called ``load_ipython_extension``, "
+"which takes no arguments. We will not get into the details of what each "
+"of these terms consists of yet, but here is the minimal code needed for a"
+" working extension:"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:42
+msgid ""
+"Although for historical reasons the function is called "
+"``load_ipython_extension``, it does apply to the Jupyter notebook in "
+"general, and will work regardless of the kernel in use."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:46
+msgid ""
+"If you are familiar with JavaScript, you can use this template to require"
+" any Jupyter module and modify its configuration, or do anything else in "
+"client-side Javascript. Your extension will be loaded at the right time "
+"during the notebook page initialisation for you to set up a listener for "
+"the various events that the page can trigger."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:52
+msgid ""
+"You might want access to the current instances of the various Jupyter "
+"notebook components on the page, as opposed to the classes defined in the"
+" modules. The current instances are exposed by a module named "
+"``base/js/namespace``. If you plan on accessing instances on the page, "
+"you should ``require`` this module rather than accessing the global "
+"variable ``Jupyter``, which will be removed in future. The following "
+"example demonstrates how to access the current notebook instance:"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:83
+msgid "Modifying key bindings"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:85
+msgid ""
+"One of the abilities of extensions is to modify key bindings, although "
+"once again this is an API which is not guaranteed to be stable. However, "
+"custom key bindings are frequently requested, and are helpful to increase"
+" accessibility, so in the following we show how to access them."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:90
+msgid ""
+"Here is an example of an extension that will unbind the shortcut ``0,0`` "
+"in command mode, which normally restarts the kernel, and bind ``0,0,0`` "
+"in its place:"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:116
+msgid ""
+"The standard keybindings might not work correctly on non-US keyboards. "
+"Unfortunately, this is a limitation of browser implementations and the "
+"status of keyboard event handling on the web in general. We appreciate "
+"your feedback if you have issues binding keys, or have any ideas to help "
+"improve the situation."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:122
+msgid ""
+"You can see that I have used the **action name** ``jupyter-notebook"
+":restart-kernel`` to bind the new shortcut. There is no API yet to access"
+" the list of all available *actions*, though the following in the "
+"JavaScript console of your browser on a notebook page should give you an "
+"idea of what is available:"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:132
+msgid ""
+"In this example, we changed a keyboard shortcut in **command mode**; you "
+"can also customize keyboard shortcuts in **edit mode**. However, most of "
+"the keyboard shortcuts in edit mode are handled by CodeMirror, which "
+"supports custom key bindings via a completely different API."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:139
+msgid "Defining and registering your own actions"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:141
+msgid ""
+"As part of your front-end extension, you may wish to define actions, "
+"which can be attached to toolbar buttons, or called from the command "
+"palette. Here is an example of an extension that defines a (not very "
+"useful!) action to show an alert, and adds a toolabr button using the "
+"full action name:"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:179
+msgid ""
+"Every action needs a name, which, when joined with its prefix to make the"
+" full action name, should be unique. Built-in actions, like the "
+"``jupyter-notebook:restart-kernel`` we bound in the earlier `Modifying "
+"key bindings`_ example, use the prefix ``jupyter-notebook``. For actions "
+"defined in an extension, it makes sense to use the extension name as the "
+"prefix. For the action name, the following guidelines should be "
+"considered:"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:188
+msgid ""
+"First pick a noun and a verb for the action. For example, if the action "
+"is \"restart kernel,\" the verb is \"restart\" and the noun is "
+"\"kernel\"."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:190
+msgid ""
+"Omit terms like \"selected\" and \"active\" by default, so \"delete-"
+"cell\", rather than \"delete-selected-cell\". Only provide a scope like "
+"\"-all-\" if it is other than the default \"selected\" or \"active\" "
+"scope."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:193
+msgid ""
+"If an action has a secondary action, separate the secondary action with "
+"\"-and-\", so \"restart-kernel-and-clear-output\"."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:195
+msgid ""
+"Use above/below or previous/next to indicate spatial and sequential "
+"relationships."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:197
+msgid ""
+"Don't ever use before/after as they have a temporal connotation that is "
+"confusing when used in a spatial context."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:199
+msgid ""
+"For dialogs, use a verb that indicates what the dialog will accomplish, "
+"such as \"confirm-restart-kernel\"."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:204
+msgid "Installing and enabling extensions"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:206
+msgid "You can install your nbextension with the command::"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:210
+msgid ""
+"The default installation is system-wide. You can use ``--user`` to do a "
+"per-user installation, or ``--sys-prefix`` to install to Python's prefix "
+"(e.g. in a virtual or conda environment). Where my_extension is the "
+"directory containing the Javascript files. This will copy it to a Jupyter"
+" data directory (the exact location is platform dependent - see "
+":ref:`jupyter_path`)."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:216
+msgid ""
+"For development, you can use the ``--symlink`` flag to symlink your "
+"extension rather than copying it, so there's no need to reinstall after "
+"changes."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:219
+msgid ""
+"To use your extension, you'll also need to **enable** it, which tells the"
+" notebook interface to load it. You can do that with another command::"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:224
+msgid ""
+"The argument refers to the Javascript module containing your "
+"``load_ipython_extension`` function, which is ``my_extension/main.js`` in"
+" this example. There is a corresponding ``disable`` command to stop using"
+" an extension without uninstalling it."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:231
+msgid "Added ``--sys-prefix`` argument"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:235
+msgid "Kernel Specific extensions"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:239
+msgid ""
+"This feature serves as a stopgap for kernel developers who need specific "
+"JavaScript injected onto the page. The availability and API are subject "
+"to change at anytime."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:244
+msgid ""
+"It is possible to load some JavaScript on the page on a per kernel basis."
+" Be aware that doing so will make the browser page reload without warning"
+" as soon as the user switches the kernel without notice."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:248
+msgid ""
+"If you, a kernel developer, need a particular piece of JavaScript to be "
+"loaded on a \"per kernel\" basis, such as:"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:251
+msgid "if you are developing a CodeMirror mode for your language"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:252
+msgid "if you need to enable some specific debugging options"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:254
+msgid ""
+"your ``kernelspecs`` are allowed to contain a ``kernel.js`` file that "
+"defines an AMD module. The AMD module should define an `onload` function "
+"that will be called when the kernelspec loads, such as:"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:258
+msgid "when you load a notebook that uses your kernelspec"
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:259
+msgid "change the active kernelspec of a notebook to your kernelspec."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:261
+msgid ""
+"Note that adding a `kernel.js` to your kernelspec will add an unexpected "
+"side effect to changing a kernel in the notebook. As it is impossible to "
+"\"unload\" JavaScript, any attempt to change the kernelspec again will "
+"save the current notebook and reload the page without confirmations."
+msgstr ""
+
+#: ../../source/extending/frontend_extensions.rst:266
+msgid "Here is an example of ``kernel.js``:"
+msgstr ""
+

@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:6
+msgid "Keyboard Shortcut Customization"
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:13
+msgid ""
+"Starting with Jupyter Notebook 5.0, you can customize the ``command`` "
+"mode shortcuts from within the Notebook Application itself."
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:16
+msgid ""
+"Head to the **``Help``** menu and select the **``Edit keyboard "
+"Shortcuts``** item. A dialog will guide you through the process of adding"
+" custom keyboard shortcuts."
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:20
+msgid ""
+"Keyboard shortcut set from within the Notebook Application will be "
+"persisted to your configuration file. A single action may have several "
+"shortcuts attached to it."
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:30
+msgid "Keyboard Shortcut Customization (Pre Notebook 5.0)"
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:37
+msgid ""
+"Starting with IPython 2.0 keyboard shortcuts in command and edit mode are"
+" fully customizable. These customizations are made using the Jupyter "
+"JavaScript API. Here is an example that makes the ``r`` key available for"
+" running a cell:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:91
+msgid ""
+"“By default the keypress ``r``, while in command mode, changes the type "
+"of the selected cell to ``raw``. This shortcut is overridden by the code "
+"in the previous cell, and thus the action no longer be available via the "
+"keypress ``r``.”"
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:101
+msgid "There are a couple of points to mention about this API:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:103
+msgid ""
+"The ``help_index`` field is used to sort the shortcuts in the Keyboard "
+"Shortcuts help dialog. It defaults to ``zz``."
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:105
+msgid ""
+"When a handler returns ``false`` it indicates that the event should stop "
+"propagating and the default action should not be performed. For further "
+"details about the ``event`` object or event handling, see the jQuery "
+"docs."
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:109
+msgid ""
+"If you don’t need a ``help`` or ``help_index`` field, you can simply pass"
+" a function as the second argument to ``add_shortcut``."
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:153
+msgid "Likewise, to remove a shortcut, use ``remove_shortcut``:"
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:190
+msgid ""
+"If you want your keyboard shortcuts to be active for all of your "
+"notebooks, put the above API calls into your ``custom.js`` file."
+msgstr ""
+
+#: ../../source/examples/Notebook/Custom Keyboard Shortcuts.ipynb:198
+msgid ""
+"Of course we provide name for majority of existing action so that you do "
+"not have to re-write everything, here is for example how to bind ``r`` "
+"back to it’s initial behavior:"
+msgstr ""
+

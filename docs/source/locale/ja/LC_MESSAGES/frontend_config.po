@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/frontend_config.rst:4
+msgid "Configuring the notebook frontend"
+msgstr ""
+
+#: ../../source/frontend_config.rst:8
+msgid ""
+"The ability to configure the notebook frontend UI and preferences is "
+"still a work in progress."
+msgstr ""
+
+#: ../../source/frontend_config.rst:11
+msgid ""
+"This document is a rough explanation on how you can persist some "
+"configuration options for the notebook JavaScript."
+msgstr ""
+
+#: ../../source/frontend_config.rst:14
+msgid ""
+"There is no exhaustive list of all the configuration options as most "
+"options are passed down to other libraries, which means that non valid "
+"configuration can be ignored without any error messages."
+msgstr ""
+
+#: ../../source/frontend_config.rst:20
+msgid "How front end configuration works"
+msgstr ""
+
+#: ../../source/frontend_config.rst:21
+msgid "The frontend configuration system works as follows:"
+msgstr ""
+
+#: ../../source/frontend_config.rst:23
+msgid "get a handle of a configurable JavaScript object."
+msgstr ""
+
+#: ../../source/frontend_config.rst:24
+msgid "access its configuration attribute."
+msgstr ""
+
+#: ../../source/frontend_config.rst:25
+msgid "update its configuration attribute with a JSON patch."
+msgstr ""
+
+#: ../../source/frontend_config.rst:29
+msgid "Example - Changing the notebook's default indentation"
+msgstr ""
+
+#: ../../source/frontend_config.rst:30
+msgid ""
+"This example explains how to change the default setting ``indentUnit`` "
+"for CodeMirror Code Cells::"
+msgstr ""
+
+#: ../../source/frontend_config.rst:42
+msgid ""
+"You can enter the previous snippet in your browser's JavaScript console "
+"once. Then reload the notebook page in your browser. Now, the preferred "
+"indent unit should be equal to two spaces. The custom setting persists "
+"and you do not need to reissue the patch on new notebooks."
+msgstr ""
+
+#: ../../source/frontend_config.rst:47
+msgid ""
+"``indentUnit``, used in this example, is one of the many `CodeMirror "
+"options <https://codemirror.net/doc/manual.html#option_indentUnit>`_ "
+"which are available for configuration."
+msgstr ""
+
+#: ../../source/frontend_config.rst:53
+msgid "Example - Restoring the notebook's default indentation"
+msgstr ""
+
+#: ../../source/frontend_config.rst:54
+msgid ""
+"If you want to restore a notebook frontend preference to its default "
+"value, you will enter a JSON patch with a ``null`` value for the "
+"preference setting."
+msgstr ""
+
+#: ../../source/frontend_config.rst:57
+msgid ""
+"For example, let's restore the indent setting ``indentUnit`` to its "
+"default of four spaces. Enter the following code snippet in your "
+"JavaScript console::"
+msgstr ""
+
+#: ../../source/frontend_config.rst:69
+msgid ""
+"Reload the notebook in your browser and the default indent should again "
+"be two spaces."
+msgstr ""
+
+#: ../../source/frontend_config.rst:73
+msgid "Persisting configuration settings"
+msgstr ""
+
+#: ../../source/frontend_config.rst:74
+msgid ""
+"Under the hood, Jupyter will persist the preferred configuration settings"
+" in ``~/.jupyter/nbconfig/<section>.json``, with ``<section>`` taking "
+"various value depending on the page where the configuration is issued. "
+"``<section>`` can take various values like ``notebook``, ``tree``, and "
+"``editor``. A ``common`` section contains configuration settings shared "
+"by all pages."
+msgstr ""
+

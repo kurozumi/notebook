@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Jupyter Team, https://jupyter.org
+# This file is distributed under the same license as the Jupyter Notebook
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jupyter Notebook 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 20:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../source/extending/handlers.rst:2
+msgid "Custom request handlers"
+msgstr ""
+
+#: ../../source/extending/handlers.rst:4
+msgid ""
+"The notebook webserver can be interacted with using a well `defined "
+"RESTful API "
+"<http://petstore.swagger.io/?url=https://raw.githubusercontent.com/jupyter/notebook/master/notebook/services/api/api.yaml>`__."
+" You can define custom RESTful API handlers in addition to the ones "
+"provided by the notebook. As described below, to define a custom handler "
+"you need to first write a notebook server extension. Then, in the "
+"extension, you can register the custom handler."
+msgstr ""
+
+#: ../../source/extending/handlers.rst:13
+msgid "Writing a notebook server extension"
+msgstr ""
+
+#: ../../source/extending/handlers.rst:15
+msgid ""
+"The notebook webserver is written in Python, hence your server extension "
+"should be written in Python too. Server extensions, like IPython "
+"extensions, are Python modules that define a specially named load "
+"function, ``load_jupyter_server_extension``. This function is called when"
+" the extension is loaded."
+msgstr ""
+
+#: ../../source/extending/handlers.rst:32
+msgid ""
+"To get the notebook server to load your custom extension, you'll need to "
+"add it to the list of extensions to be loaded. You can do this using the "
+"config system. ``NotebookApp.nbserver_extensions`` is a config variable "
+"which is a dictionary of strings, each a Python module to be imported, "
+"mapping to ``True`` to enable or ``False`` to disable each extension. "
+"Because this variable is notebook config, you can set it two different "
+"ways, using config files or via the command line."
+msgstr ""
+
+#: ../../source/extending/handlers.rst:40
+msgid ""
+"For example, to get your extension to load via the command line add a "
+"double dash before the variable name, and put the Python dictionary in "
+"double quotes. If your package is \"mypackage\" and module is "
+"\"mymodule\", this would look like ``jupyter notebook "
+"--NotebookApp.nbserver_extensions=\"{'mypackage.mymodule':True}\"`` . "
+"Basically the string should be Python importable."
+msgstr ""
+
+#: ../../source/extending/handlers.rst:48
+msgid ""
+"Alternatively, you can have your extension loaded regardless of the "
+"command line args by setting the variable in the Jupyter config file. The"
+" default location of the Jupyter config file is "
+"``~/.jupyter/jupyter_notebook_config.py`` (see :doc:`/config_overview`). "
+"Inside the config file, you can use Python to set the variable. For "
+"example, the following config does the same as the previous command line "
+"example."
+msgstr ""
+
+#: ../../source/extending/handlers.rst:62
+msgid ""
+"Before continuing, it's a good idea to verify that your extension is "
+"being loaded. Use a print statement to print something unique. Launch the"
+" notebook server and you should see your statement printed to the "
+"console."
+msgstr ""
+
+#: ../../source/extending/handlers.rst:68
+msgid "Registering custom handlers"
+msgstr ""
+
+#: ../../source/extending/handlers.rst:70
+msgid ""
+"Once you've defined a server extension, you can register custom handlers "
+"because you have a handle to the Notebook server app instance "
+"(``nb_server_app`` above). However, you first need to define your custom "
+"handler. To declare a custom handler, inherit from "
+"``notebook.base.handlers.IPythonHandler``. The example below[1] is a "
+"Hello World handler:"
+msgstr ""
+
+#: ../../source/extending/handlers.rst:85
+msgid ""
+"The Jupyter Notebook server use `Tornado "
+"<http://www.tornadoweb.org/en/stable/>`__ as its web framework. For more "
+"information on how to implement request handlers, refer to the `Tornado "
+"documentation on the matter <http://www.tornadoweb.org/en/stable/web.html"
+"#request-handlers>`__."
+msgstr ""
+
+#: ../../source/extending/handlers.rst:91
+msgid ""
+"After defining the handler, you need to register the handler with the "
+"Notebook server. See the following example:"
+msgstr ""
+
+#: ../../source/extending/handlers.rst:101
+msgid ""
+"Putting this together with the extension code, the example looks like the"
+" following:"
+msgstr ""
+
+#: ../../source/extending/handlers.rst:125
+msgid "References:"
+msgstr ""
+
+#: ../../source/extending/handlers.rst:127
+msgid ""
+"`Peter Parente's Mindtrove <http://mindtrove.info/4-ways-to-extend-"
+"jupyter-notebook/#nb-server-exts>`__"
+msgstr ""
+
