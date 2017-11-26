@@ -107,7 +107,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#notebook-user-interface">ノートブックのユーザーインターフェース</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#structure-of-a-notebook-document">ノートブック文書の構造</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#code-cells">Code cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-cells">コードセル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#markdown-cells">Markdown cells</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#raw-cells">Raw cells</a></li>
 </ul>
@@ -369,21 +369,12 @@
 <p>ノートブックは一連のセルで構成されています。セルは複数行のテキスト入力フィールドで、その内容は <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code> で実行するか、ツールバーの’’Play’’ ボタン、またはメニューバーの <cite>Cell | Run</cite> をクリックして実行します。セルの実行動作はセルのタイプによって決まります。セルには、 <strong>code cells</strong>、<strong>markdown cells</strong>、<strong>raw cells</strong> の3種類があります。すべてのセルは <strong>code cells</strong> から始まりますが、そのタイプはツールバーのドロップダウン(最初は ‘’Code’’)、または <a class="reference internal" href="#keyboard-shortcuts"><span class="std std-ref">keyboard shortcuts</span></a> を使用して変更できます。</p>
 <p>ノートブックで出来ることのさまざまな情報については、<a class="reference external" href="http://nbviewer.jupyter.org/github/jupyter/notebook/tree/master/docs/source/examples/Notebook/">collection of examples</a> を参照して下さい。</p>
 <div class="section" id="code-cells">
-<h3>Code cells<a class="headerlink" href="#code-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>A <em>code cell</em> allows you to edit and write new code, with full syntax
-highlighting and tab completion. By default, the language associated to a code
-cell is Python, but other languages, such as <code class="docutils literal"><span class="pre">Julia</span></code> and <code class="docutils literal"><span class="pre">R</span></code>, can be
-handled using <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#magics-explained" title="(in IPython v6.2.1)"><span class="xref std std-ref">cell magic commands</span></a>.</p>
-<p>When a code cell is executed, code that it contains is sent to the kernel
-associated with the notebook.  The results that are returned from this
-computation  are then displayed in the notebook as the cell’s <em>output</em>. The
-output is not limited to text, with many other possible forms of output are
-also possible, including <code class="docutils literal"><span class="pre">matplotlib</span></code> figures and HTML tables (as used, for
-example, in the <code class="docutils literal"><span class="pre">pandas</span></code> data analysis package). This is known as IPython’s
-<em>rich display</em> capability.</p>
+<h3>コードセル<a class="headerlink" href="#code-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><em>コードセル</em> を使用すると、完全な構文ハイライト表示とタブ補完で新しいコードを編集と書き込みができます。デフォルトでは、コードセルに関連付けれた言語はPythonですが、 <code class="docutils literal"><span class="pre">Julia</span></code> や <code class="docutils literal"><span class="pre">R</span></code> のような他の言語は <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#magics-explained" title="(in IPython v6.2.1)"><span class="xref std std-ref">cell magic commands</span></a> を使って処理できます。</p>
+<p>コードセルが実行されると、それに含まれるコードがノートブックに関連付けられたカーネルに送られます。この計算から返された結果は、セルの <em>出力</em> としてノートブックに表示されます。出力はテキストに限定されず、 <code class="docutils literal"><span class="pre">matplitlib</span></code> の図やHTMLテーブル(例えば、 <code class="docutils literal"><span class="pre">pandas</span></code> データ解析パッケージで使われるもの)を含む他の多くの出力形式も可能です。これはIPythonの <em>リッチ表示</em> の機能として知られています。</p>
 <div class="admonition seealso">
 <p class="first admonition-title">参考</p>
-<p class="last"><a class="reference external" href="https://nbviewer.jupyter.org/github/ipython/ipython/blob/master/examples/IPython%20Kernel/Rich%20Output.ipynb">Rich Output</a>  example notebook</p>
+<p class="last"><a class="reference external" href="https://nbviewer.jupyter.org/github/ipython/ipython/blob/master/examples/IPython%20Kernel/Rich%20Output.ipynb">リッチ出力</a> のサンプルノートブック</p>
 </div>
 </div>
 <div class="section" id="markdown-cells">
