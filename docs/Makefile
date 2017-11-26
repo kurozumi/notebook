@@ -50,7 +50,8 @@ help:
 	@echo "  spelling   to spell check the documentation"
 
 clean:
-	rm -rf $(BUILDDIR)/*
+	rm -rf $(BUILDDIR)/html/*
+	rm -rf $(BUILDDIR)/doctrees
 	rm -rf config.rst
 
 html: source/config.rst
