@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration Overview &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="Config file and command line options" href="config.html"/>
+        <link rel="prev" title="Comms" href="comms.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Jupyter Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザー向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">Jupyterノートブック</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_components.html">UI Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comms.html">Comms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">設定</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#jupyter-s-common-configuration-system">Jupyter’s Common Configuration system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notebook-server">Notebook server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notebook-front-end-client">Notebook front-end client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notebook-extensions">Notebook extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config file and command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security in the Jupyter notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend_config.html">Configuring the notebook frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Distributing Jupyter Extensions as Python Packages.html">Distributing Jupyter Extensions as Python Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending/index.html">Extending the Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">貢献者向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_release.html">Making a Notebook release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_faq.html">Developer FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">コミュニティ向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/examples_index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/What is the Jupyter Notebook.html">What is the Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Notebook Basics.html">Notebook Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Running Code.html">Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Working With Markdown Cells.html">Markdown Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Custom Keyboard Shortcuts.html">Keyboard Shortcut Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Custom Keyboard Shortcuts.html#Keyboard-Shortcut-Customization-(Pre-Notebook-5.0)">Keyboard Shortcut Customization (Pre Notebook 5.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/JavaScript Notebook Extensions.html">Embracing web standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Importing Notebooks.html">Importing Jupyter Notebooks as Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Connecting with the Qt Console.html">Connecting to an existing IPython kernel using the Qt Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Typesetting Equations.html">Motivating Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/nbpackage/mynotebook.html">My Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/nbpackage/nbs/other.html">Other notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyterノートブックについて</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Jupyter notebook changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">質問ですか？提案ですか？</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://groups.google.com/forum/#!forum/jupyter">Jupyter mailing list</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.org">Jupyter website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter">Stack Overflow - Jupyter</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter-notebook">Stack Overflow - Jupyter-notebook</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Jupyter Notebook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Configuration Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/config_overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="configuration-overview">
+<span id="id1"></span><h1>Configuration Overview<a class="headerlink" href="#configuration-overview" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Beyond the default configuration settings, you can configure a rich array of
+options to suit your workflow. Here are areas that are commonly configured
+when using Jupyter Notebook:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#configure-common"><span class="std std-ref">Jupyter’s common configuration system</span></a></li>
+<li><a class="reference internal" href="#configure-nbserver"><span class="std std-ref">Notebook server</span></a></li>
+<li><a class="reference internal" href="#configure-nbclient"><span class="std std-ref">Notebook front-end client</span></a></li>
+<li><a class="reference internal" href="#configure-nbextensions"><span class="std std-ref">Notebook extensions</span></a></li>
+</ul>
+</div></blockquote>
+<p>Let’s look at highlights of each area.</p>
+<div class="section" id="jupyter-s-common-configuration-system">
+<span id="configure-common"></span><h2>Jupyter’s Common Configuration system<a class="headerlink" href="#jupyter-s-common-configuration-system" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Jupyter applications, from the Notebook to JupyterHub to nbgrader, share a
+common configuration system. The process for creating a configuration file
+and editing settings is similar for all the Jupyter applications.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/projects/config.html">Jupyter’s Common Configuration Approach</a></li>
+<li><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/projects/jupyter-directories.html">Common Directories and File Locations</a></li>
+<li><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/projects/kernels.html">Language kernels</a></li>
+<li><a class="reference external" href="https://traitlets.readthedocs.io/en/latest/config.html#module-traitlets.config">traitlets</a>
+provide a low-level architecture for configuration.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="notebook-server">
+<span id="configure-nbserver"></span><h2>Notebook server<a class="headerlink" href="#notebook-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Notebook server runs the language kernel and communicates with the
+front-end Notebook client (i.e. the familiar notebook interface).</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Configuring the Notebook server</p>
+<blockquote>
+<div><p>To create a <code class="docutils literal"><span class="pre">jupyter_notebook_config.py</span></code> file in the <code class="docutils literal"><span class="pre">.jupyter</span></code>
+directory, with all the defaults commented out, use the following
+command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    $ jupyter notebook --generate-config
+
+:ref:`Command line arguments for configuration &lt;config&gt;` settings are
+documented in the configuration file and the user documentation.
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><a class="reference internal" href="public_server.html#working-remotely"><span class="std std-ref">Running a Notebook server</span></a></p>
+</li>
+<li><p class="first">Related: <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install-kernel.html">Configuring a language kernel</a>
+to run in the Notebook server enables your server to run other languages, like R or Julia.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="notebook-front-end-client">
+<span id="configure-nbclient"></span><h2>Notebook front-end client<a class="headerlink" href="#notebook-front-end-client" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="frontend_config.html#frontend-config"><span class="std std-ref">How front-end configuration works</span></a></dt>
+<dd><ul class="first last">
+<li><a class="reference internal" href="frontend_config.html#frontend-config"><span class="std std-ref">Example: Changing the notebook’s default indentation setting</span></a></li>
+<li><a class="reference internal" href="frontend_config.html#frontend-config"><span class="std std-ref">Example: Restoring the notebook’s default indentation setting</span></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><a class="reference internal" href="frontend_config.html#frontend-config"><span class="std std-ref">Persisting configuration settings</span></a></li>
+</ul>
+</div>
+<div class="section" id="notebook-extensions">
+<span id="configure-nbextensions"></span><h2>Notebook extensions<a class="headerlink" href="#notebook-extensions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html#Distributing-Jupyter-Extensions-as-Python-Packages">Distributing Jupyter Extensions as Python Packages</a></li>
+<li><a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/extending/index.html">Extending the Notebook</a></li>
+</ul>
+<p><a class="reference internal" href="security.html#notebook-security"><span class="std std-ref">Security in Jupyter notebooks:</span></a> Since security
+policies vary from organization to organization, we encourage you to
+consult with your security team on settings that would be best for your use
+cases. Our documentation offers some responsible security practices, and we
+recommend becoming familiar with the practices.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="config.html" class="btn btn-neutral float-right" title="Config file and command line options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="comms.html" class="btn btn-neutral" title="Comms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jupyter Team, https://jupyter.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

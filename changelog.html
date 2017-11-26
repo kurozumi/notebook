@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Jupyter notebook changelog &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="index.html"/>
+        <link rel="prev" title="Other notebook" href="examples/Notebook/nbpackage/nbs/other.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Jupyter Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザー向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">Jupyterノートブック</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_components.html">UI Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comms.html">Comms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">設定</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config file and command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security in the Jupyter notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend_config.html">Configuring the notebook frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Distributing Jupyter Extensions as Python Packages.html">Distributing Jupyter Extensions as Python Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending/index.html">Extending the Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">貢献者向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_release.html">Making a Notebook release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_faq.html">Developer FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">コミュニティ向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/examples_index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/What is the Jupyter Notebook.html">What is the Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Notebook Basics.html">Notebook Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Running Code.html">Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Working With Markdown Cells.html">Markdown Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Custom Keyboard Shortcuts.html">Keyboard Shortcut Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Custom Keyboard Shortcuts.html#Keyboard-Shortcut-Customization-(Pre-Notebook-5.0)">Keyboard Shortcut Customization (Pre Notebook 5.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/JavaScript Notebook Extensions.html">Embracing web standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Importing Notebooks.html">Importing Jupyter Notebooks as Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Connecting with the Qt Console.html">Connecting to an existing IPython kernel using the Qt Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Typesetting Equations.html">Motivating Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/nbpackage/mynotebook.html">My Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/nbpackage/nbs/other.html">Other notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyterノートブックについて</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jupyter notebook changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#release-5-2-0">5.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-5-1-0">5.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-5-0-0">5.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-sorting-in-the-dashboard">File sorting in the dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-tags">Cell tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-style">Table style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#customise-keyboard-shortcuts">Customise keyboard shortcuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-additions">Other additions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-4-0">4.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-3-2">4.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-3-1">4.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-3">4.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-2-3">4.2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-2-2">4.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-2-1">4.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-2-0">4.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-4-1-0">4.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#x">4.0.x</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">4.0.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">4.0.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">4.0.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">4.0.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">4.0.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">質問ですか？提案ですか？</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://groups.google.com/forum/#!forum/jupyter">Jupyter mailing list</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.org">Jupyter website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter">Stack Overflow - Jupyter</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter-notebook">Stack Overflow - Jupyter-notebook</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Jupyter Notebook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Jupyter notebook changelog</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/changelog.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="jupyter-notebook-changelog">
+<span id="changelog"></span><h1>Jupyter notebook changelog<a class="headerlink" href="#jupyter-notebook-changelog" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>A summary of changes in the Jupyter notebook.
+For more detailed information, see
+<a class="reference external" href="https://github.com/jupyter/notebook">GitHub</a>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Use <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span> <span class="pre">--upgrade</span></code> or <code class="docutils literal"><span class="pre">conda</span> <span class="pre">upgrade</span> <span class="pre">notebook</span></code> to
+upgrade to the latest release.</p>
+</div>
+<p>We strongly recommend that you upgrade to version 9+ of pip before upgrading <code class="docutils literal"><span class="pre">notebook</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Use <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pip</span> <span class="pre">--upgrade</span></code> to upgrade pip. Check pip version with
+<code class="docutils literal"><span class="pre">pip</span> <span class="pre">--version</span></code>.</p>
+</div>
+<div class="section" id="release-5-2-0">
+<span id="id1"></span><h2>5.2.0<a class="headerlink" href="#release-5-2-0" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Make all files in the dashboard editable by default and provide a whitelist of viewable file extensions (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2911/">PR #2911</a>).</li>
+<li>Ensure that the root directory is not hidden (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2907/">PR #2907</a>).</li>
+<li>Fix CodeMirror styling issue (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2880/">PR #2880</a>).</li>
+<li>Update error handling on <code class="docutils literal"><span class="pre">APIHandlers</span></code> (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2853/">PR #2853</a>).</li>
+<li>Upgrade xterm.js to 2.9.2 (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2849/">PR #2849</a>).</li>
+<li>Add Chinese translations (depends on upcoming UI implementation) (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2804/">PR #2804</a>).</li>
+<li>Allow for simpler customization of <code class="docutils literal"><span class="pre">output_prompt</span></code> in custom.js (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2774/">PR #2774</a>).</li>
+<li>Use RFC5987 encoding for filenames (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2767/">PR #2767</a>).</li>
+<li>Add path to the resources metadata (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2753/">PR #2753</a>).</li>
+<li>Make <code class="docutils literal"><span class="pre">extraKeys</span></code> consistent between notebook and editor views (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2745/">PR #2745</a>).</li>
+<li>Add RTL (right-to-left) support (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2357/">PR #2357</a>).</li>
+</ul>
+<p>Special thanks to <a class="reference external" href="https://github.com/samarsultan">samarsultan</a> and the Arabic Competence and Globalization Center Team at IBM Egypt for adding RTL (right-to-left) support to the notebook!</p>
+<p>See the 5.2 milestone on GitHub for a complete list of
+<a class="reference external" href="https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20milestone%3A5.2">issues</a>
+and <a class="reference external" href="https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20milestone%3A5.2">pull requests</a> involved in this release.</p>
+</div>
+<div class="section" id="release-5-1-0">
+<span id="id2"></span><h2>5.1.0<a class="headerlink" href="#release-5-1-0" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Preliminary i18n implementation (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2140/">PR #2140</a>).</li>
+<li>Expose URL with auth token in notebook UI (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2666/">PR #2666</a>).</li>
+<li>Fix search background style (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2387/">PR #2387</a>).</li>
+<li>List running notebooks without requiring <code class="docutils literal"><span class="pre">--allow-root</span></code> (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2421/">PR #2421</a>).</li>
+<li>Allow session of type other than notebook (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2559/">PR #2559</a>).</li>
+<li>Fix search background style (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2387/">PR #2387</a>).</li>
+<li>Fix some Markdown styling issues (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2571/">PR #2571</a>), (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2691/">PR #2691</a>) and (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2534/">PR #2534</a>).</li>
+<li>Remove keymaps that conflict with non-English keyboards (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2535/">PR #2535</a>).</li>
+<li>Add session-specific favicons (notebook, terminal, file) (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2452/">PR #2452</a>).</li>
+<li>Add /api/shutdown handler (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2507/">PR #2507</a>).</li>
+<li>Include metadata when copying a cell (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2349/">PR #2349</a>).</li>
+<li>Stop notebook server from command line (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2388/">PR #2388</a>).</li>
+<li>Improve 「View」 and 「Edit」 file handling in dashboard (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2449/">PR #2449</a>) and (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2402/">PR #2402</a>).</li>
+<li>Provide a promise to replace use of the <code class="docutils literal"><span class="pre">app_initialized.NotebookApp</span></code> event (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2710/">PR #2710</a>).</li>
+<li>Fix disabled collapse/expand output button (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2681/">PR #2681</a>).</li>
+<li>Cull idle kernels using <code class="docutils literal"><span class="pre">--MappingKernelManager.cull_idle_timeout</span></code> (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2215/">PR #2215</a>).</li>
+<li>Allow read-only notebooks to be trusted (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2718/">PR #2718</a>).</li>
+</ul>
+<p>See the 5.1 milestone on GitHub for a complete list of
+<a class="reference external" href="https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20milestone%3A5.1">issues</a>
+and <a class="reference external" href="https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20milestone%3A5.1">pull requests</a> involved in this release.</p>
+</div>
+<div class="section" id="release-5-0-0">
+<span id="id3"></span><h2>5.0.0<a class="headerlink" href="#release-5-0-0" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>This is the first major release of the Jupyter Notebook since version 4.0 was
+created by the 「Big Split」 of IPython and Jupyter.</p>
+<p>We encourage users to start trying JupyterLab in preparation for a future
+transition.</p>
+<p>We have merged more than 300 pull requests since 4.0. Some of the
+major user-facing changes are described here.</p>
+<div class="section" id="file-sorting-in-the-dashboard">
+<h3>File sorting in the dashboard<a class="headerlink" href="#file-sorting-in-the-dashboard" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Files in the dashboard may now be sorted by last modified date or name (<a class="reference external" href="https://github.com/jupyter/notebook/pull/943/">PR #943</a>):</p>
+<img alt="_images/dashboard-sort.png" class="align-center" src="_images/dashboard-sort.png" />
+</div>
+<div class="section" id="cell-tags">
+<h3>Cell tags<a class="headerlink" href="#cell-tags" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>There is a new cell toolbar for adding <em>cell tags</em> (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2048/">PR #2048</a>):</p>
+<img alt="_images/cell-tags-toolbar.png" class="align-center" src="_images/cell-tags-toolbar.png" />
+<p>Cell tags are a lightweight way to customise the behaviour of tools working with
+notebooks; we’re working on building support for them into tools like <a class="reference external" href="http://nbconvert.readthedocs.io/en/latest/">nbconvert</a> and <a class="reference external" href="https://github.com/computationalmodelling/nbval">nbval</a>. To start using tags,
+select <code class="docutils literal"><span class="pre">Tags</span></code> in the <code class="docutils literal"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Cell</span> <span class="pre">Toolbar</span></code> menu in a notebook.</p>
+<p>The UI for editing cell tags is basic for now; we hope to improve it in future
+releases.</p>
+</div>
+<div class="section" id="table-style">
+<h3>Table style<a class="headerlink" href="#table-style" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The default styling for tables in the notebook has been updated (<a class="reference external" href="https://github.com/jupyter/notebook/pull/1776/">PR #1776</a>).</p>
+<p>Before:</p>
+<img alt="_images/table-style-before.png" class="align-center" src="_images/table-style-before.png" />
+<p>After:</p>
+<img alt="_images/table-style-after.png" class="align-center" src="_images/table-style-after.png" />
+</div>
+<div class="section" id="customise-keyboard-shortcuts">
+<h3>Customise keyboard shortcuts<a class="headerlink" href="#customise-keyboard-shortcuts" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>You can now edit keyboard shortcuts for <em>Command Mode</em> within the UI
+(<a class="reference external" href="https://github.com/jupyter/notebook/pull/1347/">PR #1347</a>):</p>
+<img alt="_images/shortcut-editor.png" class="align-center" src="_images/shortcut-editor.png" />
+<p>See the <code class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Edit</span> <span class="pre">Keyboard</span> <span class="pre">Shortcuts</span></code> menu item and follow the instructions.</p>
+</div>
+<div class="section" id="other-additions">
+<h3>Other additions<a class="headerlink" href="#other-additions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>You can copy and paste cells between notebooks, using <code class="kbd docutils literal"><span class="pre">Ctrl-C</span></code> and
+<code class="kbd docutils literal"><span class="pre">Ctrl-V</span></code> (<code class="kbd docutils literal"><span class="pre">Cmd-C</span></code> and <code class="kbd docutils literal"><span class="pre">Cmd-V</span></code> on Mac).</li>
+<li>It’s easier to configure a password for the notebook with the new
+<code class="docutils literal"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">password</span></code> command (<a class="reference external" href="https://github.com/jupyter/notebook/pull/2007/">PR #2007</a>).</li>
+<li>The file list can now be ordered by <em>last modified</em> or by <em>name</em>
+(<a class="reference external" href="https://github.com/jupyter/notebook/pull/943/">PR #943</a>).</li>
+<li>Markdown cells now support attachments. Simply drag and drop an image from
+your desktop to a markdown cell to add it. Unlike relative links that you
+enter manually, attachments are embedded in the notebook itself. An
+unreferenced attachment will be automatically scrubbed from the notebook on
+save (<a class="reference external" href="https://github.com/jupyter/notebook/pull/621/">PR #621</a>).</li>
+<li>Undoing cell deletion now supports undeleting multiple cells. Cells may not be
+in the same order as before their deletion, depending on the actions you did
+on the meantime, but this should should help reduce the impact of
+accidentally deleting code.</li>
+<li>The file browser now has <em>Edit</em> and <em>View</em> buttons.</li>
+<li>The file browser now supports moving multiple files at once
+(<a class="reference external" href="https://github.com/jupyter/notebook/pull/1088/">PR #1088</a>).</li>
+<li>The Notebook will refuse to run as root unless the <code class="docutils literal"><span class="pre">--allow-root</span></code> flag is
+given (<a class="reference external" href="https://github.com/jupyter/notebook/pull/1115/">PR #1115</a>).</li>
+<li>Keyboard shortcuts are now declarative (<a class="reference external" href="https://github.com/jupyter/notebook/pull/1234/">PR #1234</a>).</li>
+<li>Toggling line numbers can now affect all cells (<a class="reference external" href="https://github.com/jupyter/notebook/pull/1312/">PR #1312</a>).</li>
+<li>Add more visible <em>Trusted</em> and <em>Untrusted</em> notifications (<a class="reference external" href="https://github.com/jupyter/notebook/pull/1658/">PR #1658</a>).</li>
+<li>The favicon (browser shortcut icon) now changes to indicate when the kernel is busy
+(<a class="reference external" href="https://github.com/jupyter/notebook/pull/1837/">PR #1837</a>).</li>
+<li>Header and toolbar visibility is now persisted in nbconfig and across sessions
+(<a class="reference external" href="https://github.com/jupyter/notebook/pull/1769/">PR #1769</a>).</li>
+<li>Load server extensions with ConfigManager so that merge happens recursively,
+unlike normal config values, to make it load more consistently with frontend
+extensions(<a class="reference external" href="https://github.com/jupyter/notebook/pull/2108/">PR #2108</a>).</li>
+<li>The notebook server now supports the <a class="reference external" href="http://jupyter-notebook.readthedocs.io/en/latest/extending/bundler_extensions.html">bundler API</a>
+from the <a class="reference external" href="https://github.com/jupyter-incubator/contentmanagement">jupyter_cms incubator project</a> (<a class="reference external" href="https://github.com/jupyter/notebook/pull/1579/">PR #1579</a>).</li>
+<li>The notebook server now provides information about kernel activity in
+its kernel resource API (<a class="reference external" href="https://github.com/jupyter/notebook/pull/1827/">PR #1827</a>).</li>
+</ul>
+<p>Remember that upgrading <code class="docutils literal"><span class="pre">notebook</span></code> only affects the user
+interface. Upgrading kernels and libraries may also provide new features,
+better stability and integration with the notebook interface.</p>
+</div>
+</div>
+<div class="section" id="release-4-4-0">
+<span id="id4"></span><h2>4.4.0<a class="headerlink" href="#release-4-4-0" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Allow override of output callbacks to redirect output messages. This is used to implement the ipywidgets Output widget, for example.</li>
+<li>Fix an async bug in message handling by allowing comm message handlers to return a promise which halts message processing until the promise resolves.</li>
+</ul>
+<p>See the 4.4 milestone on GitHub for a complete list of
+<a class="reference external" href="https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20milestone%3A4.4">issues</a>
+and <a class="reference external" href="https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20milestone%3A4.4">pull requests</a> involved in this release.</p>
+</div>
+<div class="section" id="release-4-3-2">
+<span id="id5"></span><h2>4.3.2<a class="headerlink" href="#release-4-3-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>4.3.2 is a patch release with a bug fix for CodeMirror and improved handling of the 「editable」 cell metadata field.</p>
+<ul class="simple">
+<li>Monkey-patch for CodeMirror that resolves <a class="reference external" href="https://github.com/jupyter/notebook/issues/2037">#2037</a> without breaking <a class="reference external" href="https://github.com/jupyter/notebook/issues/1967">#1967</a></li>
+<li>Read-only (<code class="docutils literal"><span class="pre">&quot;editable&quot;:</span> <span class="pre">false</span></code>) cells can be executed but cannot be split, merged, or deleted</li>
+</ul>
+<p>See the 4.3.2 milestone on GitHub for a complete list of
+<a class="reference external" href="https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20milestone%3A4.3.2">issues</a>
+and <a class="reference external" href="https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20milestone%3A4.3.2">pull requests</a> involved in this release.</p>
+</div>
+<div class="section" id="release-4-3-1">
+<span id="id6"></span><h2>4.3.1<a class="headerlink" href="#release-4-3-1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>4.3.1 is a patch release with a security patch, a couple bug fixes, and improvements to the newly-released token authentication.</p>
+<p><strong>Security fix</strong>:</p>
+<ul class="simple">
+<li>CVE-2016-9971. Fix CSRF vulnerability,
+where malicious forms could create untitled files and start kernels
+(no remote execution or modification of existing files)
+for users of certain browsers (Firefox, Internet Explorer / Edge).
+All previous notebook releases are affected.</li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li>Fix carriage return handling</li>
+<li>Make the font size more robust against fickle browsers</li>
+<li>Ignore resize events that bubbled up and didn’t come from window</li>
+<li>Add Authorization to allowed CORS headers</li>
+<li>Downgrade CodeMirror to 5.16 while we figure out issues in Safari</li>
+</ul>
+<p>Other improvements:</p>
+<ul class="simple">
+<li>Better docs for token-based authentication</li>
+<li>Further highlight token info in log output when autogenerated</li>
+</ul>
+<p>See the 4.3.1 milestone on GitHub for a complete list of
+<a class="reference external" href="https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20milestone%3A4.3.1">issues</a>
+and <a class="reference external" href="https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20milestone%3A4.3.1">pull requests</a> involved in this release.</p>
+</div>
+<div class="section" id="release-4-3">
+<span id="id7"></span><h2>4.3.0<a class="headerlink" href="#release-4-3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>4.3 is a minor release with many bug fixes and improvements.
+The biggest user-facing change is the addition of token authentication,
+which is enabled by default.
+A token is generated and used when your browser is opened automatically,
+so you shouldn’t have to enter anything in the default circumstances.
+If you see a login page
+(e.g. by switching browsers, or launching on a new port with <code class="docutils literal"><span class="pre">--no-browser</span></code>),
+you get a login URL with the token from the command <code class="docutils literal"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">list</span></code>,
+which you can paste into your browser.</p>
+<p>Highlights:</p>
+<ul class="simple">
+<li>API for creating mime-type based renderer extensions using <code class="code docutils literal"><span class="pre">OutputArea.register_mime_type</span></code> and <code class="code docutils literal"><span class="pre">Notebook.render_cell_output</span></code> methods. See <a class="reference external" href="https://github.com/jupyterlab/mimerender-cookiecutter">mimerender-cookiecutter</a> for reference implementations and cookiecutter.</li>
+<li>Enable token authentication by default. See <a class="reference internal" href="security.html#server-security"><span class="std std-ref">Security in the Jupyter notebook server</span></a> for more details.</li>
+<li>Update security docs to reflect new signature system</li>
+<li>Switched from term.js to xterm.js</li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li>Ensure variable is set if exc_info is falsey</li>
+<li>Catch and log handler exceptions in <code class="code docutils literal"><span class="pre">events.trigger</span></code></li>
+<li>Add debug log for static file paths</li>
+<li>Don’t check origin on token-authenticated requests</li>
+<li>Remove leftover print statement</li>
+<li>Fix highlighting of Python code blocks</li>
+<li><code class="code docutils literal"><span class="pre">json_errors</span></code> should be outermost decorator on API handlers</li>
+<li>Fix remove old nbserver info files</li>
+<li>Fix notebook mime type on download links</li>
+<li>Fix carriage symbol bahvior</li>
+<li>Fix terminal styles</li>
+<li>Update dead links in docs</li>
+<li>If kernel is broken, start a new session</li>
+<li>Include cross-origin check when allowing login URL redirects</li>
+</ul>
+<p>Other improvements:</p>
+<ul class="simple">
+<li>Allow JSON output data with mime type <code class="docutils literal"><span class="pre">application/*+json</span></code></li>
+<li>Allow kernelspecs to have spaces in them for backward compat</li>
+<li>Allow websocket connections from scripts</li>
+<li>Allow <code class="code docutils literal"><span class="pre">None</span></code> for post_save_hook</li>
+<li>Upgrade CodeMirror to 5.21</li>
+<li>Upgrade xterm to 2.1.0</li>
+<li>Docs for using comms</li>
+<li>Set <code class="code docutils literal"><span class="pre">dirty</span></code> flag when output arrives</li>
+<li>Set <code class="code docutils literal"><span class="pre">ws-url</span></code> data attribute when accessing a notebook terminal</li>
+<li>Add base aliases for nbextensions</li>
+<li>Include <code class="code docutils literal"><span class="pre">&#64;</span></code> operator in CodeMirror IPython mode</li>
+<li>Extend mathjax_url docstring</li>
+<li>Load nbextension in predictable order</li>
+<li>Improve the error messages for nbextensions</li>
+<li>Include cross-origin check when allowing login URL redirects</li>
+</ul>
+<p>See the 4.3 milestone on GitHub for a complete list of
+<a class="reference external" href="https://github.com/jupyter/notebook/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20milestone%3A4.3%20">issues</a>
+and <a class="reference external" href="https://github.com/jupyter/notebook/pulls?utf8=%E2%9C%93&amp;q=is%3Apr%20milestone%3A4.3%20">pull requests</a> involved in this release.</p>
+</div>
+<div class="section" id="release-4-2-3">
+<span id="id8"></span><h2>4.2.3<a class="headerlink" href="#release-4-2-3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>4.2.3 is a small bugfix release on 4.2.</p>
+<blockquote>
+<div>Highlights:</div></blockquote>
+<ul class="simple">
+<li>Fix regression in 4.2.2 that delayed loading custom.js
+until after <code class="docutils literal"><span class="pre">notebook_loaded</span></code> and <code class="docutils literal"><span class="pre">app_initialized</span></code> events have fired.</li>
+<li>Fix some outdated docs and links.</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last">4.2.3 <a class="reference external" href="https://github.com/jupyter/notebook/milestones/4.2.3">on GitHub</a>.</p>
+</div>
+</div>
+<div class="section" id="release-4-2-2">
+<span id="id9"></span><h2>4.2.2<a class="headerlink" href="#release-4-2-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>4.2.2 is a small bugfix release on 4.2, with an important security fix.
+All users are strongly encouraged to upgrade to 4.2.2.</p>
+<blockquote>
+<div>Highlights:</div></blockquote>
+<ul class="simple">
+<li><strong>Security fix</strong>: CVE-2016-6524, where untrusted latex output
+could be added to the page in a way that could execute javascript.</li>
+<li>Fix missing POST in OPTIONS responses.</li>
+<li>Fix for downloading non-ascii filenames.</li>
+<li>Avoid clobbering ssl_options, so that users can specify more detailed SSL
+configuration.</li>
+<li>Fix inverted load order in nbconfig, so user config has highest priority.</li>
+<li>Improved error messages here and there.</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last">4.2.2 <a class="reference external" href="https://github.com/jupyter/notebook/milestones/4.2.2">on GitHub</a>.</p>
+</div>
+</div>
+<div class="section" id="release-4-2-1">
+<span id="id10"></span><h2>4.2.1<a class="headerlink" href="#release-4-2-1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>4.2.1 is a small bugfix release on 4.2. Highlights:</p>
+<ul class="simple">
+<li>Compatibility fixes for some versions of ipywidgets</li>
+<li>Fix for ignored CSS on Windows</li>
+<li>Fix specifying destination when installing nbextensions</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last">4.2.1 <a class="reference external" href="https://github.com/jupyter/notebook/milestones/4.2.1">on GitHub</a>.</p>
+</div>
+</div>
+<div class="section" id="release-4-2-0">
+<span id="id11"></span><h2>4.2.0<a class="headerlink" href="#release-4-2-0" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Release 4.2 adds a new API for enabling and installing extensions.
+Extensions can now be enabled at the system-level, rather than just per-user.
+An API is defined for installing directly from a Python package, as well.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference internal" href="examples/Notebook/Distributing Jupyter Extensions as Python Packages.html"><span class="doc">Distributing Jupyter Extensions as Python Packages</span></a></p>
+</div>
+<p>Highlighted changes:</p>
+<ul class="simple">
+<li>Upgrade MathJax to 2.6 to fix vertical-bar appearing on some equations.</li>
+<li>Restore ability for notebook directory to be root (4.1 regression)</li>
+<li>Large outputs are now throttled, reducing the ability of output floods to
+kill the browser.</li>
+<li>Fix the notebook ignoring cell executions while a kernel is starting by
+queueing the messages.</li>
+<li>Fix handling of url prefixes (e.g. JupyterHub) in terminal and edit pages.</li>
+<li>Support nested SVGs in output.</li>
+</ul>
+<p>And various other fixes and improvements.</p>
+</div>
+<div class="section" id="release-4-1-0">
+<span id="id12"></span><h2>4.1.0<a class="headerlink" href="#release-4-1-0" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li>Properly reap zombie subprocesses</li>
+<li>Fix cross-origin problems</li>
+<li>Fix double-escaping of the base URL prefix</li>
+<li>Handle invalid unicode filenames more gracefully</li>
+<li>Fix ANSI color-processing</li>
+<li>Send keepalive messages for web terminals</li>
+<li>Fix bugs in the notebook tour</li>
+</ul>
+<p>UI changes:</p>
+<ul>
+<li><p class="first">Moved the cell toolbar selector into the <em>View</em> menu. Added a button that
+triggers a 「hint」 animation to the main toolbar so users can find the new
+location. (Click here to see a <a class="reference external" href="https://cloud.githubusercontent.com/assets/335567/10711889/59665a5a-7a3e-11e5-970f-86b89592880c.gif">screencast</a> )</p>
+<blockquote>
+<div><img alt="_images/cell-toolbar-41.png" src="_images/cell-toolbar-41.png" />
+</div></blockquote>
+</li>
+<li><p class="first">Added <em>Restart &amp; Run All</em> to the <em>Kernel</em> menu. Users can also bind it to a
+keyboard shortcut on action <code class="docutils literal"><span class="pre">restart-kernel-and-run-all-cells</span></code>.</p>
+</li>
+<li><p class="first">Added multiple-cell selection. Users press <code class="docutils literal"><span class="pre">Shift-Up/Down</span></code> or <code class="docutils literal"><span class="pre">Shift-K/J</span></code>
+to extend selection in command mode. Various actions such as cut/copy/paste,
+execute, and cell type conversions apply to all selected cells.</p>
+<img alt="_images/multi-select-41.png" src="_images/multi-select-41.png" />
+</li>
+<li><p class="first">Added a command palette for executing Jupyter actions by name. Users press
+<code class="docutils literal"><span class="pre">Cmd/Ctrl-Shift-P</span></code> or click the new command palette icon on the toolbar.</p>
+<img alt="_images/command-palette-41.png" src="_images/command-palette-41.png" />
+</li>
+<li><p class="first">Added a <em>Find and Replace</em> dialog to the <em>Edit</em> menu. Users can also press
+<code class="docutils literal"><span class="pre">F</span></code> in command mode to show the dialog.</p>
+<img alt="_images/find-replace-41.png" src="_images/find-replace-41.png" />
+</li>
+</ul>
+<p>Other improvements:</p>
+<ul class="simple">
+<li>Custom KernelManager methods can be Tornado coroutines, allowing async
+operations.</li>
+<li>Make clearing output optional when rewriting input with
+<code class="docutils literal"><span class="pre">set_next_input(replace=True)</span></code>.</li>
+<li>Added support for TLS client authentication via <code class="docutils literal"><span class="pre">--NotebookApp.client-ca</span></code>.</li>
+<li>Added tags to <code class="docutils literal"><span class="pre">jupyter/notebook</span></code> releases on DockerHub. <code class="docutils literal"><span class="pre">latest</span></code>
+continues to track the master branch.</li>
+</ul>
+<p>See the 4.1 milestone on GitHub for a complete list of
+<a class="reference external" href="https://github.com/jupyter/notebook/issues?page=3&amp;q=milestone%3A4.1+is%3Aclosed+is%3Aissue&amp;utf8=%E2%9C%93">issues</a>
+and <a class="reference external" href="https://github.com/jupyter/notebook/pulls?q=milestone%3A4.1+is%3Aclosed+is%3Apr">pull requests</a> handled.</p>
+</div>
+<div class="section" id="x">
+<h2>4.0.x<a class="headerlink" href="#x" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id13">
+<h3>4.0.6<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>fix installation of mathjax support files</li>
+<li>fix some double-escape regressions in 4.0.5</li>
+<li>fix a couple of cases where errors could prevent opening a notebook</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h3>4.0.5<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Security fixes for maliciously crafted files.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.openwall.com/lists/oss-security/2015/09/02/3">CVE-2015-6938</a>: malicious filenames</li>
+<li><a class="reference external" href="http://www.openwall.com/lists/oss-security/2015/09/16/3">CVE-2015-7337</a>: malicious binary files in text editor.</li>
+</ul>
+<p>Thanks to Jonathan Kamens at Quantopian and Juan Broullón for the reports.</p>
+</div>
+<div class="section" id="id15">
+<h3>4.0.4<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Fix inclusion of mathjax-safe extension</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>4.0.2<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Fix launching the notebook on Windows</li>
+<li>Fix the path searched for frontend config</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h3>4.0.0<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>First release of the notebook as a standalone package.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="examples/Notebook/nbpackage/nbs/other.html" class="btn btn-neutral" title="Other notebook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jupyter Team, https://jupyter.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

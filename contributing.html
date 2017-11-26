@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contributing to the Jupyter Notebook &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="Making a Notebook release" href="development_release.html"/>
+        <link rel="prev" title="Custom bundler extensions" href="extending/bundler_extensions.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Jupyter Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザー向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">Jupyterノートブック</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_components.html">UI Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comms.html">Comms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">設定</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config file and command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security in the Jupyter notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend_config.html">Configuring the notebook frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Distributing Jupyter Extensions as Python Packages.html">Distributing Jupyter Extensions as Python Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending/index.html">Extending the Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">貢献者向けドキュメント</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to the Jupyter Notebook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-guidelines">General Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-a-development-environment">Setting Up a Development Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-node-js-and-npm">Installing Node.js and npm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-the-jupyter-notebook">Installing the Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rebuilding-javascript-and-css">Rebuilding JavaScript and CSS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#development-tip">Development Tip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#git-hooks">Git Hooks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-tests">Running Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-tests">Python Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-tests">JavaScript Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-documentation">Building the Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development_release.html">Making a Notebook release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_faq.html">Developer FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">コミュニティ向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/examples_index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/What is the Jupyter Notebook.html">What is the Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Notebook Basics.html">Notebook Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Running Code.html">Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Working With Markdown Cells.html">Markdown Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Custom Keyboard Shortcuts.html">Keyboard Shortcut Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Custom Keyboard Shortcuts.html#Keyboard-Shortcut-Customization-(Pre-Notebook-5.0)">Keyboard Shortcut Customization (Pre Notebook 5.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/JavaScript Notebook Extensions.html">Embracing web standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Importing Notebooks.html">Importing Jupyter Notebooks as Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Connecting with the Qt Console.html">Connecting to an existing IPython kernel using the Qt Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Typesetting Equations.html">Motivating Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/nbpackage/mynotebook.html">My Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/nbpackage/nbs/other.html">Other notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyterノートブックについて</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Jupyter notebook changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">質問ですか？提案ですか？</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://groups.google.com/forum/#!forum/jupyter">Jupyter mailing list</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.org">Jupyter website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter">Stack Overflow - Jupyter</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter-notebook">Stack Overflow - Jupyter-notebook</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Jupyter Notebook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Contributing to the Jupyter Notebook</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/contributing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="contributing-to-the-jupyter-notebook">
+<h1>Contributing to the Jupyter Notebook<a class="headerlink" href="#contributing-to-the-jupyter-notebook" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>If you’re reading this section, you’re probably interested in contributing to
+Jupyter.  Welcome and thanks for your interest in contributing!</p>
+<p>Please take a look at the Contributor documentation, familiarize yourself with
+using the Jupyter Notebook, and introduce yourself on the mailing list and
+share what area of the project you are interested in working on.</p>
+<div class="section" id="general-guidelines">
+<h2>General Guidelines<a class="headerlink" href="#general-guidelines" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>For general documentation about contributing to Jupyter projects, see the
+<a class="reference external" href="https://jupyter.readthedocs.io/en/latest/contributor/content-contributor.html">Project Jupyter Contributor Documentation</a>.</p>
+</div>
+<div class="section" id="setting-up-a-development-environment">
+<h2>Setting Up a Development Environment<a class="headerlink" href="#setting-up-a-development-environment" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="installing-node-js-and-npm">
+<h3>Installing Node.js and npm<a class="headerlink" href="#installing-node-js-and-npm" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Building the Notebook from its GitHub source code requires some tools to
+create and minify JavaScript components and the CSS,
+specifically Node.js and Node’s package manager, <code class="docutils literal"><span class="pre">npm</span></code>.
+It should be node version ≥ 6.0.</p>
+<p>If you use <code class="docutils literal"><span class="pre">conda</span></code>, you can get them with:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>conda install -c conda-forge nodejs
+</pre></div>
+</div>
+<p>If you use <a class="reference external" href="https://brew.sh/">Homebrew</a> on Mac OS X:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>brew install node
+</pre></div>
+</div>
+<p>Installation on Linux may vary, but be aware that the <cite>nodejs</cite> or <cite>npm</cite> packages
+included in the system package repository may be too old to work properly.</p>
+<p>You can also use the installer from the <a class="reference external" href="https://nodejs.org">Node.js website</a>.</p>
+</div>
+<div class="section" id="installing-the-jupyter-notebook">
+<h3>Installing the Jupyter Notebook<a class="headerlink" href="#installing-the-jupyter-notebook" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Once you have installed the dependencies mentioned above, use the following
+steps:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>pip install --upgrade setuptools pip
+git clone https://github.com/jupyter/notebook
+<span class="nb">cd</span> notebook
+pip install -e .
+</pre></div>
+</div>
+<p>If you are using a system-wide Python installation and you only want to install the notebook for you,
+you can add <code class="docutils literal"><span class="pre">--user</span></code> to the install commands.</p>
+<p>Once you have done this, you can launch the master branch of Jupyter notebook
+from any directory in your system with:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jupyter notebook
+</pre></div>
+</div>
+</div>
+<div class="section" id="rebuilding-javascript-and-css">
+<h3>Rebuilding JavaScript and CSS<a class="headerlink" href="#rebuilding-javascript-and-css" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>There is a build step for the JavaScript and CSS in the notebook.
+To make sure that you are working with up-to-date code, you will need to run
+this command whenever there are changes to JavaScript or LESS sources:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>npm run build
+</pre></div>
+</div>
+<p><strong>IMPORTANT:</strong> Don’t forget to run <code class="docutils literal"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">build</span></code> after switching branches.
+When switching between branches of different versions (e.g. <code class="docutils literal"><span class="pre">4.x</span></code> and
+<code class="docutils literal"><span class="pre">master</span></code>), run <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code>. If you have tried the above and still
+find that the notebook is not reflecting the current source code, try cleaning
+the repo with <code class="docutils literal"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-xfd</span></code> and reinstalling with <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code>.</p>
+<div class="section" id="development-tip">
+<h4>Development Tip<a class="headerlink" href="#development-tip" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>When doing development, you can use this command to automatically rebuild
+JavaScript and LESS sources as they are modified:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>npm run build:watch
+</pre></div>
+</div>
+</div>
+<div class="section" id="git-hooks">
+<h4>Git Hooks<a class="headerlink" href="#git-hooks" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>If you want to automatically update dependencies and recompile JavaScript and
+CSS after checking out a new commit, you can install post-checkout and
+post-merge hooks which will do it for you:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>git-hooks/install-hooks.sh
+</pre></div>
+</div>
+<p>See <code class="docutils literal"><span class="pre">git-hooks/README.md</span></code> for more details.</p>
+</div>
+</div>
+</div>
+<div class="section" id="running-tests">
+<h2>Running Tests<a class="headerlink" href="#running-tests" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="python-tests">
+<h3>Python Tests<a class="headerlink" href="#python-tests" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Install dependencies:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>pip install -e .<span class="o">[</span>test<span class="o">]</span>
+</pre></div>
+</div>
+<p>To run the Python tests, use:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>nosetests
+</pre></div>
+</div>
+<p>If you want coverage statistics as well, you can run:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>nosetests --with-coverage --cover-package<span class="o">=</span>notebook notebook
+</pre></div>
+</div>
+</div>
+<div class="section" id="javascript-tests">
+<h3>JavaScript Tests<a class="headerlink" href="#javascript-tests" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>To run the JavaScript tests, you will need to have PhantomJS and CasperJS
+installed:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>npm install -g casperjs phantomjs-prebuilt
+</pre></div>
+</div>
+<p>Then, to run the JavaScript tests:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>python -m notebook.jstest <span class="o">[</span>group<span class="o">]</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal"><span class="pre">[group]</span></code> is an optional argument that is a path relative to
+<code class="docutils literal"><span class="pre">notebook/tests/</span></code>.
+For example, to run all tests in <code class="docutils literal"><span class="pre">notebook/tests/notebook</span></code>:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>python -m notebook.jstest notebook
+</pre></div>
+</div>
+<p>or to run just <code class="docutils literal"><span class="pre">notebook/tests/notebook/deletecell.js</span></code>:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>python -m notebook.jstest notebook/deletecell.js
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="building-the-documentation">
+<h2>Building the Documentation<a class="headerlink" href="#building-the-documentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To build the documentation you’ll need <a class="reference external" href="http://www.sphinx-doc.org/">Sphinx</a>,
+<a class="reference external" href="http://pandoc.org/">pandoc</a> and a few other packages.</p>
+<p>To install (and activate) a <a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file">conda environment</a> named <code class="docutils literal"><span class="pre">notebook_docs</span></code>
+containing all the necessary packages (except pandoc), use:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>conda env create -f docs/environment.yml
+<span class="nb">source</span> activate notebook_docs  <span class="c1"># Linux and OS X</span>
+activate notebook_docs         <span class="c1"># Windows</span>
+</pre></div>
+</div>
+<p>If you want to install the necessary packages with <code class="docutils literal"><span class="pre">pip</span></code> instead:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>pip install -r docs/doc-requirements.txt
+</pre></div>
+</div>
+<p>Once you have installed the required packages, you can build the docs with:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">cd</span> docs
+make html
+</pre></div>
+</div>
+<p>After that, the generated HTML files will be available at
+<code class="docutils literal"><span class="pre">build/html/index.html</span></code>. You may view the docs in your browser.</p>
+<p>You can automatically check if all hyperlinks are still valid:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>make linkcheck
+</pre></div>
+</div>
+<p>Windows users can find <code class="docutils literal"><span class="pre">make.bat</span></code> in the <code class="docutils literal"><span class="pre">docs</span></code> folder.</p>
+<p>You should also have a look at the <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/contrib_docs/index.html">Project Jupyter Documentation Guide</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="development_release.html" class="btn btn-neutral float-right" title="Making a Notebook release" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="extending/bundler_extensions.html" class="btn btn-neutral" title="Custom bundler extensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jupyter Team, https://jupyter.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Custom bundler extensions &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="検索" href="../search.html"/>
+    <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="../index.html"/>
+        <link rel="up" title="Extending the Notebook" href="index.html"/>
+        <link rel="next" title="Contributing to the Jupyter Notebook" href="../contributing.html"/>
+        <link rel="prev" title="Customize keymaps" href="keymaps.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Jupyter Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザー向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook.html">Jupyterノートブック</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui_components.html">UI Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comms.html">Comms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">設定</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config.html">Config file and command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html">Security in the Jupyter notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend_config.html">Configuring the notebook frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Distributing Jupyter Extensions as Python Packages.html">Distributing Jupyter Extensions as Python Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extending the Notebook</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contents.html">Contents API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savehooks.html">File save hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="handlers.html">Custom request handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend_extensions.html">Custom front-end extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keymaps.html">Customize keymaps</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Custom bundler extensions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#declaring-bundler-metadata">Declaring bundler metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-the-bundle-function">Writing the <cite>bundle</cite> function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-disabling-bundler-extensions">Enabling/disabling bundler extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-ipython-notebook-bundle-zip">Example: IPython Notebook bundle (.zip)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bundler-invocation-details">Bundler invocation details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">貢献者向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to the Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_release.html">Making a Notebook release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_faq.html">Developer FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">コミュニティ向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/examples_index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/What is the Jupyter Notebook.html">What is the Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Notebook Basics.html">Notebook Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Running Code.html">Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Working With Markdown Cells.html">Markdown Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Custom Keyboard Shortcuts.html">Keyboard Shortcut Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Custom Keyboard Shortcuts.html#Keyboard-Shortcut-Customization-(Pre-Notebook-5.0)">Keyboard Shortcut Customization (Pre Notebook 5.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/JavaScript Notebook Extensions.html">Embracing web standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Importing Notebooks.html">Importing Jupyter Notebooks as Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Connecting with the Qt Console.html">Connecting to an existing IPython kernel using the Qt Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Typesetting Equations.html">Motivating Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/nbpackage/mynotebook.html">My Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/nbpackage/nbs/other.html">Other notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyterノートブックについて</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Jupyter notebook changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">質問ですか？提案ですか？</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://groups.google.com/forum/#!forum/jupyter">Jupyter mailing list</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.org">Jupyter website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter">Stack Overflow - Jupyter</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter-notebook">Stack Overflow - Jupyter-notebook</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Jupyter Notebook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Extending the Notebook</a> &raquo;</li>
+        
+      <li>Custom bundler extensions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/extending/bundler_extensions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="custom-bundler-extensions">
+<h1>Custom bundler extensions<a class="headerlink" href="#custom-bundler-extensions" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The notebook server supports the writing of <em>bundler extensions</em> that
+transform, package, and download/deploy notebook files. As a developer, you
+need only write a single Python function to implement a bundler. The notebook
+server automatically generates a <em>File -&gt; Download as</em> or <em>File -&gt; Deploy as</em>
+menu item in the notebook front-end to trigger your bundler.</p>
+<p>Here are some examples of what you can implement using bundler extensions:</p>
+<ul class="simple">
+<li>Convert a notebook file to a HTML document and publish it as a post on a
+blog site</li>
+<li>Create a snapshot of the current notebook environment and bundle that
+definition plus notebook into a zip download</li>
+<li>Deploy a notebook as a standalone, interactive <a class="reference external" href="https://github.com/jupyter-incubator/dashboards_bundlers">dashboard</a></li>
+</ul>
+<p>To implement a bundler extension, you must do all of the following:</p>
+<ul class="simple">
+<li>Declare bundler extension metadata in your Python package</li>
+<li>Write a <cite>bundle</cite> function that responds to bundle requests</li>
+<li>Instruct your users on how to enable/disable your bundler extension</li>
+</ul>
+<p>The following sections describe these steps in detail.</p>
+<div class="section" id="declaring-bundler-metadata">
+<h2>Declaring bundler metadata<a class="headerlink" href="#declaring-bundler-metadata" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You must provide information about the bundler extension(s) your package
+provides by implementing a <cite>_jupyter_bundlerextensions_paths</cite> function. This
+function can reside anywhere in your package so long as it can be imported
+when enabling the bundler extension. (See <a class="reference internal" href="#enabling-bundlers"><span class="std std-ref">Enabling/disabling bundler extensions</span></a>.)</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># in mypackage.hello_bundler</span>
+
+<span class="k">def</span> <span class="nf">_jupyter_bundlerextension_paths</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Example &quot;hello world&quot; bundler extension&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;hello_bundler&#39;</span><span class="p">,</span>                    <span class="c1"># unique bundler name</span>
+        <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello Bundler&#39;</span><span class="p">,</span>                   <span class="c1"># human-redable menu item label</span>
+        <span class="s1">&#39;module_name&#39;</span><span class="p">:</span> <span class="s1">&#39;mypackage.hello_bundler&#39;</span><span class="p">,</span>   <span class="c1"># module containing bundle()</span>
+        <span class="s1">&#39;group&#39;</span><span class="p">:</span> <span class="s1">&#39;deploy&#39;</span>                           <span class="c1"># group under &#39;deploy&#39; or &#39;download&#39; menu</span>
+    <span class="p">}]</span>
+</pre></div>
+</div>
+<p>Note that the return value is a list. By returning multiple dictionaries in
+the list, you allow users to enable/disable sets of bundlers all at once.</p>
+</div>
+<div class="section" id="writing-the-bundle-function">
+<h2>Writing the <cite>bundle</cite> function<a class="headerlink" href="#writing-the-bundle-function" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>At runtime, a menu item with the given label appears either in the
+<em>File -&gt;  Deploy as</em> or <em>File -&gt; Download as</em> menu depending on the <cite>group</cite>
+value in your metadata. When a user clicks the menu item, a new browser tab
+opens and notebook server invokes a <cite>bundle</cite> function in the <cite>module_name</cite>
+specified in the metadata.</p>
+<p>You must implement a <cite>bundle</cite> function that matches the signature of the
+following example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># in mypackage.hello_bundler</span>
+
+<span class="k">def</span> <span class="nf">bundle</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Transform, convert, bundle, etc. the notebook referenced by the given</span>
+<span class="sd">    model.</span>
+
+<span class="sd">    Then issue a Tornado web response using the `handler` to redirect</span>
+<span class="sd">    the user&#39;s browser, download a file, show a HTML page, etc. This function</span>
+<span class="sd">    must finish the handler response before returning either explicitly or by</span>
+<span class="sd">    raising an exception.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    handler : tornado.web.RequestHandler</span>
+<span class="sd">        Handler that serviced the bundle request</span>
+<span class="sd">    model : dict</span>
+<span class="sd">        Notebook model from the configured ContentManager</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">handler</span><span class="o">.</span><span class="n">finish</span><span class="p">(</span><span class="s1">&#39;I bundled {}!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Your <cite>bundle</cite> function is free to do whatever it wants with the request and
+respond in any manner. For example, it may read additional query parameters
+from the request, issue a redirect to another site, run a local process (e.g.,
+<cite>nbconvert</cite>), make a HTTP request to another service, etc.</p>
+<p>The caller of the <cite>bundle</cite> function is <cite>&#64;tornado.gen.coroutine</cite> decorated and
+wraps its call with <cite>torando.gen.maybe_future</cite>. This behavior means you may
+handle the web request synchronously, as in the example above, or
+asynchronously using <cite>&#64;tornado.gen.coroutine</cite> and <cite>yield</cite>, as in the example
+below.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tornado</span> <span class="kn">import</span> <span class="n">gen</span>
+
+<span class="nd">@gen.coroutine</span>
+<span class="k">def</span> <span class="nf">bundle</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+  <span class="c1"># simulate a long running IO op (e.g., deploying to a remote host)</span>
+  <span class="k">yield</span> <span class="n">gen</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+  <span class="c1"># now respond</span>
+  <span class="n">handler</span><span class="o">.</span><span class="n">finish</span><span class="p">(</span><span class="s1">&#39;I spent 10 seconds bundling {}!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>You should prefer the second, asynchronous approach when your bundle operation
+is long-running and would otherwise block the notebook server main loop if
+handled synchronously.</p>
+<p>For more details about the data flow from menu item click to bundle function
+invocation, see <a class="reference internal" href="#bundler-details"><span class="std std-ref">Bundler invocation details</span></a>.</p>
+</div>
+<div class="section" id="enabling-disabling-bundler-extensions">
+<span id="enabling-bundlers"></span><h2>Enabling/disabling bundler extensions<a class="headerlink" href="#enabling-disabling-bundler-extensions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The notebook server includes a command line interface (CLI) for enabling and
+disabling bundler extensions.</p>
+<p>You should document the basic commands for enabling and disabling your
+bundler. One possible command for enabling the <cite>hello_bundler</cite> example is the
+following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>jupyter bundlerextension <span class="nb">enable</span> --py mypackage.hello_bundler --sys-prefix
+</pre></div>
+</div>
+<p>The above updates the notebook configuration file in the current
+conda/virtualenv environment (<cite>–sys-prefix</cite>) with the metadata returned by
+the <cite>mypackage.hellow_bundler._jupyter_bundlerextension_paths</cite> function.</p>
+<p>The corresponding command to later disable the bundler extension is the
+following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>jupyter bundlerextension disable --py mypackage.hello_bundler --sys-prefix
+</pre></div>
+</div>
+<p>For more help using the <cite>bundlerextension</cite> subcommand, run the following.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>jupyter bundlerextension --help
+</pre></div>
+</div>
+<p>The output describes options for listing enabled bundlers, configuring
+bundlers for single users, configuring bundlers system-wide, etc.</p>
+</div>
+<div class="section" id="example-ipython-notebook-bundle-zip">
+<h2>Example: IPython Notebook bundle (.zip)<a class="headerlink" href="#example-ipython-notebook-bundle-zip" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The <cite>hello_bundler</cite> example in this documentation is simplisitic in the name
+of brevity. For more meaningful examples, see
+<cite>notebook/bundler/zip_bundler.py</cite> and <cite>notebook/bundler/tarball_bundler.py</cite>.
+You can enable them to try them like so:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>jupyter bundlerextension <span class="nb">enable</span> --py notebook.bundler.zip_bundler --sys-prefix
+jupyter bundlerextension <span class="nb">enable</span> --py notebook.bundler.tarball_bundler --sys-prefix
+</pre></div>
+</div>
+</div>
+<div class="section" id="bundler-invocation-details">
+<span id="bundler-details"></span><h2>Bundler invocation details<a class="headerlink" href="#bundler-invocation-details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Support for bundler extensions comes from Python modules in <cite>notebook/bundler</cite>
+and JavaScript in <cite>notebook/static/notebook/js/menubar.js</cite>. The flow of data
+between the various components proceeds roughly as follows:</p>
+<ol class="arabic simple">
+<li>User opens a notebook document</li>
+<li>Notebook front-end JavaScript loads notebook configuration</li>
+<li>Bundler front-end JS creates menu items for all bundler extensions in the
+config</li>
+<li>User clicks a bundler menu item</li>
+<li>JS click handler opens a new browser window/tab to
+<cite>&lt;notebook base_url&gt;/bundle/&lt;path/to/notebook&gt;?bundler=&lt;name&gt;</cite> (i.e., a
+HTTP GET request)</li>
+<li>Bundle handler validates the notebook path and bundler <cite>name</cite></li>
+<li>Bundle handler delegates the request to the <cite>bundle</cite> function in the
+bundler’s <cite>module_name</cite></li>
+<li><cite>bundle</cite> function finishes the HTTP request</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contributing.html" class="btn btn-neutral float-right" title="Contributing to the Jupyter Notebook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="keymaps.html" class="btn btn-neutral" title="Customize keymaps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jupyter Team, https://jupyter.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'5.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

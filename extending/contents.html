@@ -1,0 +1,595 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contents API &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="検索" href="../search.html"/>
+    <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="../index.html"/>
+        <link rel="up" title="Extending the Notebook" href="index.html"/>
+        <link rel="next" title="File save hooks" href="savehooks.html"/>
+        <link rel="prev" title="Extending the Notebook" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Jupyter Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザー向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook.html">Jupyterノートブック</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui_components.html">UI Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comms.html">Comms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">設定</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config.html">Config file and command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html">Security in the Jupyter notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend_config.html">Configuring the notebook frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Distributing Jupyter Extensions as Python Packages.html">Distributing Jupyter Extensions as Python Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extending the Notebook</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Contents API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-model">Data Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#filesystem-entities">Filesystem Entities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api-paths">API Paths</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-a-custom-contentsmanager">Writing a Custom ContentsManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-methods">Required Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#customizing-checkpoints">Customizing Checkpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="savehooks.html">File save hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="handlers.html">Custom request handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend_extensions.html">Custom front-end extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keymaps.html">Customize keymaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bundler_extensions.html">Custom bundler extensions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">貢献者向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to the Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_release.html">Making a Notebook release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_faq.html">Developer FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">コミュニティ向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/examples_index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/What is the Jupyter Notebook.html">What is the Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Notebook Basics.html">Notebook Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Running Code.html">Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Working With Markdown Cells.html">Markdown Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Custom Keyboard Shortcuts.html">Keyboard Shortcut Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Custom Keyboard Shortcuts.html#Keyboard-Shortcut-Customization-(Pre-Notebook-5.0)">Keyboard Shortcut Customization (Pre Notebook 5.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/JavaScript Notebook Extensions.html">Embracing web standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Importing Notebooks.html">Importing Jupyter Notebooks as Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Connecting with the Qt Console.html">Connecting to an existing IPython kernel using the Qt Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Typesetting Equations.html">Motivating Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/nbpackage/mynotebook.html">My Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/nbpackage/nbs/other.html">Other notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyterノートブックについて</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Jupyter notebook changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">質問ですか？提案ですか？</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://groups.google.com/forum/#!forum/jupyter">Jupyter mailing list</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.org">Jupyter website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter">Stack Overflow - Jupyter</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter-notebook">Stack Overflow - Jupyter-notebook</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Jupyter Notebook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Extending the Notebook</a> &raquo;</li>
+        
+      <li>Contents API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/extending/contents.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="contents-api">
+<span id="id1"></span><h1>Contents API<a class="headerlink" href="#contents-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The Jupyter Notebook web application provides a graphical interface for
+creating, opening, renaming, and deleting files in a virtual filesystem.</p>
+<p>The <code class="xref py py-class docutils literal"><span class="pre">ContentsManager</span></code> class defines an abstract
+API for translating these interactions into operations on a particular storage
+medium. The default implementation,
+<code class="xref py py-class docutils literal"><span class="pre">FileContentsManager</span></code>, uses the local
+filesystem of the server for storage and straightforwardly serializes notebooks
+into JSON.  Users can override these behaviors by supplying custom subclasses
+of ContentsManager.</p>
+<p>This section describes the interface implemented by ContentsManager subclasses.
+We refer to this interface as the <strong>Contents API</strong>.</p>
+<div class="section" id="data-model">
+<h2>Data Model<a class="headerlink" href="#data-model" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="filesystem-entities">
+<h3>Filesystem Entities<a class="headerlink" href="#filesystem-entities" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p id="notebook-models">ContentsManager methods represent virtual filesystem entities as dictionaries,
+which we refer to as <strong>models</strong>.</p>
+<p>Models may contain the following entries:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="18%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Type</th>
+<th class="head">Info</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>name</strong></td>
+<td>unicode</td>
+<td>Basename of the entity.</td>
+</tr>
+<tr class="row-odd"><td><strong>path</strong></td>
+<td>unicode</td>
+<td>Full
+(<a class="reference internal" href="#apipaths"><span class="std std-ref">API-style</span></a>)
+path to the entity.</td>
+</tr>
+<tr class="row-even"><td><strong>type</strong></td>
+<td>unicode</td>
+<td>The entity type. One of
+<code class="docutils literal"><span class="pre">&quot;notebook&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;file&quot;</span></code> or
+<code class="docutils literal"><span class="pre">&quot;directory&quot;</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><strong>created</strong></td>
+<td>datetime</td>
+<td>Creation date of the entity.</td>
+</tr>
+<tr class="row-even"><td><strong>last_modified</strong></td>
+<td>datetime</td>
+<td>Last modified date of the
+entity.</td>
+</tr>
+<tr class="row-odd"><td><strong>content</strong></td>
+<td>variable</td>
+<td>The 「content」 of the entity.
+(<a class="reference internal" href="#modelcontent"><span class="std std-ref">See
+Below</span></a>)</td>
+</tr>
+<tr class="row-even"><td><strong>mimetype</strong></td>
+<td>unicode or
+<code class="docutils literal"><span class="pre">None</span></code></td>
+<td>The mimetype of <code class="docutils literal"><span class="pre">content</span></code>,
+if any.  (<a class="reference internal" href="#modelcontent"><span class="std std-ref">See
+Below</span></a>)</td>
+</tr>
+<tr class="row-odd"><td><strong>format</strong></td>
+<td>unicode or
+<code class="docutils literal"><span class="pre">None</span></code></td>
+<td>The format of <code class="docutils literal"><span class="pre">content</span></code>,
+if any. (<a class="reference internal" href="#modelcontent"><span class="std std-ref">See
+Below</span></a>)</td>
+</tr>
+</tbody>
+</table>
+<p id="modelcontent">Certain model fields vary in structure depending on the <code class="docutils literal"><span class="pre">type</span></code> field of the
+model. There are three model types: <strong>notebook</strong>, <strong>file</strong>, and <strong>directory</strong>.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">notebook</span></code> models</dt>
+<dd><ul class="first last">
+<li>The <code class="docutils literal"><span class="pre">format</span></code> field is always <code class="docutils literal"><span class="pre">&quot;json&quot;</span></code>.</li>
+<li>The <code class="docutils literal"><span class="pre">mimetype</span></code> field is always <code class="docutils literal"><span class="pre">None</span></code>.</li>
+<li>The <code class="docutils literal"><span class="pre">content</span></code> field contains a
+<code class="xref py py-class docutils literal"><span class="pre">nbformat.notebooknode.NotebookNode</span></code> representing the .ipynb file
+represented by the model.  See the <a class="reference external" href="https://nbformat.readthedocs.io/en/latest/index.html">NBFormat</a> documentation for a full
+description.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">file</span></code> models</dt>
+<dd><ul class="first last">
+<li>The <code class="docutils literal"><span class="pre">format</span></code> field is either <code class="docutils literal"><span class="pre">&quot;text&quot;</span></code> or <code class="docutils literal"><span class="pre">&quot;base64&quot;</span></code>.</li>
+<li>The <code class="docutils literal"><span class="pre">mimetype</span></code> field is <code class="docutils literal"><span class="pre">text/plain</span></code> for text-format models and
+<code class="docutils literal"><span class="pre">application/octet-stream</span></code> for base64-format models.</li>
+<li>The <code class="docutils literal"><span class="pre">content</span></code> field is always of type <code class="docutils literal"><span class="pre">unicode</span></code>.  For text-format
+file models, <code class="docutils literal"><span class="pre">content</span></code> simply contains the file’s bytes after decoding
+as UTF-8.  Non-text (<code class="docutils literal"><span class="pre">base64</span></code>) files are read as bytes, base64 encoded,
+and then decoded as UTF-8.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">directory</span></code> models</dt>
+<dd><ul class="first last">
+<li>The <code class="docutils literal"><span class="pre">format</span></code> field is always <code class="docutils literal"><span class="pre">&quot;json&quot;</span></code>.</li>
+<li>The <code class="docutils literal"><span class="pre">mimetype</span></code> field is always <code class="docutils literal"><span class="pre">None</span></code>.</li>
+<li>The <code class="docutils literal"><span class="pre">content</span></code> field contains a list of <a class="reference internal" href="#contentfree"><span class="std std-ref">content-free</span></a>
+models representing the entities in the directory.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last" id="contentfree">In certain circumstances, we don’t need the full content of an entity to
+complete a Contents API request.  In such cases, we omit the <code class="docutils literal"><span class="pre">mimetype</span></code>,
+<code class="docutils literal"><span class="pre">content</span></code>, and <code class="docutils literal"><span class="pre">format</span></code> keys from the model. This most commonly occurs
+when listing a directory, in which circumstance we represent files within
+the directory as content-less models to avoid having to recursively traverse
+and serialize the entire filesystem.</p>
+</div>
+<p><strong>Sample Models</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Notebook Model with Content</span>
+<span class="p">{</span>
+    <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;nbformat&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;nbformat_minor&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;cells&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">&#39;cell_type&#39;</span><span class="p">:</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="p">{},</span>
+                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="s1">&#39;Some **Markdown**&#39;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;created&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">19865</span><span class="p">),</span>
+    <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;last_modified&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">19865</span><span class="p">),</span>
+    <span class="s1">&#39;mimetype&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;a.ipynb&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;foo/a.ipynb&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;notebook&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;writable&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Notebook Model without Content</span>
+<span class="p">{</span>
+    <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s1">&#39;created&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">271931</span><span class="p">),</span>
+    <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s1">&#39;last_modified&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">271931</span><span class="p">),</span>
+    <span class="s1">&#39;mimetype&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;a.ipynb&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;foo/a.ipynb&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;notebook&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;writable&#39;</span><span class="p">:</span> <span class="bp">True</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api-paths">
+<h3>API Paths<a class="headerlink" href="#api-paths" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p id="apipaths">ContentsManager methods represent the locations of filesystem resources as
+<strong>API-style paths</strong>.  Such paths are interpreted as relative to the root
+directory of the notebook server.  For compatibility across systems, the
+following guarantees are made:</p>
+<ul class="simple">
+<li>Paths are always <code class="docutils literal"><span class="pre">unicode</span></code>, not <code class="docutils literal"><span class="pre">bytes</span></code>.</li>
+<li>Paths are not URL-escaped.</li>
+<li>Paths are always forward-slash (/) delimited, even on Windows.</li>
+<li>Leading and trailing slashes are stripped.  For example, <code class="docutils literal"><span class="pre">/foo/bar/buzz/</span></code>
+becomes <code class="docutils literal"><span class="pre">foo/bar/buzz</span></code>.</li>
+<li>The empty string (<code class="docutils literal"><span class="pre">&quot;&quot;</span></code>) represents the root directory.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="writing-a-custom-contentsmanager">
+<h2>Writing a Custom ContentsManager<a class="headerlink" href="#writing-a-custom-contentsmanager" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The default ContentsManager is designed for users running the notebook as an
+application on a personal computer.  It stores notebooks as .ipynb files on the
+local filesystem, and it maps files and directories in the Notebook UI to files
+and directories on disk.  It is possible to override how notebooks are stored
+by implementing your own custom subclass of <code class="docutils literal"><span class="pre">ContentsManager</span></code>. For example,
+if you deploy the notebook in a context where you don’t trust or don’t have
+access to the filesystem of the notebook server, it’s possible to write your
+own ContentsManager that stores notebooks and files in a database.</p>
+<div class="section" id="required-methods">
+<h3>Required Methods<a class="headerlink" href="#required-methods" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>A minimal complete implementation of a custom
+<code class="xref py py-class docutils literal"><span class="pre">ContentsManager</span></code> must implement the following
+methods:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">ContentsManager.get</span></code>(path[,&nbsp;content,&nbsp;type,&nbsp;…])</td>
+<td>Get a file or directory model.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">ContentsManager.save</span></code>(model,&nbsp;path)</td>
+<td>Save a file or directory model to path.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">ContentsManager.delete_file</span></code>(path)</td>
+<td>Delete the file or directory at path.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">ContentsManager.rename_file</span></code>(old_path,&nbsp;new_path)</td>
+<td>Rename a file or directory.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">ContentsManager.file_exists</span></code>([path])</td>
+<td>Does a file exist at the given path?</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">ContentsManager.dir_exists</span></code>(path)</td>
+<td>Does a directory exist at the given path?</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">ContentsManager.is_hidden</span></code>(path)</td>
+<td>Is path a hidden directory or file?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="customizing-checkpoints">
+<h2>Customizing Checkpoints<a class="headerlink" href="#customizing-checkpoints" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>TODO:</p>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="xref py py-mod docutils literal"><span class="pre">notebook.services.contents.tests</span></code> includes several test suites written
+against the abstract Contents API.  This means that an excellent way to test a
+new ContentsManager subclass is to subclass our tests to make them use your
+ContentsManager.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><a class="reference external" href="https://github.com/quantopian/pgcontents">PGContents</a> is an example of a complete implementation of a custom
+<code class="docutils literal"><span class="pre">ContentsManager</span></code>.  It stores notebooks and files in <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a> and encodes
+directories as SQL relations.  PGContents also provides an example of how to
+re-use the notebook’s tests.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="savehooks.html" class="btn btn-neutral float-right" title="File save hooks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Extending the Notebook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jupyter Team, https://jupyter.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'5.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

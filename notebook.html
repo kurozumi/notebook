@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Jupyterノートブック &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="UI Components" href="ui_components.html"/>
+        <link rel="prev" title="Jupyterノートブック" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Jupyter Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザー向けドキュメント</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jupyterノートブック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">はじめに</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main-features-of-the-web-application">Webアプリケーションの主な機能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notebook-documents">ノートブックドキュメント</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-notebook-server">ノートブックサーバーの起動</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-notebook-document">新しいノートブックドキュメントの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opening-notebooks">ノートブックを開く</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#notebook-user-interface">ノートブックのユーザーインターフェース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structure-of-a-notebook-document">ノートブック文書の構造</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-cells">Code cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#markdown-cells">Markdown cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raw-cells">Raw cells</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-workflow">Basic workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-kernels">Installing kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signing-notebooks">Signing Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#browser-compatibility">Browser Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_components.html">UI Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comms.html">Comms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">設定</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config file and command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security in the Jupyter notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend_config.html">Configuring the notebook frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Distributing Jupyter Extensions as Python Packages.html">Distributing Jupyter Extensions as Python Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending/index.html">Extending the Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">貢献者向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_release.html">Making a Notebook release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_faq.html">Developer FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">コミュニティ向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/examples_index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/What is the Jupyter Notebook.html">What is the Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Notebook Basics.html">Notebook Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Running Code.html">Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Working With Markdown Cells.html">Markdown Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Custom Keyboard Shortcuts.html">Keyboard Shortcut Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Custom Keyboard Shortcuts.html#Keyboard-Shortcut-Customization-(Pre-Notebook-5.0)">Keyboard Shortcut Customization (Pre Notebook 5.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/JavaScript Notebook Extensions.html">Embracing web standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Importing Notebooks.html">Importing Jupyter Notebooks as Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Connecting with the Qt Console.html">Connecting to an existing IPython kernel using the Qt Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Typesetting Equations.html">Motivating Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/nbpackage/mynotebook.html">My Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Notebook/nbpackage/nbs/other.html">Other notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyterノートブックについて</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Jupyter notebook changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">質問ですか？提案ですか？</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://groups.google.com/forum/#!forum/jupyter">Jupyter mailing list</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.org">Jupyter website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter">Stack Overflow - Jupyter</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter-notebook">Stack Overflow - Jupyter-notebook</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Jupyter Notebook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Jupyterノートブック</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/notebook.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="the-jupyter-notebook">
+<span id="htmlnotebook"></span><h1>Jupyterノートブック<a class="headerlink" href="#the-jupyter-notebook" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="introduction">
+<h2>はじめに<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ノートブックは、対話型コンピューティングへのコンソールベースのアプローチを定性的に新しい方向に拡張し、計算プロセス全体をキャプチャするのに適したWebベースのアプリケーションを提供します:結果をコミュニケーションするように、コードの開発、文書化、実行が出来ます。Jupyter Notebookは2つのコンポーネントを組み合わせています:</p>
+<p><strong>Webアプリケーション</strong>: 説明文、数学、計算、リッチメディアの出力を組み合わせた対話的なオーサリング用のブラウザベースのツールです。</p>
+<p><strong>ノートブックドキュメント</strong>: 説明文、数学、画像およびリッチメディアのオブジェクト表現の入力と出力を含む、Webアプリケーションで表示可能なすべてのコンテンツ表現です。</p>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last">ノートブックとその依存関係のインストール方法については、 <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html#install" title="(in Jupyter Documentation v4.1)"><span class="xref std std-ref">installation guide</span></a> を参照して下さい。</p>
+</div>
+<div class="section" id="main-features-of-the-web-application">
+<h3>Webアプリケーションの主な機能<a class="headerlink" href="#main-features-of-the-web-application" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>自動シンタックスハイライト、インデント、タブの保管とイントロスペクションによるコードのブラウザ内編集。</li>
+<li>ブラウザからコードを実行し、生成したコードに計算結果を添付する機能。</li>
+<li>HTML、LaTeX、PNG、SVGなどのリッチメディア表現を使用した計算結果の表示。例えば、<a class="reference external" href="http://matplotlib.org">matplotlib</a> ライブラリによってレンダリングされたPublication-quality figureをインラインに含めることが出来ます。</li>
+<li>コードの解説を提供できる <a class="reference external" href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> マークアップ言語を使用したリッチテキストのブラウザ内編集は、プレーンテキストに限らずコードの解説を提供します。</li>
+<li>LaTeXを使用してマークダウンセル内に簡単に数式表記を含めることができ、<a class="reference external" href="https://www.mathjax.org/">MathJax</a> によってネイティブにレンダリングされます。</li>
+</ul>
+</div>
+<div class="section" id="notebook-documents">
+<h3>ノートブックドキュメント<a class="headerlink" href="#notebook-documents" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ノートブックドキュメントには、インタラクティブ・セッションのインプットとアウトプットと、コードに付随する実行用ではない追加のテキストが含まれています。このようにして、Notebookファイルは、セッションの完全な計算記録として機能し、実行可能なコードを説明文、数学、および結果として生じるオブジェクトのリッチ表現とインタリーブすることができます。これらのドキュメントは内部的に <a class="reference external" href="https://en.wikipedia.org/wiki/JSON">JSON</a>  ファイルで、<code class="docutils literal"><span class="pre">.ipynb</span></code> 拡張子で保存されます。JSONはプレーンテキスト形式なので、バージョン管理や同僚との共有が可能です。</p>
+<p>ノートブックは、<a class="reference external" href="https://nbconvert.readthedocs.io/en/latest/">nbconvert</a> コマンドを使用して、HTML（ブログ投稿など）、reStructuredText、LaTeX、PDF、およびスライドショーなど、さまざまな静的フォーマットにエクスポートできます。</p>
+<p>さらに、パブリックなURLから入手可能な <code class="docutils literal"><span class="pre">.ipynb</span></code> のノートブックドキュメントは、<a class="reference external" href="nbviewer">Jupyter Notebook Viewer</a> (<a class="reference external" href="http://nbviewer.jupyter.org">nbviewer</a>)を介して共有することが出来ます。このサービスは、ノートブックドキュメントをURLからロードし、静的なWebページとしてレンダリングします。その結果は同僚や、Jupyterノートブック自体をインストールする必要なく他のユーザーにパブリックなブログ投稿として共有できます。つまり、<a class="reference external" href="http://nbviewer.jupyter.org">nbviewer</a> は単にWebサービスとしてに <a class="reference external" href="https://nbconvert.readthedocs.io/en/latest/">nbconvert</a> するだけなので、nbviewerに依存することなく、nbconvertで独自の静的変換を行うことができます。</p>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference external" href="https://nbformat.readthedocs.io/en/latest/format_description.html#notebook-file-format" title="(in nbformat v4.5)"><span class="xref std std-ref">Details on the notebook JSON file format</span></a></p>
+</div>
+</div>
+</div>
+<div class="section" id="starting-the-notebook-server">
+<h2>ノートブックサーバーの起動<a class="headerlink" href="#starting-the-notebook-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次のコマンドを使ってコマンドラインからノートブックサーバーを起動することが出来ます:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>これにより、ノートブックサーバに関する情報がコンソールに表示され、WEBブラウザが開き、WEBアプリケーションのURLが開きます(デフォルトは <code class="docutils literal"><span class="pre">http://127.0.0.1:8888</span></code>)。</p>
+<p>Jupyterノートブック Webアプリケーションのランディングページである <strong>dashboard</strong> には、ノートブックディレクトリで現在利用可能なノートブックが表示されます(デフォルトでは、ノートブックサーバーが起動されたディレクトリ)。</p>
+<p><code class="docutils literal"><span class="pre">New</span> <span class="pre">Notebook</span></code> ボタンでダッシュボードから新しいノートブックを作成したり、既存のノートブックを開くことが出来ます。ノートブックリストのエリアに <code class="docutils literal"><span class="pre">.ipyng</span></code> のノートブックや標準の <code class="docutils literal"><span class="pre">.py</span></code> のPythonソースコードをドラッグアンドドロップすることも出来ます。</p>
+<p>コマンドラインからノートブックサーバーを起動する時、<code class="docutils literal"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">my_notebook.ipynb</span></code> でダッシュボードをバイパスして、特定のノートブックを直接開くことが出来ます。拡張子がない場合、 <code class="docutils literal"><span class="pre">.ipynb</span></code> 拡張子が仮定されます。</p>
+<p>開いてるノートブックの中にいるとき、<cite>File | Open…</cite> メニューオプションは新しいブラウザータブにダッシュボードを開き、ノートブックディレクトリから別のノートブックを開くか、新しいノートブックを作成します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">異なるディレクトリのノートブックで作業したい場合、同時にノートブックサーバーを起動することが出来ます。デフォルトでは、最初のノートブックサーバーは8888ポートで起動し、後のノートブックサーバーはそれに近いポートを検索します。<code class="docutils literal"><span class="pre">—port</span></code> オプションを使用してポートを手動で指定することも出来ます。</p>
+</div>
+<div class="section" id="creating-a-new-notebook-document">
+<h3>新しいノートブックドキュメントの作成<a class="headerlink" href="#creating-a-new-notebook-document" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>新しいノートブックはダッシュボードから、またはアクティブなノートブック内のFile‣Newメニューオプションを使っていつでも作成できます。新しいノートブックは同じディレクトリ内に作成され、新しいブラウザタブで開きます。また、ダッシュボードのノートブックリストに新しいエントリとして反映されます。</p>
+<img alt="_images/new-notebook.gif" src="_images/new-notebook.gif" />
+</div>
+<div class="section" id="opening-notebooks">
+<h3>ノートブックを開く<a class="headerlink" href="#opening-notebooks" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>開いているノートブックにはカーネルに接続された <strong>正確なひとつ</strong> のインタラクティブなセッションがあり、ユーザーが送信したコードを実行して結果を返信します。このカーネルはWebブラウザウィンドウが閉じている場合はアクティブなままで、ダッシュボードから同じダッシュボードを開くとWebアプリケーションは同じカーネルに接続されます。ダッシュボードでは、アクティブなカーネルのノートブックには <code class="docutils literal"><span class="pre">Shutdown</span></code> ボタンがありますが、非アクティブなカーネルのノートブックの場合は <code class="docutils literal"><span class="pre">Delete</span></code> ボタンがあります。</p>
+<p>他のクライアントが同じカーネルに接続する可能性があります。各カーネルが起動すると、ノートブックサーバーは次のようなメッセージをターミナルに出力します:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">NotebookApp</span><span class="p">]</span> <span class="n">Kernel</span> <span class="n">started</span><span class="p">:</span> <span class="mi">87</span><span class="n">f7d2c0</span><span class="o">-</span><span class="mf">13e3</span><span class="o">-</span><span class="mi">43</span><span class="n">df</span><span class="o">-</span><span class="mi">8</span><span class="n">bb8</span><span class="o">-</span><span class="mi">1</span><span class="n">bd37aaf3373</span>
+</pre></div>
+</div>
+<p>この長い文字列はカーネルに接続するのに必要な情報を得るために十分なカーネルのIDです。ノートブックがIPythonカーネルを使用している場合、 <code class="docutils literal"><span class="pre">%connect_info</span></code> <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#magics-explained" title="(in IPython v6.2.1)"><span class="xref std std-ref">magic</span></a> を実行することでこの接続データをみることも出来ます。同じID情報と他の詳細を表示します。</p>
+<p>例えば、コマンドラインから <em>同じ</em> カーネルに接続されたQt consoleを手動で起動したり、IDの一部を渡したりすることが出来ます:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ jupyter qtconsole --existing 87f7d2c0
+</pre></div>
+</div>
+<p>IDなしの場合、 <code class="docutils literal"><span class="pre">—existing</span></code> は直前に起動したカーネルに接続します。</p>
+<p>IPythonカーネルでは、ノートブックの <code class="docutils literal"><span class="pre">%qtconsole</span></code> <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#magics-explained" title="(in IPython v6.2.1)"><span class="xref std std-ref">magic</span></a> を実行して、同じカーネルに接続されたQtコンソールを開くことも出来ます。</p>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference external" href="https://ipython.readthedocs.io/en/stable/overview.html#ipythonzmq" title="(in IPython v6.2.1)"><span>Decoupled two-process model</span></a></p>
+</div>
+</div>
+</div>
+<div class="section" id="notebook-user-interface">
+<h2>ノートブックのユーザーインターフェース<a class="headerlink" href="#notebook-user-interface" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しいノートブック文章を作成する時、 <strong>ノートブック名</strong>　、<strong>メニューバー</strong> 、<strong>ツールバー</strong> 、空の <strong>コードセル</strong> が表示されます。</p>
+<p><strong>ノートブック名</strong>: ノートブック文書の名前は、ページ上部、<code class="docutils literal"><span class="pre">IP[y]:</span> <span class="pre">Notebook</span></code> 横に表示されます。この名前は <code class="docutils literal"><span class="pre">.ipynb</span></code> ノートブック文書ファイルの名前に反映されます。ノートブック名をクリックすると名前を変更できるダイアログが表示されます。このようにブラウザで ”Untitled0” から “My first notebook” に変更すると、<code class="docutils literal"><span class="pre">Untitled0.ipynb</span></code> ファイルは <code class="docutils literal"><span class="pre">My</span> <span class="pre">first</span> <span class="pre">notebook.ipynb</span></code> に変更されます。</p>
+<p><strong>メニューバー</strong>: メニューバーには、ノートブックの機能を操作することが出来る様々なオプションが表示されます。</p>
+<p><strong>ツールバー</strong>: ツールバーはアイコンをクリックすることで、ノートブック内で頻繁に使用される操作を簡単に実行できます。</p>
+<p><strong>code cell</strong>: the default type of cell, read on for an explanation of cells</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">ノートブクバージョン4.1ではユーザーインターフェースにより複数のセルを選択することができます。メニューバーにある、 <code class="docutils literal"><span class="pre">quick</span> <span class="pre">celltype</span> <span class="pre">selector</span></code> は、選択範囲内のセルのタイプが一位ではないことを示すために複数のセルが選択されている場合にダッシュ <code class="docutils literal"><span class="pre">-</span></code> を表示します。クイックセレクタを使用して選択のタイプを変更し、現在選択されている全てのセルのタイプを変更することも出来ます。</p>
+</div>
+</div>
+<div class="section" id="structure-of-a-notebook-document">
+<h2>ノートブック文書の構造<a class="headerlink" href="#structure-of-a-notebook-document" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ノートブックは一連のセルで構成されています。セルは複数行のテキスト入力フィールドで、その内容は <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code> で実行するか、ツールバーの’’Play’’ ボタン、またはメニューバーの <cite>Cell | Run</cite> をクリックして実行します。セルの実行動作はセルのタイプによって決まります。セルには、 <strong>code cells</strong>、<strong>markdown cells</strong>、<strong>raw cells</strong> の3種類があります。すべてのセルは <strong>code cells</strong> から始まりますが、そのタイプはツールバーのドロップダウン(最初は ‘’Code’’)、または <a class="reference internal" href="#keyboard-shortcuts"><span class="std std-ref">keyboard shortcuts</span></a> を使用して変更できます。</p>
+<p>ノートブックで出来ることのさまざまな情報については、<a class="reference external" href="http://nbviewer.jupyter.org/github/jupyter/notebook/tree/master/docs/source/examples/Notebook/">collection of examples</a> を参照して下さい。</p>
+<div class="section" id="code-cells">
+<h3>Code cells<a class="headerlink" href="#code-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>A <em>code cell</em> allows you to edit and write new code, with full syntax
+highlighting and tab completion. By default, the language associated to a code
+cell is Python, but other languages, such as <code class="docutils literal"><span class="pre">Julia</span></code> and <code class="docutils literal"><span class="pre">R</span></code>, can be
+handled using <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#magics-explained" title="(in IPython v6.2.1)"><span class="xref std std-ref">cell magic commands</span></a>.</p>
+<p>When a code cell is executed, code that it contains is sent to the kernel
+associated with the notebook.  The results that are returned from this
+computation  are then displayed in the notebook as the cell’s <em>output</em>. The
+output is not limited to text, with many other possible forms of output are
+also possible, including <code class="docutils literal"><span class="pre">matplotlib</span></code> figures and HTML tables (as used, for
+example, in the <code class="docutils literal"><span class="pre">pandas</span></code> data analysis package). This is known as IPython’s
+<em>rich display</em> capability.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference external" href="https://nbviewer.jupyter.org/github/ipython/ipython/blob/master/examples/IPython%20Kernel/Rich%20Output.ipynb">Rich Output</a>  example notebook</p>
+</div>
+</div>
+<div class="section" id="markdown-cells">
+<h3>Markdown cells<a class="headerlink" href="#markdown-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>You can document the computational process in a literate way, alternating
+descriptive text with code, using <em>rich text</em>. In IPython this is accomplished
+by marking up text with the Markdown language. The corresponding cells are
+called <em>Markdown cells</em>. The Markdown language provides a simple way to
+perform this text markup, that is, to specify which parts of the text should
+be emphasized (italics), bold, form lists, etc.</p>
+<p>If you want to provide structure for your document, you can use markdown
+headings. Markdown headings consist of 1 to 6 hash # signs <code class="docutils literal"><span class="pre">#</span></code> followed by a
+space and the title of your section. The markdown heading will be converted
+to a clickable link for a section of the notebook. It is also used as a hint
+when exporting to other document formats, like PDF.</p>
+<p>When a Markdown cell is executed, the Markdown code is converted into
+the corresponding formatted rich text. Markdown allows arbitrary HTML code for
+formatting.</p>
+<p>Within Markdown cells, you can also include <em>mathematics</em> in a straightforward
+way, using standard LaTeX notation: <code class="docutils literal"><span class="pre">$...$</span></code> for inline mathematics and
+<code class="docutils literal"><span class="pre">$$...$$</span></code> for displayed mathematics. When the Markdown cell is executed,
+the LaTeX portions are automatically rendered in the HTML output as equations
+with high quality typography. This is made possible by <a class="reference external" href="https://www.mathjax.org/">MathJax</a>, which
+supports a <a class="reference external" href="mathjax_tex">large subset</a> of LaTeX functionality</p>
+<p>Standard mathematics environments defined by LaTeX and AMS-LaTeX (the
+<cite>amsmath</cite> package) also work, such as
+<code class="docutils literal"><span class="pre">\begin{equation}...\end{equation}</span></code>, and <code class="docutils literal"><span class="pre">\begin{align}...\end{align}</span></code>.
+New LaTeX macros may be defined using standard methods,
+such as <code class="docutils literal"><span class="pre">\newcommand</span></code>, by placing them anywhere <em>between math delimiters</em> in
+a Markdown cell. These definitions are then available throughout the rest of
+the IPython session.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference external" href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Working%20With%20Markdown%20Cells.ipynb">Working with Markdown Cells</a> example notebook</p>
+</div>
+</div>
+<div class="section" id="raw-cells">
+<h3>Raw cells<a class="headerlink" href="#raw-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><em>Raw</em> cells provide a place in which you can write <em>output</em> directly.
+Raw cells are not evaluated by the notebook.
+When passed through <a class="reference external" href="https://nbconvert.readthedocs.io/en/latest/">nbconvert</a>, raw cells arrive in the
+destination format unmodified. For example, this allows you to type full LaTeX
+into a raw cell, which will only be rendered by LaTeX after conversion by
+nbconvert.</p>
+</div>
+</div>
+<div class="section" id="basic-workflow">
+<h2>Basic workflow<a class="headerlink" href="#basic-workflow" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The normal workflow in a notebook is, then, quite similar to a standard
+IPython session, with the difference that you can edit cells in-place multiple
+times until you obtain the desired results, rather than having to
+rerun separate scripts with the <code class="docutils literal"><span class="pre">%run</span></code> magic command.</p>
+<p>Typically, you will work on a computational problem in pieces, organizing
+related ideas into cells and moving forward once previous parts work
+correctly. This is much more convenient for interactive exploration than
+breaking up a computation into scripts that must be executed together, as was
+previously necessary, especially if parts of them take a long time to run.</p>
+<p>At certain moments, it may be necessary to interrupt a calculation which is
+taking too long to complete. This may be done with the <cite>Kernel | Interrupt</cite>
+menu option, or the <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">i</span></code> keyboard shortcut.
+Similarly, it may be necessary or desirable to restart the whole computational
+process, with the <cite>Kernel | Restart</cite> menu option or <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">.</span></code>
+shortcut.</p>
+<p>A notebook may be downloaded in either a <code class="docutils literal"><span class="pre">.ipynb</span></code> or <code class="docutils literal"><span class="pre">.py</span></code> file from the
+menu option <cite>File | Download as</cite>. Choosing the <code class="docutils literal"><span class="pre">.py</span></code> option downloads a
+Python <code class="docutils literal"><span class="pre">.py</span></code> script, in which all rich output has been removed and the
+content of markdown cells have been inserted as comments.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p><a class="reference external" href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Running%20Code.ipynb">Running Code in the Jupyter Notebook</a> example notebook</p>
+<p class="last"><a class="reference external" href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Notebook%20Basics.ipynb">Notebook Basics</a> example notebook</p>
+</div>
+<div class="section" id="keyboard-shortcuts">
+<span id="id1"></span><h3>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>All actions in the notebook can be performed with the mouse, but keyboard
+shortcuts are also available for the most common ones. The essential shortcuts
+to remember are the following:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code>:  run cell</dt>
+<dd>Execute the current cell, show output (if any), and jump to the next cell
+below. If <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code> is invoked on the last cell, a new code
+cell will also be created. Note that in the notebook, typing <code class="kbd docutils literal"><span class="pre">Enter</span></code>
+on its own <em>never</em> forces execution, but rather just inserts a new line in
+the current cell. <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code> is equivalent to clicking the
+<code class="docutils literal"><span class="pre">Cell</span> <span class="pre">|</span> <span class="pre">Run</span></code> menu item.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="kbd docutils literal"><span class="pre">Ctrl-Enter</span></code>: run cell in-place</dt>
+<dd>Execute the current cell as if it were in 「terminal mode」, where any
+output is shown, but the cursor <em>remains</em> in the current cell. The cell’s
+entire contents are selected after execution, so you can just start typing
+and only the new input will be in the cell. This is convenient for doing
+quick experiments in place, or for querying things like filesystem
+content, without needing to create additional cells that you may not want
+to be saved in the notebook.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="kbd docutils literal"><span class="pre">Alt-Enter</span></code>: run cell, insert below</dt>
+<dd>Executes the current cell, shows the output, and inserts a <em>new</em>
+cell between the current cell and the cell below (if one exists). This
+is thus a shortcut for the sequence <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code>, <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">a</span></code>.
+(<code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">a</span></code> adds a new cell above the current one.)</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="kbd docutils literal"><span class="pre">Esc</span></code> and <code class="kbd docutils literal"><span class="pre">Enter</span></code>: Command mode and edit mode</dt>
+<dd>In command mode, you can easily navigate around the notebook using keyboard
+shortcuts. In edit mode, you can edit text in cells.</dd>
+</dl>
+</li>
+</ul>
+<p>For the full list of available shortcuts, click <span class="guilabel">Help</span>,
+<span class="guilabel">Keyboard Shortcuts</span> in the notebook menus.</p>
+</div>
+</div>
+<div class="section" id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>One major feature of the Jupyter notebook is the ability to display plots that
+are the output of running code cells. The IPython kernel is designed to work
+seamlessly with the <a class="reference external" href="http://matplotlib.org">matplotlib</a> plotting library to provide this functionality.
+Specific plotting library integration is a feature of the kernel.</p>
+</div>
+<div class="section" id="installing-kernels">
+<h2>Installing kernels<a class="headerlink" href="#installing-kernels" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>For information on how to install a Python kernel, refer to the
+<a class="reference external" href="http://ipython.org/install.html">IPython install page</a>.</p>
+<p>Kernels for other languages can be found in the <a class="reference external" href="https://github.com/ipython/ipython/wiki/IPython%20kernels%20for%20other%20languages">IPython wiki</a>.
+They usually come with instruction what to run to make the kernel available
+in the notebook.</p>
+</div>
+<div class="section" id="signing-notebooks">
+<span id="id2"></span><h2>Signing Notebooks<a class="headerlink" href="#signing-notebooks" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To prevent untrusted code from executing on users』 behalf when notebooks open,
+we have added a signature to the notebook, stored in metadata.
+The notebook server verifies this signature when a notebook is opened.
+If the signature stored in the notebook metadata does not match,
+javascript and HTML output will not be displayed on load,
+and must be regenerated by re-executing the cells.</p>
+<p>Any notebook that you have executed yourself <em>in its entirety</em> will be
+considered trusted, and its HTML and javascript output will be displayed on
+load.</p>
+<p>If you need to see HTML or Javascript output without re-executing,
+you can explicitly trust notebooks, such as those shared with you,
+or those that you have written yourself prior to IPython 2.0,
+at the command-line with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ jupyter trust mynotebook.ipynb [other notebooks.ipynb]
+</pre></div>
+</div>
+<p>This just generates a new signature stored in each notebook.</p>
+<p>You can generate a new notebook signing key with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ jupyter trust --reset
+</pre></div>
+</div>
+</div>
+<div class="section" id="browser-compatibility">
+<h2>Browser Compatibility<a class="headerlink" href="#browser-compatibility" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Jupyter Notebook is officially supported by the latest stable versions of the
+following browsers:</p>
+<ul class="simple">
+<li>Chrome</li>
+<li>Safari</li>
+<li>Firefox</li>
+</ul>
+<p>The is mainly due to the notebook’s usage of WebSockets and the flexible box
+model.</p>
+<p>The following browsers are unsupported:</p>
+<ul class="simple">
+<li>Safari &lt; 5</li>
+<li>Firefox &lt; 6</li>
+<li>Chrome &lt; 13</li>
+<li>Opera (any): CSS issues, but execution might work</li>
+<li>Internet Explorer &lt; 10</li>
+<li>Internet Explorer ≥ 10 (same as Opera)</li>
+</ul>
+<p>Using Safari with HTTPS and an untrusted certificate is known to not work
+(websockets will fail).</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ui_components.html" class="btn btn-neutral float-right" title="UI Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Jupyterノートブック" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jupyter Team, https://jupyter.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

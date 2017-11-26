@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Custom front-end extensions &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="検索" href="../search.html"/>
+    <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="../index.html"/>
+        <link rel="up" title="Extending the Notebook" href="index.html"/>
+        <link rel="next" title="Customize keymaps" href="keymaps.html"/>
+        <link rel="prev" title="Custom request handlers" href="handlers.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Jupyter Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザー向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook.html">Jupyterノートブック</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui_components.html">UI Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comms.html">Comms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">設定</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config.html">Config file and command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html">Security in the Jupyter notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend_config.html">Configuring the notebook frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Distributing Jupyter Extensions as Python Packages.html">Distributing Jupyter Extensions as Python Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extending the Notebook</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contents.html">Contents API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savehooks.html">File save hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="handlers.html">Custom request handlers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Custom front-end extensions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-structure-of-a-front-end-extension">The structure of a front-end extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-key-bindings">Modifying key bindings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#defining-and-registering-your-own-actions">Defining and registering your own actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-and-enabling-extensions">Installing and enabling extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kernel-specific-extensions">Kernel Specific extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="keymaps.html">Customize keymaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bundler_extensions.html">Custom bundler extensions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">貢献者向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to the Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_release.html">Making a Notebook release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_faq.html">Developer FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">コミュニティ向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/examples_index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/What is the Jupyter Notebook.html">What is the Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Notebook Basics.html">Notebook Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Running Code.html">Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Working With Markdown Cells.html">Markdown Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Custom Keyboard Shortcuts.html">Keyboard Shortcut Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Custom Keyboard Shortcuts.html#Keyboard-Shortcut-Customization-(Pre-Notebook-5.0)">Keyboard Shortcut Customization (Pre Notebook 5.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/JavaScript Notebook Extensions.html">Embracing web standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Importing Notebooks.html">Importing Jupyter Notebooks as Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Connecting with the Qt Console.html">Connecting to an existing IPython kernel using the Qt Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/Typesetting Equations.html">Motivating Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/nbpackage/mynotebook.html">My Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Notebook/nbpackage/nbs/other.html">Other notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyterノートブックについて</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Jupyter notebook changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">質問ですか？提案ですか？</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://groups.google.com/forum/#!forum/jupyter">Jupyter mailing list</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.org">Jupyter website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter">Stack Overflow - Jupyter</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter-notebook">Stack Overflow - Jupyter-notebook</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Jupyter Notebook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Extending the Notebook</a> &raquo;</li>
+        
+      <li>Custom front-end extensions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/extending/frontend_extensions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="custom-front-end-extensions">
+<h1>Custom front-end extensions<a class="headerlink" href="#custom-front-end-extensions" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This describes the basic steps to write a JavaScript extension for the Jupyter
+notebook front-end. This allows you to customize the behaviour of the various
+pages like the dashboard, the notebook, or the text editor.</p>
+<div class="section" id="the-structure-of-a-front-end-extension">
+<h2>The structure of a front-end extension<a class="headerlink" href="#the-structure-of-a-front-end-extension" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The notebook front-end and Javascript API are not stable, and are subject
+to a lot of changes. Any extension written for the current notebook is
+almost guaranteed to break in the next release.</p>
+</div>
+<p>A front-end extension is a JavaScript file that defines an <a class="reference external" href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">AMD module</a>
+which exposes at least a function called <code class="docutils literal"><span class="pre">load_ipython_extension</span></code>, which
+takes no arguments. We will not get into the details of what each of these
+terms consists of yet, but here is the minimal code needed for a working
+extension:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// file my_extension/main.js</span>
+
+<span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+
+    <span class="kd">function</span> <span class="nx">load_ipython_extension</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;this is my first extension&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">load_ipython_extension</span><span class="o">:</span> <span class="nx">load_ipython_extension</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Although for historical reasons the function is called
+<code class="docutils literal"><span class="pre">load_ipython_extension</span></code>, it does apply to the Jupyter notebook in
+general, and will work regardless of the kernel in use.</p>
+</div>
+<p>If you are familiar with JavaScript, you can use this template to require any
+Jupyter module and modify its configuration, or do anything else in client-side
+Javascript. Your extension will be loaded at the right time during the notebook
+page initialisation for you to set up a listener for the various events that
+the page can trigger.</p>
+<p>You might want access to the current instances of the various Jupyter notebook
+components on the page, as opposed to the classes defined in the modules. The
+current instances are exposed by a module named <code class="docutils literal"><span class="pre">base/js/namespace</span></code>. If you
+plan on accessing instances on the page, you should <code class="docutils literal"><span class="pre">require</span></code> this module
+rather than accessing the global variable <code class="docutils literal"><span class="pre">Jupyter</span></code>, which will be removed in
+future. The following example demonstrates how to access the current notebook
+instance:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// file my_extension/main.js</span>
+
+<span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;base/js/namespace&#39;</span>
+<span class="p">],</span> <span class="kd">function</span><span class="p">(</span>
+    <span class="nx">Jupyter</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">load_ipython_extension</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+            <span class="s1">&#39;This is the current notebook application instance:&#39;</span><span class="p">,</span>
+            <span class="nx">Jupyter</span><span class="p">.</span><span class="nx">notebook</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">load_ipython_extension</span><span class="o">:</span> <span class="nx">load_ipython_extension</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modifying-key-bindings">
+<h2>Modifying key bindings<a class="headerlink" href="#modifying-key-bindings" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>One of the abilities of extensions is to modify key bindings, although once
+again this is an API which is not guaranteed to be stable. However, custom key
+bindings are frequently requested, and are helpful to increase accessibility,
+so in the following we show how to access them.</p>
+<p>Here is an example of an extension that will unbind the shortcut <code class="docutils literal"><span class="pre">0,0</span></code> in
+command mode, which normally restarts the kernel, and bind <code class="docutils literal"><span class="pre">0,0,0</span></code> in its
+place:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// file my_extension/main.js</span>
+
+<span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;base/js/namespace&#39;</span>
+<span class="p">],</span> <span class="kd">function</span><span class="p">(</span>
+    <span class="nx">Jupyter</span>
+<span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">function</span> <span class="nx">load_ipython_extension</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">Jupyter</span><span class="p">.</span><span class="nx">keyboard_manager</span><span class="p">.</span><span class="nx">command_shortcuts</span><span class="p">.</span><span class="nx">remove_shortcut</span><span class="p">(</span><span class="s1">&#39;0,0&#39;</span><span class="p">);</span>
+        <span class="nx">Jupyter</span><span class="p">.</span><span class="nx">keyboard_manager</span><span class="p">.</span><span class="nx">command_shortcuts</span><span class="p">.</span><span class="nx">add_shortcut</span><span class="p">(</span><span class="s1">&#39;0,0,0&#39;</span><span class="p">,</span> <span class="s1">&#39;jupyter-notebook:restart-kernel&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">load_ipython_extension</span><span class="o">:</span> <span class="nx">load_ipython_extension</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The standard keybindings might not work correctly on non-US keyboards.
+Unfortunately, this is a limitation of browser implementations and the
+status of keyboard event handling on the web in general. We appreciate your
+feedback if you have issues binding keys, or have any ideas to help improve
+the situation.</p>
+</div>
+<p>You can see that I have used the <strong>action name</strong>
+<code class="docutils literal"><span class="pre">jupyter-notebook:restart-kernel</span></code> to bind the new shortcut. There is no API
+yet to access the list of all available <em>actions</em>, though the following in the
+JavaScript console of your browser on a notebook page should give you an idea
+of what is available:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;base/js/namespace&#39;</span><span class="p">).</span><span class="nx">actions</span><span class="p">.</span><span class="nx">_actions</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In this example, we changed a keyboard shortcut in <strong>command mode</strong>; you
+can also customize keyboard shortcuts in <strong>edit mode</strong>.
+However, most of the keyboard shortcuts in edit mode are handled by CodeMirror,
+which supports custom key bindings via a completely different API.</p>
+</div>
+<div class="section" id="defining-and-registering-your-own-actions">
+<h2>Defining and registering your own actions<a class="headerlink" href="#defining-and-registering-your-own-actions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>As part of your front-end extension, you may wish to define actions, which can
+be attached to toolbar buttons, or called from the command palette. Here is an
+example of an extension that defines a (not very useful!) action to show an
+alert, and adds a toolabr button using the full action name:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// file my_extension/main.js</span>
+
+<span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;base/js/namespace&#39;</span>
+<span class="p">],</span> <span class="kd">function</span><span class="p">(</span>
+    <span class="nx">Jupyter</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">load_ipython_extension</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="kd">var</span> <span class="nx">handler</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;this is an alert from my_extension!&#39;</span><span class="p">);</span>
+        <span class="p">};</span>
+
+        <span class="kd">var</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="s1">&#39;fa-comment-o&#39;</span><span class="p">,</span> <span class="c1">// a font-awesome class used on buttons, etc</span>
+            <span class="nx">help</span>    <span class="o">:</span> <span class="s1">&#39;Show an alert&#39;</span><span class="p">,</span>
+            <span class="nx">help_index</span> <span class="o">:</span> <span class="s1">&#39;zz&#39;</span><span class="p">,</span>
+            <span class="nx">handler</span> <span class="o">:</span> <span class="nx">handler</span>
+        <span class="p">};</span>
+        <span class="kd">var</span> <span class="nx">prefix</span> <span class="o">=</span> <span class="s1">&#39;my_extension&#39;</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">action_name</span> <span class="o">=</span> <span class="s1">&#39;show-alert&#39;</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">full_action_name</span> <span class="o">=</span> <span class="nx">Jupyter</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">action_name</span><span class="p">,</span> <span class="nx">prefix</span><span class="p">);</span> <span class="c1">// returns &#39;my_extension:show-alert&#39;</span>
+        <span class="nx">Jupyter</span><span class="p">.</span><span class="nx">toolbar</span><span class="p">.</span><span class="nx">add_buttons_group</span><span class="p">([</span><span class="nx">full_action_name</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">load_ipython_extension</span><span class="o">:</span> <span class="nx">load_ipython_extension</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Every action needs a name, which, when joined with its prefix to make the full
+action name, should be unique. Built-in actions, like the
+<code class="docutils literal"><span class="pre">jupyter-notebook:restart-kernel</span></code> we bound in the earlier
+<a class="reference internal" href="#modifying-key-bindings">Modifying key bindings</a> example, use the prefix <code class="docutils literal"><span class="pre">jupyter-notebook</span></code>. For
+actions defined in an extension, it makes sense to use the extension name as
+the prefix. For the action name, the following guidelines should be considered:</p>
+<ul class="simple">
+<li>First pick a noun and a verb for the action. For example, if the action is
+「restart kernel,」 the verb is 「restart」 and the noun is 「kernel」.</li>
+<li>Omit terms like 「selected」 and 「active」 by default, so 「delete-cell」, rather
+than 「delete-selected-cell」. Only provide a scope like 「-all-」 if it is other
+than the default 「selected」 or 「active」 scope.</li>
+<li>If an action has a secondary action, separate the secondary action with
+「-and-「, so 「restart-kernel-and-clear-output」.</li>
+<li>Use above/below or previous/next to indicate spatial and sequential
+relationships.</li>
+<li>Don’t ever use before/after as they have a temporal connotation that is
+confusing when used in a spatial context.</li>
+<li>For dialogs, use a verb that indicates what the dialog will accomplish, such
+as 「confirm-restart-kernel」.</li>
+</ul>
+</div>
+<div class="section" id="installing-and-enabling-extensions">
+<h2>Installing and enabling extensions<a class="headerlink" href="#installing-and-enabling-extensions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can install your nbextension with the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">install</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">my_extension</span><span class="o">/</span> <span class="p">[</span><span class="o">--</span><span class="n">user</span><span class="o">|--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The default installation is system-wide. You can use <code class="docutils literal"><span class="pre">--user</span></code> to do a
+per-user installation, or <code class="docutils literal"><span class="pre">--sys-prefix</span></code> to install to Python’s prefix (e.g.
+in a virtual or conda environment). Where my_extension is the directory
+containing the Javascript files. This will copy it to a Jupyter data directory
+(the exact location is platform dependent - see <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/projects/jupyter-directories.html#jupyter-path" title="(in Jupyter Documentation v4.1)"><span>Data files</span></a>).</p>
+<p>For development, you can use the <code class="docutils literal"><span class="pre">--symlink</span></code> flag to symlink your extension
+rather than copying it, so there’s no need to reinstall after changes.</p>
+<p>To use your extension, you’ll also need to <strong>enable</strong> it, which tells the
+notebook interface to load it. You can do that with another command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="n">my_extension</span><span class="o">/</span><span class="n">main</span> <span class="p">[</span><span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The argument refers to the Javascript module containing your
+<code class="docutils literal"><span class="pre">load_ipython_extension</span></code> function, which is <code class="docutils literal"><span class="pre">my_extension/main.js</span></code> in this
+example. There is a corresponding <code class="docutils literal"><span class="pre">disable</span></code> command to stop using an
+extension without uninstalling it.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 4.2 で変更: </span>Added <code class="docutils literal"><span class="pre">--sys-prefix</span></code> argument</p>
+</div>
+</div>
+<div class="section" id="kernel-specific-extensions">
+<h2>Kernel Specific extensions<a class="headerlink" href="#kernel-specific-extensions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This feature serves as a stopgap for kernel developers who need specific
+JavaScript injected onto the page. The availability and API are subject to
+change at anytime.</p>
+</div>
+<p>It is possible to load some JavaScript on the page on a per kernel basis. Be
+aware that doing so will make the browser page reload without warning as
+soon as the user switches the kernel without notice.</p>
+<p>If you, a kernel developer, need a particular piece of JavaScript to be loaded
+on a 「per kernel」 basis, such as:</p>
+<ul class="simple">
+<li>if you are developing a CodeMirror mode for your language</li>
+<li>if you need to enable some specific debugging options</li>
+</ul>
+<p>your <code class="docutils literal"><span class="pre">kernelspecs</span></code> are allowed to contain a <code class="docutils literal"><span class="pre">kernel.js</span></code> file that defines
+an AMD module. The AMD module should define an <cite>onload</cite> function that will be
+called when the kernelspec loads, such as:</p>
+<ul class="simple">
+<li>when you load a notebook that uses your kernelspec</li>
+<li>change the active kernelspec of a notebook to your kernelspec.</li>
+</ul>
+<p>Note that adding a <cite>kernel.js</cite> to your kernelspec will add an unexpected side
+effect to changing a kernel in the notebook. As it is impossible to 「unload」
+JavaScript, any attempt to change the kernelspec again will save the current
+notebook and reload the page without confirmations.</p>
+<p>Here is an example of <code class="docutils literal"><span class="pre">kernel.js</span></code>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="p">{</span><span class="nx">onload</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;Kernel specific javascript loaded&#39;</span><span class="p">);</span>
+
+    <span class="c1">// do more things here, like define a codemirror mode</span>
+
+  <span class="p">}}</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="keymaps.html" class="btn btn-neutral float-right" title="Customize keymaps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="handlers.html" class="btn btn-neutral" title="Custom request handlers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jupyter Team, https://jupyter.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'5.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

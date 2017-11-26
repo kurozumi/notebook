@@ -1,0 +1,659 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Distributing Jupyter Extensions as Python Packages &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../genindex.html"/>
+        <link rel="search" title="検索" href="../../search.html"/>
+    <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="../../index.html"/>
+        <link rel="next" title="Extending the Notebook" href="../../extending/index.html"/>
+        <link rel="prev" title="Configuring the notebook frontend" href="../../frontend_config.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Jupyter Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザー向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../notebook.html">Jupyterノートブック</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui_components.html">UI Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../comms.html">Comms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">設定</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">Config file and command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">Security in the Jupyter notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../frontend_config.html">Configuring the notebook frontend</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Distributing Jupyter Extensions as Python Packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#How-can-the-notebook-be-extended?">How can the notebook be extended?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Why-create-a-Python-package-for-Jupyter-extensions?">Why create a Python package for Jupyter extensions?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Installation-of-Jupyter-Extensions">Installation of Jupyter Extensions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Install-a-Python-package-containing-Jupyter-Extensions">Install a Python package containing Jupyter Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Enable-a-Server-Extension">Enable a Server Extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Install-the-nbextension-assets">Install the nbextension assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Enable-nbextension-assets">Enable nbextension assets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Did-it-work?-Check-by-listing-Jupyter-Extensions.">Did it work? Check by listing Jupyter Extensions.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Additional-resources-on-creating-and-distributing-packages">Additional resources on creating and distributing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Example---Server-extension">Example - Server extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Creating-a-Python-package-with-a-server-extension">Creating a Python package with a server extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Defining-the-server-extension">Defining the server extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#my_module/__init__.py"><code class="docutils literal"><span class="pre">my_module/__init__.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Install-and-enable-the-server-extension">Install and enable the server extension</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Example---Server-extension-and-nbextension">Example - Server extension and nbextension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Creating-a-Python-package-with-a-server-extension-and-nbextension">Creating a Python package with a server extension and nbextension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Defining-the-server-extension-and-nbextension">Defining the server extension and nbextension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#my_fancy_module/__init__.py"><code class="docutils literal"><span class="pre">my_fancy_module/__init__.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Install-and-enable-the-server-extension-and-nbextension">Install and enable the server extension and nbextension</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Example---Bundler-extension">Example - Bundler extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Creating-a-Python-package-with-a-bundlerextension">Creating a Python package with a bundlerextension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Defining-the-bundler-extension">Defining the bundler extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#my_tarball_bundler/__init__.py"><code class="docutils literal"><span class="pre">my_tarball_bundler/__init__.py</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending/index.html">Extending the Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">貢献者向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing to the Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development_release.html">Making a Notebook release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development_faq.html">Developer FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">コミュニティ向けドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples_index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="What is the Jupyter Notebook.html">What is the Jupyter Notebook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notebook Basics.html">Notebook Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Running Code.html">Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Working With Markdown Cells.html">Markdown Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Custom Keyboard Shortcuts.html">Keyboard Shortcut Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Custom Keyboard Shortcuts.html#Keyboard-Shortcut-Customization-(Pre-Notebook-5.0)">Keyboard Shortcut Customization (Pre Notebook 5.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JavaScript Notebook Extensions.html">Embracing web standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Importing Notebooks.html">Importing Jupyter Notebooks as Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Connecting with the Qt Console.html">Connecting to an existing IPython kernel using the Qt Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Typesetting Equations.html">Motivating Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nbpackage/mynotebook.html">My Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nbpackage/nbs/other.html">Other notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyterノートブックについて</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Jupyter notebook changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">質問ですか？提案ですか？</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://groups.google.com/forum/#!forum/jupyter">Jupyter mailing list</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jupyter.org">Jupyter website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter">Stack Overflow - Jupyter</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://stackoverflow.com/questions/tagged/jupyter-notebook">Stack Overflow - Jupyter-notebook</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Jupyter Notebook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Distributing Jupyter Extensions as Python Packages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/examples/Notebook/Distributing Jupyter Extensions as Python Packages.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="Distributing-Jupyter-Extensions-as-Python-Packages">
+<h1>Distributing Jupyter Extensions as Python Packages<a class="headerlink" href="#Distributing-Jupyter-Extensions-as-Python-Packages" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="Overview">
+<h2>Overview<a class="headerlink" href="#Overview" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="How-can-the-notebook-be-extended?">
+<h3>How can the notebook be extended?<a class="headerlink" href="#How-can-the-notebook-be-extended?" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The Jupyter Notebook client and server application are both deeply
+customizable. Their behavior can be extended by creating, respectively:</p>
+<ul class="simple">
+<li>nbextension: a notebook extension<ul>
+<li>a single JS file, or directory of JavaScript, Cascading
+StyleSheets, etc. that contain at minimum a JavaScript module
+packaged as an <a class="reference external" href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">AMD
+modules</a>
+that exports a function <code class="docutils literal"><span class="pre">load_ipython_extension</span></code></li>
+</ul>
+</li>
+<li>server extension: an importable Python module<ul>
+<li>that implements <code class="docutils literal"><span class="pre">load_jupyter_server_extension</span></code></li>
+</ul>
+</li>
+<li>bundler extension: an importable Python module with generated File -&gt;
+Download as / Deploy as menu item trigger<ul>
+<li>that implements <code class="docutils literal"><span class="pre">bundle</span></code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="Why-create-a-Python-package-for-Jupyter-extensions?">
+<h3>Why create a Python package for Jupyter extensions?<a class="headerlink" href="#Why-create-a-Python-package-for-Jupyter-extensions?" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Since it is rare to have a server extension that does not have any
+frontend components (an nbextension), for convenience and consistency,
+all these client and server extensions with their assets can be packaged
+and versioned together as a Python package with a few simple commands.
+This makes installing the package of extensions easier and less
+error-prone for the user.</p>
+</div>
+</div>
+<div class="section" id="Installation-of-Jupyter-Extensions">
+<h2>Installation of Jupyter Extensions<a class="headerlink" href="#Installation-of-Jupyter-Extensions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="Install-a-Python-package-containing-Jupyter-Extensions">
+<h3>Install a Python package containing Jupyter Extensions<a class="headerlink" href="#Install-a-Python-package-containing-Jupyter-Extensions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>There are several ways that you may get a Python package containing
+Jupyter Extensions. Commonly, you will use a package manager for your
+system:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>pip install helpful_package
+<span class="c1"># or</span>
+conda install helpful_package
+<span class="c1"># or</span>
+apt-get install helpful_package
+
+<span class="c1"># where &#39;helpful_package&#39; is a Python package containing one or more Jupyter Extensions</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Enable-a-Server-Extension">
+<h3>Enable a Server Extension<a class="headerlink" href="#Enable-a-Server-Extension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The simplest case would be to enable a server extension which has no
+frontend components.</p>
+<p>A <code class="docutils literal"><span class="pre">pip</span></code> user that wants their configuration stored in their home
+directory would type the following command:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> --py helpful_package
+</pre></div>
+</div>
+<p>Alternatively, a <code class="docutils literal"><span class="pre">virtualenv</span></code> or <code class="docutils literal"><span class="pre">conda</span></code> user can pass
+<code class="docutils literal"><span class="pre">--sys-prefix</span></code> which keeps their environment isolated and
+reproducible. For example:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="c1"># Make sure that your virtualenv or conda environment is activated</span>
+<span class="o">[</span>source<span class="o">]</span> activate my-environment
+
+jupyter serverextension <span class="nb">enable</span> --py helpful_package --sys-prefix
+</pre></div>
+</div>
+</div>
+<div class="section" id="Install-the-nbextension-assets">
+<h3>Install the nbextension assets<a class="headerlink" href="#Install-the-nbextension-assets" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If a package also has an nbextension with frontend assets that must be
+available (but not neccessarily enabled by default), install these
+assets with the following command:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>jupyter nbextension install --py helpful_package <span class="c1"># or --sys-prefix if using virtualenv or conda</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Enable-nbextension-assets">
+<h3>Enable nbextension assets<a class="headerlink" href="#Enable-nbextension-assets" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If a package has assets that should be loaded every time a Jupyter app
+(e.g.&nbsp;lab, notebook, dashboard, terminal) is loaded in the browser, the
+following command can be used to enable the nbextension:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>jupyter nbextension <span class="nb">enable</span> --py helpful_package <span class="c1"># or --sys-prefix if using virtualenv or conda</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Did-it-work?-Check-by-listing-Jupyter-Extensions.">
+<h2>Did it work? Check by listing Jupyter Extensions.<a class="headerlink" href="#Did-it-work?-Check-by-listing-Jupyter-Extensions." title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>After running one or more extension installation steps, you can list
+what is presently known about nbextensions, server extensions, or
+bundler extensions. The following commands will list which extensions
+are available, whether they are enabled, and other extension details:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>jupyter nbextension list
+jupyter serverextension list
+jupyter bundlerextension list
+</pre></div>
+</div>
+</div>
+<div class="section" id="Additional-resources-on-creating-and-distributing-packages">
+<h2>Additional resources on creating and distributing packages<a class="headerlink" href="#Additional-resources-on-creating-and-distributing-packages" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div>Of course, in addition to the files listed, there are number of
+other files one needs to build a proper package. Here are some good
+resources: - <a class="reference external" href="https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/quickstart.html">The Hitchhiker’s Guide to
+Packaging</a>
+- <a class="reference external" href="https://www.kennethreitz.org/essays/repository-structure-and-python">Repository Structure and
+Python</a>
+by Kenneth Reitz</div></blockquote>
+<blockquote>
+<div>How you distribute them, too, is important: - <a class="reference external" href="https://python-packaging-user-guide.readthedocs.io/tutorials/distributing-packages/">Packaging and
+Distributing
+Projects</a>
+- <a class="reference external" href="https://conda.io/docs/building/build.html">conda: Building
+packages</a></div></blockquote>
+<blockquote>
+<div>Here are some tools to get you started: -
+<a class="reference external" href="https://github.com/Anaconda-Platform/generator-nbextension">generator-nbextension</a></div></blockquote>
+</div>
+<div class="section" id="Example---Server-extension">
+<h2>Example - Server extension<a class="headerlink" href="#Example---Server-extension" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="Creating-a-Python-package-with-a-server-extension">
+<h3>Creating a Python package with a server extension<a class="headerlink" href="#Creating-a-Python-package-with-a-server-extension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Here is an example of a python module which contains a server extension
+directly on itself. It has this directory structure:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="o">-</span> <span class="n">MANIFEST</span><span class="o">.</span><span class="ow">in</span>
+<span class="o">-</span> <span class="n">my_module</span><span class="o">/</span>
+  <span class="o">-</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Defining-the-server-extension">
+<h3>Defining the server extension<a class="headerlink" href="#Defining-the-server-extension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>This example shows that the server extension and its
+<code class="docutils literal"><span class="pre">load_jupyter_server_extension</span></code> function are defined in the
+<code class="docutils literal"><span class="pre">__init__.py</span></code> file.</p>
+<div class="section" id="my_module/__init__.py">
+<h4><code class="docutils literal"><span class="pre">my_module/__init__.py</span></code><a class="headerlink" href="#my_module/__init__.py" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_jupyter_server_extension_paths</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[{</span>
+        <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;my_module&quot;</span>
+    <span class="p">}]</span>
+
+
+<span class="k">def</span> <span class="nf">load_jupyter_server_extension</span><span class="p">(</span><span class="n">nbapp</span><span class="p">):</span>
+    <span class="n">nbapp</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;my module enabled!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Install-and-enable-the-server-extension">
+<h3>Install and enable the server extension<a class="headerlink" href="#Install-and-enable-the-server-extension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Which a user can install with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">serverextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="n">my_module</span> <span class="p">[</span><span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Example---Server-extension-and-nbextension">
+<h2>Example - Server extension and nbextension<a class="headerlink" href="#Example---Server-extension-and-nbextension" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="Creating-a-Python-package-with-a-server-extension-and-nbextension">
+<h3>Creating a Python package with a server extension and nbextension<a class="headerlink" href="#Creating-a-Python-package-with-a-server-extension-and-nbextension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Here is another server extension, with a front-end module. It assumes
+this directory structure:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="o">-</span> <span class="n">MANIFEST</span><span class="o">.</span><span class="ow">in</span>
+<span class="o">-</span> <span class="n">my_fancy_module</span><span class="o">/</span>
+  <span class="o">-</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+  <span class="o">-</span> <span class="n">static</span><span class="o">/</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">js</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Defining-the-server-extension-and-nbextension">
+<h3>Defining the server extension and nbextension<a class="headerlink" href="#Defining-the-server-extension-and-nbextension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>This example again shows that the server extension and its
+<code class="docutils literal"><span class="pre">load_jupyter_server_extension</span></code> function are defined in the
+<code class="docutils literal"><span class="pre">__init__.py</span></code> file. This time, there is also a function
+<code class="docutils literal"><span class="pre">_jupyter_nbextension_path</span></code> for the nbextension.</p>
+<div class="section" id="my_fancy_module/__init__.py">
+<h4><code class="docutils literal"><span class="pre">my_fancy_module/__init__.py</span></code><a class="headerlink" href="#my_fancy_module/__init__.py" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_jupyter_server_extension_paths</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[{</span>
+        <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;my_fancy_module&quot;</span>
+    <span class="p">}]</span>
+
+<span class="c1"># Jupyter Extension points</span>
+<span class="k">def</span> <span class="nf">_jupyter_nbextension_paths</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">section</span><span class="o">=</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span>
+        <span class="c1"># the path is relative to the `my_fancy_module` directory</span>
+        <span class="n">src</span><span class="o">=</span><span class="s2">&quot;static&quot;</span><span class="p">,</span>
+        <span class="c1"># directory in the `nbextension/` namespace</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;my_fancy_module&quot;</span><span class="p">,</span>
+        <span class="c1"># _also_ in the `nbextension/` namespace</span>
+        <span class="n">require</span><span class="o">=</span><span class="s2">&quot;my_fancy_module/index&quot;</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">load_jupyter_server_extension</span><span class="p">(</span><span class="n">nbapp</span><span class="p">):</span>
+    <span class="n">nbapp</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;my module enabled!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Install-and-enable-the-server-extension-and-nbextension">
+<h3>Install and enable the server extension and nbextension<a class="headerlink" href="#Install-and-enable-the-server-extension-and-nbextension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The user can install and enable the extensions with the following set of
+commands:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">install</span> <span class="o">--</span><span class="n">py</span> <span class="n">my_fancy_module</span> <span class="p">[</span><span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span><span class="o">|--</span><span class="n">user</span><span class="p">]</span>
+<span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="n">my_fancy_module</span> <span class="p">[</span><span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span><span class="o">|--</span><span class="n">system</span><span class="p">]</span>
+<span class="n">jupyter</span> <span class="n">serverextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="n">my_fancy_module</span> <span class="p">[</span><span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span><span class="o">|--</span><span class="n">system</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Example---Bundler-extension">
+<h2>Example - Bundler extension<a class="headerlink" href="#Example---Bundler-extension" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="Creating-a-Python-package-with-a-bundlerextension">
+<h3>Creating a Python package with a bundlerextension<a class="headerlink" href="#Creating-a-Python-package-with-a-bundlerextension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Here is a bundler extension that adds a <em>Download as -&gt; Notebook Tarball
+(tar.gz)</em> option to the notebook <em>File</em> menu. It assumes this directory
+structure:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="o">-</span> <span class="n">MANIFEST</span><span class="o">.</span><span class="ow">in</span>
+<span class="o">-</span> <span class="n">my_tarball_bundler</span><span class="o">/</span>
+  <span class="o">-</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Defining-the-bundler-extension">
+<h3>Defining the bundler extension<a class="headerlink" href="#Defining-the-bundler-extension" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>This example shows that the bundler extension and its <code class="docutils literal"><span class="pre">bundle</span></code>
+function are defined in the <code class="docutils literal"><span class="pre">__init__.py</span></code> file.</p>
+<div class="section" id="my_tarball_bundler/__init__.py">
+<h4><code class="docutils literal"><span class="pre">my_tarball_bundler/__init__.py</span></code><a class="headerlink" href="#my_tarball_bundler/__init__.py" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tarfile</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">nbformat</span>
+
+<span class="k">def</span> <span class="nf">_jupyter_bundlerextension_paths</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Declare bundler extensions provided by this package.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[{</span>
+        <span class="c1"># unique bundler name</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;tarball_bundler&quot;</span><span class="p">,</span>
+        <span class="c1"># module containing bundle function</span>
+        <span class="s2">&quot;module_name&quot;</span><span class="p">:</span> <span class="s2">&quot;my_tarball_bundler&quot;</span><span class="p">,</span>
+        <span class="c1"># human-redable menu item label</span>
+        <span class="s2">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;Notebook Tarball (tar.gz)&quot;</span><span class="p">,</span>
+        <span class="c1"># group under &#39;deploy&#39; or &#39;download&#39; menu</span>
+        <span class="s2">&quot;group&quot;</span> <span class="p">:</span> <span class="s2">&quot;download&quot;</span><span class="p">,</span>
+    <span class="p">}]</span>
+
+
+<span class="k">def</span> <span class="nf">bundle</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create a compressed tarball containing the notebook document.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    handler : tornado.web.RequestHandler</span>
+<span class="sd">        Handler that serviced the bundle request</span>
+<span class="sd">    model : dict</span>
+<span class="sd">        Notebook model from the configured ContentManager</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">notebook_filename</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    <span class="n">notebook_content</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">writes</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">notebook_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">notebook_filename</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">tar_filename</span> <span class="o">=</span> <span class="s1">&#39;{}.tar.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">notebook_name</span><span class="p">)</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">TarInfo</span><span class="p">(</span><span class="n">notebook_filename</span><span class="p">)</span>
+    <span class="n">info</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">notebook_content</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">tar_buffer</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">tar_filename</span><span class="p">,</span> <span class="s2">&quot;w:gz&quot;</span><span class="p">,</span> <span class="n">fileobj</span><span class="o">=</span><span class="n">tar_buffer</span><span class="p">)</span> <span class="k">as</span> <span class="n">tar</span><span class="p">:</span>
+            <span class="n">tar</span><span class="o">.</span><span class="n">addfile</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">notebook_content</span><span class="p">))</span>
+
+        <span class="c1"># Set headers to trigger browser download</span>
+        <span class="n">handler</span><span class="o">.</span><span class="n">set_header</span><span class="p">(</span><span class="s1">&#39;Content-Disposition&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;attachment; filename=&quot;{}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tar_filename</span><span class="p">))</span>
+        <span class="n">handler</span><span class="o">.</span><span class="n">set_header</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/gzip&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Return the buffer value as the response</span>
+        <span class="n">handler</span><span class="o">.</span><span class="n">finish</span><span class="p">(</span><span class="n">tar_buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="../../extending/index.html"><span class="doc">Extending the Notebook</span></a> for more
+documentation about writing nbextensions, server extensions, and bundler
+extensions.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../extending/index.html" class="btn btn-neutral float-right" title="Extending the Notebook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../frontend_config.html" class="btn btn-neutral" title="Configuring the notebook frontend" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jupyter Team, https://jupyter.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'5.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
