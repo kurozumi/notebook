@@ -118,7 +118,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#structure-of-a-notebook-document">ノートブック文書の構造</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#code-cells">コードセル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#markdown-cells">マークダウンセル</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#raw-cells">Raw cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raw-cells">生のセル</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#basic-workflow">Basic workflow</a><ul>
@@ -399,13 +399,8 @@
 </div>
 </div>
 <div class="section" id="raw-cells">
-<h3>Raw cells<a class="headerlink" href="#raw-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><em>Raw</em> cells provide a place in which you can write <em>output</em> directly.
-Raw cells are not evaluated by the notebook.
-When passed through <a class="reference external" href="https://nbconvert.readthedocs.io/en/latest/">nbconvert</a>, raw cells arrive in the
-destination format unmodified. For example, this allows you to type full LaTeX
-into a raw cell, which will only be rendered by LaTeX after conversion by
-nbconvert.</p>
+<h3>生のセル<a class="headerlink" href="#raw-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><em>生の</em> セルは <em>出力</em> を直接書き込むことができる場所を提供します。生のセルはノートブックで評価されません。 <a class="reference external" href="https://nbconvert.readthedocs.io/en/latest/">nbconvert</a> を通過すると、生のセルは未変更の先のフォーマットに到着します。例えば、完全なLaTeXを生のセルに入力することが出来ます。生のセルは、nbconvertに変換後LaTeXによってのみレンダリングされます。</p>
 </div>
 </div>
 <div class="section" id="basic-workflow">
