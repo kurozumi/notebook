@@ -383,16 +383,10 @@
 <p>ドキュメントの構造を提供する場合は、マークダウンの見出しを使用できます。マークダウンの見出しは、1〜6個のハッシュ # 記号 <code class="docutils literal"><span class="pre">#</span></code> と、スペースとセクションのタイトルで構成されます。マークダウンの見出しは、ノートブックのセクションのクリック可能なリンクに変換されます。また、PDFなどの他のドキュメント形式にエクスポートする際のヒントとしても使用されます。</p>
 <p>マークダウンセルが実行されると、マークダウンコードは対応するフォーマットされたリッチテキストに変換されます。マークダウンは書式設定に任意のHTMLコードを使用できます。</p>
 <p>マークダウンセル内では、標準のLaTex表記を使って、簡単な方法で <em>数学</em> を含めることも出来ます: インライン数学では <code class="docutils literal"><span class="pre">$…$</span></code>、表示された数学では <code class="docutils literal"><span class="pre">$$…$$</span></code> です。マークダウンセグが実行されると、LaTeXの部分は高品質のタイポグラフィの式としてHTM出力に自動的にレンダリングされます。これはLaTeX機能の <a class="reference external" href="mathjax_tex">large subset</a> をサポートする <a class="reference external" href="https://www.mathjax.org/">MathJax</a> によって可能になりました。</p>
-<p>Standard mathematics environments defined by LaTeX and AMS-LaTeX (the
-<cite>amsmath</cite> package) also work, such as
-<code class="docutils literal"><span class="pre">\begin{equation}...\end{equation}</span></code>, and <code class="docutils literal"><span class="pre">\begin{align}...\end{align}</span></code>.
-New LaTeX macros may be defined using standard methods,
-such as <code class="docutils literal"><span class="pre">\newcommand</span></code>, by placing them anywhere <em>between math delimiters</em> in
-a Markdown cell. These definitions are then available throughout the rest of
-the IPython session.</p>
+<p><code class="docutils literal"><span class="pre">\begin{equation}…\end{equation}</span></code>、 <code class="docutils literal"><span class="pre">\begin{align}…\end{align}</span></code> のようなLaTeXtoAMS-LaTeX(amsmathパッケージ)で定義されている標準の数学環境も動作します。新しいLaTeXマクロは、<code class="docutils literal"><span class="pre">\newcommand</span></code> のような標準的な方法を使って、マークダウンセルの <em>math delimitersの間に</em> のどこにでも置くことによってで意義することが出来ます。これらの定義は残りのIPythonセッションで利用できます。</p>
 <div class="admonition seealso">
 <p class="first admonition-title">参考</p>
-<p class="last"><a class="reference external" href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Working%20With%20Markdown%20Cells.ipynb">Working with Markdown Cells</a> example notebook</p>
+<p class="last"><a class="reference external" href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Working%20With%20Markdown%20Cells.ipynb">Working with Markdown Cells</a> のサンプルノートブック</p>
 </div>
 </div>
 <div class="section" id="raw-cells">
