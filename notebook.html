@@ -121,7 +121,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#raw-cells">生のセル</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#basic-workflow">Basic workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-workflow">基本的なワークフロー</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
 </ul>
 </li>
@@ -404,26 +404,11 @@
 </div>
 </div>
 <div class="section" id="basic-workflow">
-<h2>Basic workflow<a class="headerlink" href="#basic-workflow" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The normal workflow in a notebook is, then, quite similar to a standard
-IPython session, with the difference that you can edit cells in-place multiple
-times until you obtain the desired results, rather than having to
-rerun separate scripts with the <code class="docutils literal"><span class="pre">%run</span></code> magic command.</p>
-<p>Typically, you will work on a computational problem in pieces, organizing
-related ideas into cells and moving forward once previous parts work
-correctly. This is much more convenient for interactive exploration than
-breaking up a computation into scripts that must be executed together, as was
-previously necessary, especially if parts of them take a long time to run.</p>
-<p>At certain moments, it may be necessary to interrupt a calculation which is
-taking too long to complete. This may be done with the <cite>Kernel | Interrupt</cite>
-menu option, or the <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">i</span></code> keyboard shortcut.
-Similarly, it may be necessary or desirable to restart the whole computational
-process, with the <cite>Kernel | Restart</cite> menu option or <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">.</span></code>
-shortcut.</p>
-<p>A notebook may be downloaded in either a <code class="docutils literal"><span class="pre">.ipynb</span></code> or <code class="docutils literal"><span class="pre">.py</span></code> file from the
-menu option <cite>File | Download as</cite>. Choosing the <code class="docutils literal"><span class="pre">.py</span></code> option downloads a
-Python <code class="docutils literal"><span class="pre">.py</span></code> script, in which all rich output has been removed and the
-content of markdown cells have been inserted as comments.</p>
+<h2>基本的なワークフロー<a class="headerlink" href="#basic-workflow" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ノートブックでの通常のワークフローは、標準的なIPythonセッションと非常に似ていますが、<code class="docutils literal"><span class="pre">%run</span></code> マジックコマンドでスクリプトを再実行するのではなく、目的の結果が得られるまでまで複数の場所でセルを編集得できるという違いがあります。</p>
+<p>通常は、計算上の問題を断片的に処理し、関連するアイデアをセルに整理し、前の部分が正しく動作するようにします。これまで必要だったように、特にそれらの一部が実行に時間がかかる場合は、計算をまとめて実行する必要があるスクリプトに分割するよりも、インタラクティブな検索のほうがはるかに便利です。</p>
+<p>特定の瞬間に、完了に時間がかかりすぎる計算を中断する必要があるかもしれません。これは <cite>Kernel | Interrupt</cite> メニューオプション、または <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">i</span></code> キーボードショートカットを使用します。同様に、<cite>Kernel | Restart</cite> メニューオプション、または <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">.</span></code> ショートカットを使って、計算プロセス全体を再起動することが必要または望ましい場合があります。</p>
+<p>ノートブックはメニューオプショの`File | Download as` から <code class="docutils literal"><span class="pre">.ipynb</span></code> または <code class="docutils literal"><span class="pre">.py</span></code> ファイルのいずれかでダウンロードできます。 <code class="docutils literal"><span class="pre">.py</span></code> オプションを選択するとすべてのリッチ出力が削除され、マークダウンセルの内容がコメントとして挿入されたPython <code class="docutils literal"><span class="pre">.py</span></code> スクリプトがダウンロードされます。</p>
 <div class="admonition seealso">
 <p class="first admonition-title">参考</p>
 <p><a class="reference external" href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Running%20Code.ipynb">Running Code in the Jupyter Notebook</a> example notebook</p>
