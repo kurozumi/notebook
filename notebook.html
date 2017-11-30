@@ -420,42 +420,26 @@
 <ul class="simple">
 <li><dl class="first docutils">
 <dt><code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code>:  セルを実行</dt>
-<dd>Execute the current cell, show output (if any), and jump to the next cell
-below. If <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code> is invoked on the last cell, a new code
-cell will also be created. Note that in the notebook, typing <code class="kbd docutils literal"><span class="pre">Enter</span></code>
-on its own <em>never</em> forces execution, but rather just inserts a new line in
-the current cell. <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code> is equivalent to clicking the
-<code class="docutils literal"><span class="pre">Cell</span> <span class="pre">|</span> <span class="pre">Run</span></code> menu item.</dd>
+<dd>現在のセルを実行し、出力がある場合はそれを表示し、下の次のセルにジャンプします。<code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code> が最後のセルで呼び出されると、新しいコードセルが作成されます。ノートブックでは、 <code class="kbd docutils literal"><span class="pre">Enter</span></code> を押すだけで実行が矯正されるのではなく、現在のセルに新しい行が挿入されることに注意して下さい。<code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code> は <code class="docutils literal"><span class="pre">Cell</span> <span class="pre">|</span> <span class="pre">Run</span></code> メニュー項目をクリックすることに相当します。</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><code class="kbd docutils literal"><span class="pre">Ctrl-Enter</span></code>: run cell in-place</dt>
-<dd>Execute the current cell as if it were in 「terminal mode」, where any
-output is shown, but the cursor <em>remains</em> in the current cell. The cell’s
-entire contents are selected after execution, so you can just start typing
-and only the new input will be in the cell. This is convenient for doing
-quick experiments in place, or for querying things like filesystem
-content, without needing to create additional cells that you may not want
-to be saved in the notebook.</dd>
+<dt><code class="kbd docutils literal"><span class="pre">Ctrl-Enter</span></code>: 所定の位置で実行</dt>
+<dd>現在のセルを”ターミナルモード”のように実行します。出力は表示されますが、カーソルは現在のセルに <em>残ります</em> 。実行後にセルの内容全体が選択されるので、入力を開始するだけで新しい入力だけがセルに表示されます。ノートブックに保存したくない追加のセルを作成する必要がなく、迅速な実験を実行したり、ファイルシステムの内容などを検索したりするのに便利です。</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><code class="kbd docutils literal"><span class="pre">Alt-Enter</span></code>: run cell, insert below</dt>
-<dd>Executes the current cell, shows the output, and inserts a <em>new</em>
-cell between the current cell and the cell below (if one exists). This
-is thus a shortcut for the sequence <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code>, <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">a</span></code>.
-(<code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">a</span></code> adds a new cell above the current one.)</dd>
+<dt><code class="kbd docutils literal"><span class="pre">Alt-Enter</span></code>: セルを実行して下に挿入</dt>
+<dd>現在のセルを実行し、出力を表示し、現在のセルと下のセル(存在する場合)の間に <em>新しい</em> セルを挿入します。これはシーケンス <code class="kbd docutils literal"><span class="pre">Shift-Enter</span></code>、 <code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">a</span></code> のショートカットです。(<code class="kbd docutils literal"><span class="pre">Ctrl-m</span> <span class="pre">a</span></code> は現在のセルの上に新しいセルを追加します)</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><code class="kbd docutils literal"><span class="pre">Esc</span></code> and <code class="kbd docutils literal"><span class="pre">Enter</span></code>: Command mode and edit mode</dt>
-<dd>In command mode, you can easily navigate around the notebook using keyboard
-shortcuts. In edit mode, you can edit text in cells.</dd>
+<dt><code class="kbd docutils literal"><span class="pre">Esc</span></code> と <code class="kbd docutils literal"><span class="pre">Enter</span></code>: コマンドモードと編集モード</dt>
+<dd>コマンドモードでは、キーボードショートカットを使用してノートブックの周りを簡単に移動できます。編集モードで、セル内のテキストを編集できます。</dd>
 </dl>
 </li>
 </ul>
-<p>For the full list of available shortcuts, click <span class="guilabel">Help</span>,
-<span class="guilabel">Keyboard Shortcuts</span> in the notebook menus.</p>
+<p>利用可能なショートカットの完全なりすとについては、ノートブックメニューの <span class="guilabel">Help</span>、<span class="guilabel">Keyboard Shortcuts</span> をクリックして下さい。</p>
 </div>
 </div>
 <div class="section" id="plotting">
