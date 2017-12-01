@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Comms &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  <title>通信 &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="search" title="検索" href="search.html"/>
     <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="index.html"/>
         <link rel="next" title="Configuration Overview" href="config_overview.html"/>
-        <link rel="prev" title="UI Components" href="ui_components.html"/>
+        <link rel="prev" title="UIコンポーネント" href="ui_components.html"/>
 <meta name="google-site-verification" content="weS-iT6zr4B9g-sBuM2nD1EZBt55FPAZZbS1K5mkC0g" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23705195-42"></script>
@@ -107,8 +107,8 @@
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ui_components.html">UI Components</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Comms</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="ui_components.html">UIコンポーネント</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">通信</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#opening-a-comm-from-the-kernel">Opening a comm from the kernel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#opening-a-comm-from-the-frontend">Opening a comm from the frontend</a></li>
 </ul>
@@ -203,7 +203,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Comms</li>
+      <li>通信</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -267,14 +267,9 @@
 }
 </style>
 <div class="section" id="comms">
-<h1>Comms<a class="headerlink" href="#comms" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p><em>Comms</em> allow custom messages between the frontend and the kernel. They are used,
-for instance, in <a class="reference external" href="http://ipywidgets.readthedocs.io/en/latest/">ipywidgets</a> to
-update widget state.</p>
-<p>A comm consists of a pair of objects, in the kernel and the frontend, with an
-automatically assigned unique ID. When one side sends a message, a callback on
-the other side is triggered with that message data. Either side, the frontend
-or kernel, can open or close the comm.</p>
+<h1>通信<a class="headerlink" href="#comms" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><em>通信</em> はプロントエンドとカーネルの間でカスタムメッセージを許可します。例えば、<a class="reference external" href="http://ipywidgets.readthedocs.io/en/latest/">ipywidgets</a> でウィジェットの上タオを更新するために使用されます。</p>
+<p>通信は、カーネルとフロントエンドのオブジェクトのぺあからんり、自動的に割り当てられたユニークなIDで構成されます。一方の側がメッセージを送信すると、他方の側のコールバックがそのメッセージデータで鳥がされます。いずれかの側、フロントエンドまたはカーネルは、通信を開いたり閉じたり出来ます。</p>
 <div class="admonition seealso">
 <p class="first admonition-title">参考</p>
 <dl class="last docutils">
@@ -380,7 +375,7 @@ documentation for comms support.</p>
         <a href="config_overview.html" class="btn btn-neutral float-right" title="Configuration Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ui_components.html" class="btn btn-neutral" title="UI Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ui_components.html" class="btn btn-neutral" title="UIコンポーネント" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
