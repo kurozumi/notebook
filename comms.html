@@ -326,7 +326,7 @@
 </pre></div>
 </div>
 <p>この例では、IPythonカーネルをサイド使用します。この例は、通信をサポートする他のカーネルでは異なります。通信のサポートについては特定の言語カーネルのドキュメントを参照して下さい。</p>
-<p>そしてフロントエンドから通信が開きます:</p>
+<p>フロント エンドからの通信を開きます:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">comm</span> <span class="o">=</span> <span class="nx">Jupyter</span><span class="p">.</span><span class="nx">notebook</span><span class="p">.</span><span class="nx">kernel</span><span class="p">.</span><span class="nx">comm_manager</span><span class="p">.</span><span class="nx">new_comm</span><span class="p">(</span><span class="s1">&#39;my_comm_target&#39;</span><span class="p">,</span>
                                                      <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="mi">6</span><span class="p">})</span>
 <span class="c1">// Send data</span>
