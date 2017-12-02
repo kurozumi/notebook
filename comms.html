@@ -109,8 +109,8 @@
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui_components.html">UIコンポーネント</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">通信</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#opening-a-comm-from-the-kernel">Opening a comm from the kernel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#opening-a-comm-from-the-frontend">Opening a comm from the frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opening-a-comm-from-the-kernel">カーネルから通信を開く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opening-a-comm-from-the-frontend">フロントエンドから通信を開く</a></li>
 </ul>
 </li>
 </ul>
@@ -274,15 +274,12 @@
 <p class="first admonition-title">参考</p>
 <dl class="last docutils">
 <dt><a class="reference external" href="http://jupyter-client.readthedocs.io/en/latest/messaging.html#custom-messages">Custom Messages</a></dt>
-<dd>The messaging specification section on comms</dd>
+<dd>通信に関するメッセージ仕様セクション</dd>
 </dl>
 </div>
 <div class="section" id="opening-a-comm-from-the-kernel">
-<h2>Opening a comm from the kernel<a class="headerlink" href="#opening-a-comm-from-the-kernel" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>First, the function to accept the comm must be available on the frontend. This
-can either be specified in a <cite>requirejs</cite> module, or registered in a registry, for
-example when an <a class="reference internal" href="extending/frontend_extensions.html"><span class="doc">extension</span></a> is loaded.
-This example shows a frontend comm target registered in a registry:</p>
+<h2>カーネルから通信を開く<a class="headerlink" href="#opening-a-comm-from-the-kernel" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず、通信を受け入れる機能がフロントエンドで利用可能でなければなりません。これは <cite>requirejs</cite> モジュールで指定するか、<a class="reference internal" href="extending/frontend_extensions.html"><span class="doc">extension</span></a> がロードされた時などにレジストリに登録することが出来ます。この例は、レジストリに登録されているフロントエンドの通信ターゲットを示しています:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">Jupyter</span><span class="p">.</span><span class="nx">notebook</span><span class="p">.</span><span class="nx">kernel</span><span class="p">.</span><span class="nx">comm_manager</span><span class="p">.</span><span class="nx">register_target</span><span class="p">(</span><span class="s1">&#39;my_comm_target&#39;</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">(</span><span class="nx">comm</span><span class="p">,</span> <span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// comm is the frontend comm instance</span>
@@ -295,7 +292,7 @@ This example shows a frontend comm target registered in a registry:</p>
     <span class="p">});</span>
 </pre></div>
 </div>
-<p>Now that the frontend comm is registered, you can open the comm from the kernel:</p>
+<p>フロントエンド通信が登録されたので、カーネルから通信を開くことが出来ます:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipykernel.comm</span> <span class="kn">import</span> <span class="n">Comm</span>
 
 <span class="c1"># Use comm to send a message from the kernel</span>
@@ -308,15 +305,11 @@ This example shows a frontend comm target registered in a registry:</p>
     <span class="c1"># Use msg[&#39;content&#39;][&#39;data&#39;] for the data in the message</span>
 </pre></div>
 </div>
-<p>This example uses the IPython kernel; it’s up to each language kernel what API,
-if any, it offers for using comms.</p>
+<p>この例では、IPythonカーネルを使用しています。各言語のカーネルには、もしAPIがあれば通信を使用するために提供されます。</p>
 </div>
 <div class="section" id="opening-a-comm-from-the-frontend">
-<h2>Opening a comm from the frontend<a class="headerlink" href="#opening-a-comm-from-the-frontend" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This is very similar to above, but in reverse. First, a comm target must be
-registered in the kernel. For instance, this may be done by code displaying
-output: it will register a target in the kernel, and then display output
-containing Javascript to connect to it.</p>
+<h2>フロントエンドから通信を開く<a class="headerlink" href="#opening-a-comm-from-the-frontend" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これは上記と非常によく似ていますが、逆です。まず、カーネルに通信ターゲットを登録する必要があります。例えば、これは出力をコード表示することでにって行うことが出来ます。カーネルにターゲットを登録し、それに接続するためのJavascriptを含む出力を表示します。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">target_func</span><span class="p">(</span><span class="n">comm</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
     <span class="c1"># comm is the kernel Comm instance</span>
     <span class="c1"># msg is the comm_open message</span>
@@ -332,10 +325,8 @@ containing Javascript to connect to it.</p>
 <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">comm_manager</span><span class="o">.</span><span class="n">register_target</span><span class="p">(</span><span class="s1">&#39;my_comm_target&#39;</span><span class="p">,</span> <span class="n">target_func</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This example uses the IPython kernel again; this example will be different in
-other kernels that support comms. Refer to the specific language kernel’s
-documentation for comms support.</p>
-<p>And then open the comm from the frontend:</p>
+<p>この例では、IPythonカーネルをサイド使用します。この例は、通信をサポートする他のカーネルでは異なります。通信のサポートについては特定の言語カーネルのドキュメントを参照して下さい。</p>
+<p>そしてフロントエンドから通信が開きます:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">comm</span> <span class="o">=</span> <span class="nx">Jupyter</span><span class="p">.</span><span class="nx">notebook</span><span class="p">.</span><span class="nx">kernel</span><span class="p">.</span><span class="nx">comm_manager</span><span class="p">.</span><span class="nx">new_comm</span><span class="p">(</span><span class="s1">&#39;my_comm_target&#39;</span><span class="p">,</span>
                                                      <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="o">:</span> <span class="mi">6</span><span class="p">})</span>
 <span class="c1">// Send data</span>
