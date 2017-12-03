@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running a notebook server &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  <title>ノートブックサーバの実行 &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
   
 
   
@@ -107,14 +107,14 @@
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ui_components.html">UI Components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comms.html">Comms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_components.html">UIコンポーネント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comms.html">通信</a></li>
 </ul>
 <p class="caption"><span class="caption-text">設定</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config_overview.html">設定の概要</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Config file and command line options</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Running a notebook server</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ノートブックサーバの実行</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#securing-a-notebook-server">Securing a notebook server</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisite-a-notebook-configuration-file">Prerequisite: A notebook configuration file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#preparing-a-hashed-password">Preparing a hashed password</a></li>
@@ -220,7 +220,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Running a notebook server</li>
+      <li>ノートブックサーバの実行</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -284,11 +284,8 @@
 }
 </style>
 <div class="section" id="running-a-notebook-server">
-<span id="working-remotely"></span><h1>Running a notebook server<a class="headerlink" href="#running-a-notebook-server" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The <a class="reference internal" href="notebook.html"><span class="doc">Jupyter notebook</span></a> web application is based on a
-server-client structure.  The notebook server uses a <a class="reference external" href="https://ipython.readthedocs.io/en/stable/overview.html#ipythonzmq" title="(in IPython v6.2.1)"><span class="xref std std-ref">two-process kernel
-architecture</span></a> based on <a class="reference external" href="http://zeromq.org">ZeroMQ</a>, as well as <a class="reference external" href="http://www.tornadoweb.org">Tornado</a> for
-serving HTTP requests.</p>
+<span id="working-remotely"></span><h1>ノートブックサーバの実行<a class="headerlink" href="#running-a-notebook-server" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference internal" href="notebook.html"><span class="doc">Jupyter notebook</span></a> Webアプリケーションはサーバー-クライアント構造に基づいています。ノートブックサーバーは、<a class="reference external" href="http://zeromq.org">ZeroMQ</a> に基づく <a class="reference external" href="https://ipython.readthedocs.io/en/stable/overview.html#ipythonzmq" title="(in IPython v6.2.1)"><span class="xref std std-ref">two-process kernel architecture</span></a> とHTTPリクエストを処理するための <a class="reference external" href="http://www.tornadoweb.org">ornado</a> を使用します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">By default, a notebook server runs locally at 127.0.0.1:8888
