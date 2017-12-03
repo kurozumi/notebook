@@ -108,14 +108,14 @@
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/running.html">Running the Notebook</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/migrating.html">Migrating from IPython</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ui_components.html">UI Components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../comms.html">Comms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui_components.html">UIコンポーネント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../comms.html">通信</a></li>
 </ul>
 <p class="caption"><span class="caption-text">設定</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../config_overview.html">Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../config_overview.html">設定の概要</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../config.html">Config file and command line options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../public_server.html">Running a notebook server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../public_server.html">ノートブックサーバの実行</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../security.html">Security in the Jupyter notebook server</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../security.html#security-in-notebook-documents">Security in notebook documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../frontend_config.html">Configuring the notebook frontend</a></li>
@@ -486,13 +486,13 @@ out the connection information for the Kernel using the
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 {
-  &#34;shell_port&#34;: 50129,
-  &#34;iopub_port&#34;: 50130,
-  &#34;stdin_port&#34;: 50131,
-  &#34;control_port&#34;: 50132,
-  &#34;hb_port&#34;: 50133,
+  &#34;shell_port&#34;: 62880,
+  &#34;iopub_port&#34;: 62881,
+  &#34;stdin_port&#34;: 62882,
+  &#34;control_port&#34;: 62883,
+  &#34;hb_port&#34;: 62884,
   &#34;ip&#34;: &#34;127.0.0.1&#34;,
-  &#34;key&#34;: &#34;2ff44cd8-ee2b5aee394e510577ffb743&#34;,
+  &#34;key&#34;: &#34;343184a6-3a47b70109d77e0fe33c61b5&#34;,
   &#34;transport&#34;: &#34;tcp&#34;,
   &#34;signature_scheme&#34;: &#34;hmac-sha256&#34;,
   &#34;kernel_name&#34;: &#34;&#34;
@@ -501,7 +501,7 @@ out the connection information for the Kernel using the
 Paste the above JSON into a file, and connect with:
     $&gt; jupyter &lt;app&gt; --existing &lt;file&gt;
 or, if you are local, you can connect with just:
-    $&gt; jupyter &lt;app&gt; --existing /var/folders/zq/mr_v6fr54qbftbckvrdw5cwm0000gn/T/tmptb03r8i2.json
+    $&gt; jupyter &lt;app&gt; --existing /var/folders/zq/mr_v6fr54qbftbckvrdw5cwm0000gn/T/tmpi0g65_40.json
 or even just:
     $&gt; jupyter &lt;app&gt; --existing
 if this is the most recent Jupyter kernel you have started.
