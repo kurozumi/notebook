@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuring the notebook frontend &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
+  <title>ノートブックフロントエンドの設定 &mdash; Jupyter Notebook 5.2.1 ドキュメント</title>
   
 
   
@@ -117,9 +117,9 @@
 <li class="toctree-l1"><a class="reference internal" href="public_server.html">ノートブックサーバの実行</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Security in the Jupyter notebook server</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security.html#security-in-notebook-documents">Security in notebook documents</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuring the notebook frontend</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-front-end-configuration-works">How front end configuration works</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-changing-the-notebook-s-default-indentation">Example - Changing the notebook’s default indentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ノートブックフロントエンドの設定</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-front-end-configuration-works">フロントエンドの設定方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-changing-the-notebook-s-default-indentation">例 - ノートブックのデフォルトのインデントを変更する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-restoring-the-notebook-s-default-indentation">Example - Restoring the notebook’s default indentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#persisting-configuration-settings">Persisting configuration settings</a></li>
 </ul>
@@ -205,7 +205,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Configuring the notebook frontend</li>
+      <li>ノートブックフロントエンドの設定</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -269,32 +269,27 @@
 }
 </style>
 <div class="section" id="configuring-the-notebook-frontend">
-<span id="frontend-config"></span><h1>Configuring the notebook frontend<a class="headerlink" href="#configuring-the-notebook-frontend" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="frontend-config"></span><h1>ノートブックフロントエンドの設定<a class="headerlink" href="#configuring-the-notebook-frontend" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The ability to configure the notebook frontend UI and preferences is
-still a work in progress.</p>
+<p class="last">ノートブックのフロントエンドのUIと環境設定を構成する機能はまだ進行中です。</p>
 </div>
-<p>This document is a rough explanation on how you can persist some configuration
-options for the notebook JavaScript.</p>
-<p>There is no exhaustive list of all the configuration options as most options
-are passed down to other libraries, which means that non valid
-configuration can be ignored without any error messages.</p>
+<p>このドキュメントでは、ノートブックJavascriptの設定オプションを保持する方法について簡単に説明します。</p>
+<p>ほとんどのオプションが他のライブラリに渡されるので、すべての設定オプションの網羅的なリストではありません。つまり、有効でない設定はエラーメッセージ無しで無視できます。</p>
 <div class="section" id="how-front-end-configuration-works">
-<h2>How front end configuration works<a class="headerlink" href="#how-front-end-configuration-works" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The frontend configuration system works as follows:</p>
+<h2>フロントエンドの設定方法<a class="headerlink" href="#how-front-end-configuration-works" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>フロントエンド設定システムは次のように動作します:</p>
 <blockquote>
 <div><ul class="simple">
-<li>get a handle of a configurable JavaScript object.</li>
-<li>access its configuration attribute.</li>
-<li>update its configuration attribute with a JSON patch.</li>
+<li>設定可能なJavaScriptオブジェクトのハンドルを取得します。</li>
+<li>その構成属性にアクセスします。</li>
+<li>その構成属性をJSONパッチで更新します。</li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="example-changing-the-notebook-s-default-indentation">
-<h2>Example - Changing the notebook’s default indentation<a class="headerlink" href="#example-changing-the-notebook-s-default-indentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This example explains how to change the default setting <code class="docutils literal"><span class="pre">indentUnit</span></code>
-for CodeMirror Code Cells:</p>
+<h2>例 - ノートブックのデフォルトのインデントを変更する<a class="headerlink" href="#example-changing-the-notebook-s-default-indentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>この例では、CodeMirrorコードセルのデフォルト設定 <code class="docutils literal"><span class="pre">indentUnit</span></code> を変更する方法について説明します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">cell</span> <span class="o">=</span> <span class="n">Jupyter</span><span class="o">.</span><span class="n">notebook</span><span class="o">.</span><span class="n">get_selected_cell</span><span class="p">();</span>
 <span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">config</span><span class="p">;</span>
 <span class="n">var</span> <span class="n">patch</span> <span class="o">=</span> <span class="p">{</span>
@@ -305,12 +300,8 @@ for CodeMirror Code Cells:</p>
 <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can enter the previous snippet in your browser’s JavaScript console once.
-Then reload the notebook page in your browser. Now, the preferred indent unit
-should be equal to two spaces. The custom setting persists and you do not need
-to reissue the patch on new notebooks.</p>
-<p><code class="docutils literal"><span class="pre">indentUnit</span></code>, used in this example, is one of the many <a class="reference external" href="https://codemirror.net/doc/manual.html#option_indentUnit">CodeMirror options</a> which are available
-for configuration.</p>
+<p>以前のスニペットをブラウザのJavaScriptコンソールに一度入力することができます。ここで、好ましいインデント単位は2つのスペースと等しくなければなりません。カスタム設定が維持され、新しいノートブックにパッチを再発行する必要はありません。</p>
+<p>この例で使用される <code class="docutils literal"><span class="pre">indentUnit</span></code> は、設定に使用できる多くの <a class="reference external" href="https://codemirror.net/doc/manual.html#option_indentUnit">CodeMirror options</a>  オプションの一つです。</p>
 </div>
 <div class="section" id="example-restoring-the-notebook-s-default-indentation">
 <h2>Example - Restoring the notebook’s default indentation<a class="headerlink" href="#example-restoring-the-notebook-s-default-indentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
