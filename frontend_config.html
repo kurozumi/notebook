@@ -37,7 +37,7 @@
         <link rel="search" title="検索" href="search.html"/>
     <link rel="top" title="Jupyter Notebook 5.2.1 ドキュメント" href="index.html"/>
         <link rel="next" title="Distributing Jupyter Extensions as Python Packages" href="examples/Notebook/Distributing Jupyter Extensions as Python Packages.html"/>
-        <link rel="prev" title="Security in the Jupyter notebook server" href="security.html"/>
+        <link rel="prev" title="Jupyterノートブックのセキュリティ" href="security.html"/>
 <meta name="google-site-verification" content="weS-iT6zr4B9g-sBuM2nD1EZBt55FPAZZbS1K5mkC0g" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23705195-42"></script>
@@ -115,13 +115,13 @@
 <li class="toctree-l1"><a class="reference internal" href="config_overview.html">設定の概要</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Config file and command line options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="public_server.html">ノートブックサーバの実行</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security.html">Security in the Jupyter notebook server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security.html#security-in-notebook-documents">Security in notebook documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Jupyterノートブックのセキュリティ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html#security-in-notebook-documents">ノートブックドキュメントのセキュリティ</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ノートブックフロントエンドの設定</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#how-front-end-configuration-works">フロントエンドの設定方法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-changing-the-notebook-s-default-indentation">例 - ノートブックのデフォルトのインデントを変更する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-restoring-the-notebook-s-default-indentation">Example - Restoring the notebook’s default indentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#persisting-configuration-settings">Persisting configuration settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-restoring-the-notebook-s-default-indentation">例 - ノートブックのデフォルトインデントを復元する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#persisting-configuration-settings">構成設定を維持する</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Notebook/Distributing Jupyter Extensions as Python Packages.html">Distributing Jupyter Extensions as Python Packages</a></li>
@@ -304,11 +304,9 @@
 <p>この例で使用される <code class="docutils literal"><span class="pre">indentUnit</span></code> は、設定に使用できる多くの <a class="reference external" href="https://codemirror.net/doc/manual.html#option_indentUnit">CodeMirror options</a>  オプションの一つです。</p>
 </div>
 <div class="section" id="example-restoring-the-notebook-s-default-indentation">
-<h2>Example - Restoring the notebook’s default indentation<a class="headerlink" href="#example-restoring-the-notebook-s-default-indentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If you want to restore a notebook frontend preference to its default value,
-you will enter a JSON patch with a <code class="docutils literal"><span class="pre">null</span></code> value for the preference setting.</p>
-<p>For example, let’s restore the indent setting <code class="docutils literal"><span class="pre">indentUnit</span></code> to its default of
-four spaces. Enter the following code snippet in your JavaScript console:</p>
+<h2>例 - ノートブックのデフォルトインデントを復元する<a class="headerlink" href="#example-restoring-the-notebook-s-default-indentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ノートブックフロントエンドのプリファレンスをデフォルト値に戻したい場合は、プリフェレンス設定の <code class="docutils literal"><span class="pre">null</span></code> 値のJSONパッチを入力します。</p>
+<p>例えば、インデント設定 <code class="docutils literal"><span class="pre">indentUnit</span></code> をデフォルトの4つのスペースに戻してみましょう。JavaScriptコンソールに次のコードスニペットを入力します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">cell</span> <span class="o">=</span> <span class="n">Jupyter</span><span class="o">.</span><span class="n">notebook</span><span class="o">.</span><span class="n">get_selected_cell</span><span class="p">();</span>
 <span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">config</span><span class="p">;</span>
 <span class="n">var</span> <span class="n">patch</span> <span class="o">=</span> <span class="p">{</span>
@@ -319,11 +317,10 @@ four spaces. Enter the following code snippet in your JavaScript console:</p>
 <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Reload the notebook in your browser and the default indent should again be two
-spaces.</p>
+<p>ブラウザでノートブックをリロードすると、デフォルトのインデントは再び2つのスペースになります。</p>
 </div>
 <div class="section" id="persisting-configuration-settings">
-<h2>Persisting configuration settings<a class="headerlink" href="#persisting-configuration-settings" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>構成設定を維持する<a class="headerlink" href="#persisting-configuration-settings" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Under the hood, Jupyter will persist the preferred configuration settings in
 <code class="docutils literal"><span class="pre">~/.jupyter/nbconfig/&lt;section&gt;.json</span></code>, with <code class="docutils literal"><span class="pre">&lt;section&gt;</span></code>
 taking various value depending on the page where the configuration is issued.
@@ -358,7 +355,7 @@ pages.</p>
         <a href="examples/Notebook/Distributing Jupyter Extensions as Python Packages.html" class="btn btn-neutral float-right" title="Distributing Jupyter Extensions as Python Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="security.html" class="btn btn-neutral" title="Security in the Jupyter notebook server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="security.html" class="btn btn-neutral" title="Jupyterノートブックのセキュリティ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
