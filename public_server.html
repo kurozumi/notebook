@@ -115,22 +115,22 @@
 <li class="toctree-l1"><a class="reference internal" href="config_overview.html">設定の概要</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Config file and command line options</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ノートブックサーバの実行</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#securing-a-notebook-server">Securing a notebook server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#prerequisite-a-notebook-configuration-file">Prerequisite: A notebook configuration file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preparing-a-hashed-password">Preparing a hashed password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#securing-a-notebook-server">ノートブックサーバーのセキュリティ保護</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisite-a-notebook-configuration-file">前提条件: ノートブックの設定ファイル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preparing-a-hashed-password">ハッシュされたパスワードの準備</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#adding-hashed-password-to-your-notebook-configuration-file">Adding hashed password to your notebook configuration file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-ssl-for-encrypted-communication">Using SSL for encrypted communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-ssl-for-encrypted-communication">暗号化通信にSSLを使用する</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#running-a-public-notebook-server">Running a public notebook server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-let-s-encrypt">Using Let’s Encrypt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#firewall-setup">Firewall Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-public-notebook-server">パブリックノートブックサーバーの実行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-let-s-encrypt">Let’s Encryptを使用する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#firewall-setup">ファイアウォール設定</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#running-the-notebook-with-a-customized-url-prefix">Running the notebook with a customized URL prefix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#embedding-the-notebook-in-another-website">Embedding the notebook in another website</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#known-issues">Known issues</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#proxies">Proxies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-notebook-with-a-customized-url-prefix">カスタマイズされたURL接頭辞を使用してノートブックを実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#embedding-the-notebook-in-another-website">他のウェブサイトへのノートブックの埋め込み</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#known-issues">既知の問題点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#proxies">プロキシ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#docker-cmd">Docker CMD</a></li>
 </ul>
 </li>
@@ -307,12 +307,12 @@ the public internet, but doing so introduces additional
 <a class="reference external" href="https://jupyterhub.readthedocs.io/en/latest/getting-started/security-basics.html">security concerns</a>.</p>
 </div>
 <div class="section" id="securing-a-notebook-server">
-<span id="notebook-server-security"></span><h2>Securing a notebook server<a class="headerlink" href="#securing-a-notebook-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="notebook-server-security"></span><h2>ノートブックサーバーのセキュリティ保護<a class="headerlink" href="#securing-a-notebook-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>You can protect your notebook server with a simple single password by
 configuring the <code class="xref py py-attr docutils literal"><span class="pre">NotebookApp.password</span></code> setting in
 <code class="file docutils literal"><span class="pre">jupyter_notebook_config.py</span></code>.</p>
 <div class="section" id="prerequisite-a-notebook-configuration-file">
-<h3>Prerequisite: A notebook configuration file<a class="headerlink" href="#prerequisite-a-notebook-configuration-file" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>前提条件: ノートブックの設定ファイル<a class="headerlink" href="#prerequisite-a-notebook-configuration-file" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Check to see if you have a notebook configuration file,
 <code class="file docutils literal"><span class="pre">jupyter_notebook_config.py</span></code>. The default location for this file
 is your Jupyter folder in your home directory, <code class="docutils literal"><span class="pre">~/.jupyter</span></code>.</p>
@@ -323,7 +323,7 @@ using the following command:</p>
 </div>
 </div>
 <div class="section" id="preparing-a-hashed-password">
-<span id="hashed-pw"></span><h3>Preparing a hashed password<a class="headerlink" href="#preparing-a-hashed-password" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="hashed-pw"></span><h3>ハッシュされたパスワードの準備<a class="headerlink" href="#preparing-a-hashed-password" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>As of notebook version 5.0, you can enter and store a password for your
 notebook server with a single command.
 <strong class="command">jupyter notebook password</strong> will prompt you for your password
@@ -364,7 +364,7 @@ directory, <code class="docutils literal"><span class="pre">~/.jupyter</span></c
 </div>
 </div>
 <div class="section" id="using-ssl-for-encrypted-communication">
-<h3>Using SSL for encrypted communication<a class="headerlink" href="#using-ssl-for-encrypted-communication" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>暗号化通信にSSLを使用する<a class="headerlink" href="#using-ssl-for-encrypted-communication" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>When using a password, it is a good idea to also use SSL with a web
 certificate, so that your hashed password is not sent unencrypted by your
 browser.</p>
@@ -396,19 +396,19 @@ certificate is insecure or unrecognized.  If you wish to have a fully
 compliant self-signed certificate that will not raise warnings, it is possible
 (but rather involved) to create one, as explained in detail in this
 <a class="reference external" href="https://arstechnica.com/information-technology/2009/12/how-to-get-set-with-a-secure-sertificate-for-free/">tutorial</a>. Alternatively, you may use <a class="reference external" href="https://letsencrypt.org">Let’s Encrypt</a> to acquire a free SSL
-certificate and follow the steps in <a class="reference internal" href="#using-lets-encrypt"><span class="std std-ref">Using Let’s Encrypt</span></a> to set up a
+certificate and follow the steps in <a class="reference internal" href="#using-lets-encrypt"><span class="std std-ref">Let’s Encryptを使用する</span></a> to set up a
 public server.</p>
 </div>
 </div>
 <div class="section" id="running-a-public-notebook-server">
-<span id="notebook-public-server"></span><h2>Running a public notebook server<a class="headerlink" href="#running-a-public-notebook-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="notebook-public-server"></span><h2>パブリックノートブックサーバーの実行<a class="headerlink" href="#running-a-public-notebook-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>If you want to access your notebook server remotely via a web browser,
 you can do so by running a public notebook server. For optimal security
 when running a public notebook server, you should first secure the
 server with a password and SSL/HTTPS as described in
-<a class="reference internal" href="#notebook-server-security"><span class="std std-ref">Securing a notebook server</span></a>.</p>
+<a class="reference internal" href="#notebook-server-security"><span class="std std-ref">ノートブックサーバーのセキュリティ保護</span></a>.</p>
 <p>Start by creating a certificate file and a hashed password, as explained in
-<a class="reference internal" href="#notebook-server-security"><span class="std std-ref">Securing a notebook server</span></a>.</p>
+<a class="reference internal" href="#notebook-server-security"><span class="std std-ref">ノートブックサーバーのセキュリティ保護</span></a>.</p>
 <p>If you don’t already have one, create a
 config file for the notebook using the following command line:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ jupyter notebook --generate-config
@@ -434,15 +434,15 @@ following:</p>
 </div>
 <p>You can then start the notebook using the <code class="docutils literal"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> command.</p>
 <div class="section" id="using-let-s-encrypt">
-<span id="using-lets-encrypt"></span><h3>Using Let’s Encrypt<a class="headerlink" href="#using-let-s-encrypt" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="using-lets-encrypt"></span><h3>Let’s Encryptを使用する<a class="headerlink" href="#using-let-s-encrypt" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference external" href="https://letsencrypt.org">Let’s Encrypt</a> provides free SSL/TLS certificates. You can also set up a
 public server using a <a class="reference external" href="https://letsencrypt.org">Let’s Encrypt</a> certificate.</p>
-<p><a class="reference internal" href="#notebook-public-server"><span class="std std-ref">Running a public notebook server</span></a> will be similar when using a Let’s Encrypt
+<p><a class="reference internal" href="#notebook-public-server"><span class="std std-ref">パブリックノートブックサーバーの実行</span></a> will be similar when using a Let’s Encrypt
 certificate with a few configuration changes. Here are the steps:</p>
 <ol class="arabic">
 <li><p class="first">Create a <a class="reference external" href="https://letsencrypt.org/getting-started/">Let’s Encrypt certificate</a>.</p>
 </li>
-<li><p class="first">Use <a class="reference internal" href="#hashed-pw"><span class="std std-ref">Preparing a hashed password</span></a> to create one.</p>
+<li><p class="first">Use <a class="reference internal" href="#hashed-pw"><span class="std std-ref">ハッシュされたパスワードの準備</span></a> to create one.</p>
 </li>
 <li><p class="first">If you don’t already have config file for the notebook, create one
 using the following command:</p>
@@ -485,7 +485,7 @@ non-responsive</em>.</p>
 domain.</p>
 </div>
 <div class="section" id="firewall-setup">
-<h3>Firewall Setup<a class="headerlink" href="#firewall-setup" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>ファイアウォール設定<a class="headerlink" href="#firewall-setup" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To function correctly, the firewall on the computer running the jupyter
 notebook server must be configured to allow connections from client
 machines on the access port <code class="docutils literal"><span class="pre">c.NotebookApp.port</span></code> set in
@@ -498,7 +498,7 @@ multiple connections per kernel, so a large range of ports must be accessible.</
 </div>
 </div>
 <div class="section" id="running-the-notebook-with-a-customized-url-prefix">
-<h2>Running the notebook with a customized URL prefix<a class="headerlink" href="#running-the-notebook-with-a-customized-url-prefix" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>カスタマイズされたURL接頭辞を使用してノートブックを実行する<a class="headerlink" href="#running-the-notebook-with-a-customized-url-prefix" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The notebook dashboard, which is the landing page with an overview
 of the notebooks in your working directory, is typically found and accessed
 at the default URL <code class="docutils literal"><span class="pre">http://localhost:8888/</span></code>.</p>
@@ -513,7 +513,7 @@ instructions about modifying <code class="docutils literal"><span class="pre">ju
 </div>
 </div>
 <div class="section" id="embedding-the-notebook-in-another-website">
-<h2>Embedding the notebook in another website<a class="headerlink" href="#embedding-the-notebook-in-another-website" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>他のウェブサイトへのノートブックの埋め込み<a class="headerlink" href="#embedding-the-notebook-in-another-website" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Sometimes you may want to embed the notebook somewhere on your website,
 e.g. in an IFrame. To do this, you may need to override the
 Content-Security-Policy to allow embedding. Assuming your website is at
@@ -540,9 +540,9 @@ single-tab mode:</p>
 </div>
 </div>
 <div class="section" id="known-issues">
-<h2>Known issues<a class="headerlink" href="#known-issues" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>既知の問題点<a class="headerlink" href="#known-issues" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="proxies">
-<h3>Proxies<a class="headerlink" href="#proxies" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>プロキシ<a class="headerlink" href="#proxies" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>When behind a proxy, especially if your system or browser is set to autodetect
 the proxy, the notebook web application might fail to connect to the server’s
 websockets, and present you with a warning at startup. In this case, you need
