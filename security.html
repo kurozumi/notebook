@@ -120,17 +120,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#security-in-notebook-documents">ノートブックドキュメントのセキュリティ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-problem">The problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#our-security-model">Our security model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-details-of-trust">The details of trust</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#updating-trust">Updating trust</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#explicit-trust">Explicit trust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-problem">問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#our-security-model">私たちのセキュリティモデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-details-of-trust">信頼の詳細</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#updating-trust">信頼の更新</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explicit-trust">明示的な信頼</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#reporting-security-issues">Reporting security issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#affected-use-cases">Affected use cases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#javascript-and-css-in-markdown-cells">Javascript and CSS in Markdown cells</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#collaboration">Collaboration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reporting-security-issues">セキュリティ問題の報告</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#affected-use-cases">影響を受けるユースケース</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-and-css-in-markdown-cells">マークダウンセルのJavascriptとCSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collaboration">コラボレーション</a></li>
 </ul>
 </li>
 </ul>
@@ -361,7 +361,7 @@ for their nefarious purposes increases. IPython 2.0 introduced a
 security model to prevent execution of untrusted code without explicit
 user input.</p>
 <div class="section" id="the-problem">
-<h2>The problem<a class="headerlink" href="#the-problem" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>問題<a class="headerlink" href="#the-problem" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The whole point of Jupyter is arbitrary code execution. We have no
 desire to limit what can be done with a notebook, which would negatively
 impact its utility.</p>
@@ -375,7 +375,7 @@ a notebook, it is considered trusted, and should be allowed to do
 anything.</p>
 </div>
 <div class="section" id="our-security-model">
-<h2>Our security model<a class="headerlink" href="#our-security-model" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>私たちのセキュリティモデル<a class="headerlink" href="#our-security-model" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li>Untrusted HTML is always sanitized</li>
 <li>Untrusted Javascript is never executed</li>
@@ -387,7 +387,7 @@ others) is never trusted</li>
 </ul>
 </div>
 <div class="section" id="the-details-of-trust">
-<h2>The details of trust<a class="headerlink" href="#the-details-of-trust" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>信頼の詳細<a class="headerlink" href="#the-details-of-trust" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>When a notebook is executed and saved, a signature is computed from a
 digest of the notebook’s contents plus a secret key. This is stored in a
 database, writable only by the current user. By default, this is located at:</p>
@@ -404,7 +404,7 @@ output in the notebook will be trusted at load, otherwise it will be
 untrusted.</p>
 <p>Any output generated during an interactive session is trusted.</p>
 <div class="section" id="updating-trust">
-<h3>Updating trust<a class="headerlink" href="#updating-trust" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>信頼の更新<a class="headerlink" href="#updating-trust" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>A notebook’s trust is updated when the notebook is saved. If there are
 any untrusted outputs still in the notebook, the notebook will not be
 trusted, and no signature will be stored. If all untrusted outputs have
@@ -415,7 +415,7 @@ single session. A newly loaded notebook file is either trusted or not in its
 entirety.</p>
 </div>
 <div class="section" id="explicit-trust">
-<h3>Explicit trust<a class="headerlink" href="#explicit-trust" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>明示的な信頼<a class="headerlink" href="#explicit-trust" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Sometimes re-executing a notebook to generate trusted output is not an
 option, either because dependencies are unavailable, or it would take a
 long time. Users can explicitly trust a notebook in two ways:</p>
@@ -433,7 +433,7 @@ that signature to the user’s database.</p>
 </div>
 </div>
 <div class="section" id="reporting-security-issues">
-<h2>Reporting security issues<a class="headerlink" href="#reporting-security-issues" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>セキュリティ問題の報告<a class="headerlink" href="#reporting-security-issues" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>If you find a security vulnerability in Jupyter, either a failure of the
 code to properly implement the model described here, or a failure of the
 model itself, please report it to <a class="reference external" href="mailto:security&#37;&#52;&#48;ipython&#46;org">security<span>&#64;</span>ipython<span>&#46;</span>org</a>.</p>
@@ -441,12 +441,12 @@ model itself, please report it to <a class="reference external" href="mailto:sec
 you can use <a class="reference download internal" href="_downloads/ipython_security.asc" download=""><code class="xref download docutils literal"><span class="pre">this</span> <span class="pre">PGP</span> <span class="pre">public</span> <span class="pre">key</span></code></a>.</p>
 </div>
 <div class="section" id="affected-use-cases">
-<h2>Affected use cases<a class="headerlink" href="#affected-use-cases" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>影響を受けるユースケース<a class="headerlink" href="#affected-use-cases" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Some use cases that work in Jupyter 1.0 became less convenient in
 2.0 as a result of the security changes. We do our best to minimize
 these annoyances, but security is always at odds with convenience.</p>
 <div class="section" id="javascript-and-css-in-markdown-cells">
-<h3>Javascript and CSS in Markdown cells<a class="headerlink" href="#javascript-and-css-in-markdown-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>マークダウンセルのJavascriptとCSS<a class="headerlink" href="#javascript-and-css-in-markdown-cells" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>While never officially supported, it had become common practice to put
 hidden Javascript or CSS styling in Markdown cells, so that they would
 not be visible on the page. Since Markdown cells are now sanitized (by
@@ -459,7 +459,7 @@ trusted, because otherwise the output will be sanitized just like
 Markdown.</p>
 </div>
 <div class="section" id="collaboration">
-<h3>Collaboration<a class="headerlink" href="#collaboration" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>コラボレーション<a class="headerlink" href="#collaboration" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>When collaborating on a notebook, people probably want to see the
 outputs produced by their colleagues』 most recent executions. Since each
 collaborator’s key will differ, this will result in each share starting
