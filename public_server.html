@@ -288,13 +288,9 @@
 <p><a class="reference internal" href="notebook.html"><span class="doc">Jupyter notebook</span></a> Webアプリケーションはサーバー-クライアント構造に基づいています。ノートブックサーバーは、<a class="reference external" href="http://zeromq.org">ZeroMQ</a> に基づく <a class="reference external" href="https://ipython.readthedocs.io/en/stable/overview.html#ipythonzmq" title="(in IPython v6.2.1)"><span class="xref std std-ref">two-process kernel architecture</span></a> とHTTPリクエストを処理するための <a class="reference external" href="http://www.tornadoweb.org">ornado</a> を使用します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">By default, a notebook server runs locally at 127.0.0.1:8888
-and is accessible only from <cite>localhost</cite>. You may access the
-notebook server from the browser using <cite>http://127.0.0.1:8888</cite>.</p>
+<p class="last">デフォルトでは、ノートブックサーバーはローカルで127.0.0.1:8888で実行され、ローカルホストからのみアクセスできます。<a class="reference external" href="http://127.0.01">http://127.0.01</a>:8888を使用してブラウザからノートブックサーバーにアクセスできます。</p>
 </div>
-<p>This document describes how you can
-<a class="reference internal" href="#notebook-server-security"><span class="std std-ref">secure a notebook server</span></a> and how to
-<a class="reference internal" href="#notebook-public-server"><span class="std std-ref">run it on a public interface</span></a>.</p>
+<p>このドキュメントでは、<a class="reference internal" href="#notebook-server-security"><span class="std std-ref">secure a notebook server</span></a> と、<a class="reference internal" href="#notebook-public-server"><span class="std std-ref">run it on a public interface</span></a> の方法について説明します。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p><strong>This is not the multi-user server you are looking for</strong>. This document
